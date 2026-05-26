@@ -1,167 +1,349 @@
-import DashboardLayout from "../../components/layout/DashboardLayout";
+import {
+  useEffect,
+  useState,
+} from "react";
 
 import {
+  ResponsiveContainer,
   LineChart,
   Line,
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 import {
   FaUsers,
   FaUserCheck,
-  FaClipboardCheck,
   FaBuilding,
+  FaClipboardCheck,
 } from "react-icons/fa";
 
-const data = [
-  { day: "Mon", employees: 120 },
-  { day: "Tue", employees: 180 },
-  { day: "Wed", employees: 220 },
-  { day: "Thu", employees: 260 },
-  { day: "Fri", employees: 190 },
-  { day: "Sat", employees: 110 },
-  { day: "Sun", employees: 130 },
-];
+import DashboardLayout from "../../components/layout/DashboardLayout";
+
+import {
+  getEmployees,
+} from "../../services/employeeService";
 
 function Dashboard() {
+
+  const [employees,
+    setEmployees] =
+    useState([]);
+
+  useEffect(() => {
+
+    fetchEmployees();
+
+  }, []);
+
+  const fetchEmployees =
+    async () => {
+
+      try {
+
+        const localEmployees =
+          localStorage.getItem(
+            "employees"
+          );
+
+        if (localEmployees) {
+
+          setEmployees(
+            JSON.parse(
+              localEmployees
+            )
+          );
+
+        } else {
+
+          const data =
+            await getEmployees();
+
+          setEmployees(data);
+        }
+
+      } catch (error) {
+
+        console.log(error);
+      }
+    };
+
+  /* ACTIVE */
+
+  const activeEmployees =
+    employees.filter(
+      (employee) =>
+        employee.status ===
+        "Active"
+    ).length;
+
+  /* DEPARTMENTS */
+
+  const departments =
+    [...new Set(
+      employees.map(
+        (employee) =>
+          employee.department
+      )
+    )];
+
+  /* ATTENDANCE */
+
+  const attendance =
+    Math.floor(
+      (activeEmployees /
+        employees.length) *
+        100 || 0
+    );
+
+  /* GRAPH DATA */
+
+  const chartData =
+    departments.map(
+      (department) => ({
+
+        department,
+
+        employees:
+          employees.filter(
+            (employee) =>
+              employee.department ===
+              department
+          ).length,
+      })
+    );
+
   return (
+
     <DashboardLayout>
+
       <div className="dashboard-wrapper">
+
+        {/* HEADER */}
+
         <div className="dashboard-header">
+
           <div>
-            <h1>Dashboard Overview</h1>
+
+            <h1>
+              Employee Dashboard
+            </h1>
+
             <p>
-              Monitor employee performance, attendance, and department
-              activities.
+              Welcome back Admin
             </p>
+
           </div>
 
-          <div className="date-box">
-            <h4>May 2026</h4>
-          </div>
         </div>
+
+        {/* STATS */}
 
         <div className="stats-grid">
+
+          {/* TOTAL */}
+
           <div className="stat-card">
+
             <div className="stat-icon blue">
+
               <FaUsers />
+
             </div>
 
             <div>
-              <h4>Total Employees</h4>
-              <h2>256</h2>
-              <span className="success">+12.5%</span>
+
+              <h2>
+                {employees.length}
+              </h2>
+
+              <p>
+                Total Employees
+              </p>
+
             </div>
+
           </div>
 
+          {/* ACTIVE */}
+
           <div className="stat-card">
+
             <div className="stat-icon green">
+
               <FaUserCheck />
+
             </div>
 
             <div>
-              <h4>Active Employees</h4>
-              <h2>210</h2>
-              <span className="success">+8.3%</span>
+
+              <h2>
+                {activeEmployees}
+              </h2>
+
+              <p>
+                Active Employees
+              </p>
+
             </div>
+
           </div>
 
+          {/* DEPARTMENTS */}
+
           <div className="stat-card">
+
             <div className="stat-icon purple">
-              <FaClipboardCheck />
+
+              <FaBuilding />
+
             </div>
 
             <div>
-              <h4>Attendance</h4>
-              <h2>92%</h2>
-              <span className="success">+5.4%</span>
+
+              <h2>
+                {departments.length}
+              </h2>
+
+              <p>
+                Departments
+              </p>
+
             </div>
+
           </div>
+
+          {/* ATTENDANCE */}
 
           <div className="stat-card">
+
             <div className="stat-icon orange">
-              <FaBuilding />
+
+              <FaClipboardCheck />
+
             </div>
 
             <div>
-              <h4>Departments</h4>
-              <h2>12</h2>
-              <span>No Change</span>
+
+              <h2>
+                {attendance}%
+              </h2>
+
+              <p>
+                Attendance
+              </p>
+
             </div>
+
           </div>
+
         </div>
 
+        {/* GRAPH + RECENT */}
+
         <div className="dashboard-content">
+
+          {/* GRAPH */}
+
           <div className="chart-section">
+
             <div className="section-header">
-              <h3>Employee Analytics</h3>
-              <button>This Week</button>
+
+              <h2>
+                Employee Overview
+              </h2>
+
             </div>
 
             <div className="chart-container">
-              <ResponsiveContainer width="100%" height={320}>
-                <LineChart data={data}>
-                  <XAxis dataKey="day" />
+
+              <ResponsiveContainer
+                width="100%"
+                height={300}
+              >
+
+                <LineChart
+                  data={chartData}
+                >
+
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                  />
+
+                  <XAxis
+                    dataKey="department"
+                  />
+
                   <YAxis />
+
                   <Tooltip />
+
                   <Line
                     type="monotone"
                     dataKey="employees"
                     stroke="#2563eb"
                     strokeWidth={3}
                   />
+
                 </LineChart>
+
               </ResponsiveContainer>
+
             </div>
+
           </div>
+
+          {/* RECENT EMPLOYEES */}
 
           <div className="employee-section">
+
             <div className="section-header">
-              <h3>Recent Employees</h3>
-              <span>View All</span>
+
+              <h2>
+                Recent Employees
+              </h2>
+
             </div>
 
-            <div className="employee-list">
-              <div className="employee-item">
+            {employees
+              .slice(0, 5)
+              .map((employee) => (
+
+              <div
+                className="employee-item"
+                key={employee.id}
+              >
+
                 <div>
-                  <h4>John Doe</h4>
-                  <p>Frontend Developer</p>
+
+                  <h4>
+                    {employee.name}
+                  </h4>
+
+                  <p>
+                    {employee.role}
+                  </p>
+
                 </div>
 
-                <span>IT</span>
+                <span
+                  className={
+                    employee.status ===
+                    "Active"
+                      ? "status active"
+                      : "status inactive"
+                  }
+                >
+                  {employee.status}
+                </span>
+
               </div>
+            ))}
 
-              <div className="employee-item">
-                <div>
-                  <h4>Jane Smith</h4>
-                  <p>UI/UX Designer</p>
-                </div>
-
-                <span>Design</span>
-              </div>
-
-              <div className="employee-item">
-                <div>
-                  <h4>Michael Johnson</h4>
-                  <p>HR Manager</p>
-                </div>
-
-                <span>HR</span>
-              </div>
-
-              <div className="employee-item">
-                <div>
-                  <h4>Emily Davis</h4>
-                  <p>Data Analyst</p>
-                </div>
-
-                <span>Analytics</span>
-              </div>
-            </div>
           </div>
+
         </div>
 
         <div className="extra-sections">
@@ -190,6 +372,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
+
     </DashboardLayout>
   );
 }

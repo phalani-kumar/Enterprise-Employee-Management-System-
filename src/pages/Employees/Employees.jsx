@@ -1,159 +1,805 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+
+// import DashboardLayout from "../../components/layout/DashboardLayout";
+
+// import {
+//   getEmployees,
+// } from "../../services/employeeService";
+
+// function Employees() {
+//   const [employees, setEmployees] =
+//     useState([]);
+
+//   const [loading, setLoading] =
+//     useState(true);
+
+//   const [error, setError] =
+//     useState("");
+
+//   const [searchTerm, setSearchTerm] =
+//     useState("");
+
+//   const [department, setDepartment] =
+//     useState("All");
+
+//   const [currentPage, setCurrentPage] =
+//     useState(1);
+
+//   const employeesPerPage = 4;
+
+//   const [newEmployee, setNewEmployee] =
+//     useState({
+//       name: "",
+//       email: "",
+//       department: "",
+//       role: "",
+//     });
+
+//   useEffect(() => {
+//     fetchEmployees();
+//   }, []);
+
+//   /* FETCH EMPLOYEES */
+
+//   const fetchEmployees = async () => {
+//     try {
+//       setLoading(true);
+
+//       const data =
+//         await getEmployees();
+
+//       setEmployees(data);
+
+//       setError("");
+//     } catch (error) {
+//       setError(
+//         "Failed to fetch employees"
+//       );
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   /* ADD EMPLOYEE */
+
+//   const addEmployee = () => {
+//     if (
+//       !newEmployee.name ||
+//       !newEmployee.email ||
+//       !newEmployee.department ||
+//       !newEmployee.role
+//     ) {
+//       alert("Please fill all fields");
+
+//       return;
+//     }
+
+//     const employee = {
+//       id: employees.length + 1,
+
+//       name: newEmployee.name,
+
+//       email: newEmployee.email,
+
+//       department:
+//         newEmployee.department,
+
+//       role: newEmployee.role,
+
+//       status: "Active",
+//     };
+
+//     setEmployees([
+//       ...employees,
+//       employee,
+//     ]);
+
+//     setNewEmployee({
+//       name: "",
+//       email: "",
+//       department: "",
+//       role: "",
+//     });
+
+//     alert(
+//       "Employee Added Successfully"
+//     );
+//   };
+
+//   /* DELETE */
+
+//   const deleteEmployee = (id) => {
+//     const filtered =
+//       employees.filter(
+//         (employee) =>
+//           employee.id !== id
+//       );
+
+//     setEmployees(filtered);
+
+//     alert(
+//       "Employee Deleted Successfully"
+//     );
+//   };
+
+//   /* SEARCH + FILTER */
+
+//   const filteredEmployees =
+//     employees.filter((employee) => {
+//       const matchesSearch =
+//         employee.name
+//           .toLowerCase()
+//           .includes(
+//             searchTerm.toLowerCase()
+//           );
+
+//       const matchesDepartment =
+//         department === "All"
+//           ? true
+//           : employee.department ===
+//             department;
+
+//       return (
+//         matchesSearch &&
+//         matchesDepartment
+//       );
+//     });
+
+//   /* PAGINATION */
+
+//   const totalPages = Math.ceil(
+//     filteredEmployees.length /
+//       employeesPerPage
+//   );
+
+//   const indexOfLastEmployee =
+//     currentPage * employeesPerPage;
+
+//   const indexOfFirstEmployee =
+//     indexOfLastEmployee -
+//     employeesPerPage;
+
+//   const currentEmployees =
+//     filteredEmployees.slice(
+//       indexOfFirstEmployee,
+//       indexOfLastEmployee
+//     );
+
+//   /* LOADING */
+
+//   if (loading) {
+//     return (
+//       <DashboardLayout>
+//         <div className="loading-state">
+//           Loading Employees...
+//         </div>
+//       </DashboardLayout>
+//     );
+//   }
+
+//   /* ERROR */
+
+//   if (error) {
+//     return (
+//       <DashboardLayout>
+//         <div className="error-state">
+//           <h2>{error}</h2>
+
+//           <button
+//             onClick={
+//               fetchEmployees
+//             }
+//           >
+//             Retry
+//           </button>
+//         </div>
+//       </DashboardLayout>
+//     );
+//   }
+
+//   /* EMPTY */
+
+//   if (employees.length === 0) {
+//     return (
+//       <DashboardLayout>
+//         <div className="empty-state">
+//           No Employees Found
+//         </div>
+//       </DashboardLayout>
+//     );
+//   }
+
+//   return (
+//     <DashboardLayout>
+//       <div className="employee-page">
+//         {/* HEADER */}
+
+//         <div className="employee-header">
+//           <div>
+//             <h1>
+//               Employee Dashboard
+//             </h1>
+
+//             <p>
+//               Manage employee records
+//             </p>
+//           </div>
+//         </div>
+
+//         {/* ADD EMPLOYEE */}
+
+//         <div className="add-employee-form">
+//           <input
+//             type="text"
+//             placeholder="Name"
+//             value={newEmployee.name}
+//             onChange={(e) =>
+//               setNewEmployee({
+//                 ...newEmployee,
+//                 name: e.target.value,
+//               })
+//             }
+//           />
+
+//           <input
+//             type="email"
+//             placeholder="Email"
+//             value={newEmployee.email}
+//             onChange={(e) =>
+//               setNewEmployee({
+//                 ...newEmployee,
+//                 email: e.target.value,
+//               })
+//             }
+//           />
+
+//           <input
+//             type="text"
+//             placeholder="Department"
+//             value={
+//               newEmployee.department
+//             }
+//             onChange={(e) =>
+//               setNewEmployee({
+//                 ...newEmployee,
+//                 department:
+//                   e.target.value,
+//               })
+//             }
+//           />
+
+//           <input
+//             type="text"
+//             placeholder="Role"
+//             value={newEmployee.role}
+//             onChange={(e) =>
+//               setNewEmployee({
+//                 ...newEmployee,
+//                 role: e.target.value,
+//               })
+//             }
+//           />
+
+//           <button
+//             onClick={addEmployee}
+//           >
+//             Add Employee
+//           </button>
+//         </div>
+
+//         {/* SEARCH */}
+
+//         <div className="search-filter">
+//           <input
+//             type="text"
+//             placeholder="Search employee..."
+//             value={searchTerm}
+//             onChange={(e) =>
+//               setSearchTerm(
+//                 e.target.value
+//               )
+//             }
+//           />
+
+//           <select
+//             value={department}
+//             onChange={(e) =>
+//               setDepartment(
+//                 e.target.value
+//               )
+//             }
+//           >
+//             <option value="All">
+//               All Departments
+//             </option>
+
+//             <option value="IT">
+//               IT
+//             </option>
+
+//             <option value="HR">
+//               HR
+//             </option>
+
+//             <option value="Finance">
+//               Finance
+//             </option>
+
+//             <option value="Design">
+//               Design
+//             </option>
+//           </select>
+//         </div>
+
+//         {/* TABLE */}
+
+//         <div className="table-wrapper">
+//           <table className="employee-table">
+//             <thead>
+//               <tr>
+//                 <th>Name</th>
+
+//                 <th>Email</th>
+
+//                 <th>Department</th>
+
+//                 <th>Role</th>
+
+//                 <th>Status</th>
+
+//                 <th>Action</th>
+//               </tr>
+//             </thead>
+
+//             <tbody>
+//               {currentEmployees.map(
+//                 (employee) => (
+//                   <tr
+//                     key={employee.id}
+//                   >
+//                     <td>
+//                       {employee.name}
+//                     </td>
+
+//                     <td>
+//                       {employee.email}
+//                     </td>
+
+//                     <td>
+//                       {
+//                         employee.department
+//                       }
+//                     </td>
+
+//                     <td>
+//                       {employee.role}
+//                     </td>
+
+//                     <td>
+//                       <span className={
+//                         employee.status === 
+//                         "Active"
+//                         ? "status active"
+//                         : "status inactive"
+//                       }
+//                         >
+//                         {
+//                           employee.status
+//                         }
+//                       </span>
+//                     </td>
+
+//                     <td>
+//                       <button
+//                         className="delete-btn"
+//                         onClick={() =>
+//                           deleteEmployee(
+//                             employee.id
+//                           )
+//                         }
+//                       >
+//                         Delete
+//                       </button>
+//                     </td>
+//                   </tr>
+//                 )
+//               )}
+//             </tbody>
+//           </table>
+
+//           {/* PAGINATION */}
+
+//           <div className="pagination">
+//             <button
+//               disabled={
+//                 currentPage === 1
+//               }
+//               onClick={() =>
+//                 setCurrentPage(
+//                   currentPage - 1
+//                 )
+//               }
+//             >
+//               Previous
+//             </button>
+
+//             {[...Array(totalPages)].map(
+//               (_, index) => (
+//                 <button
+//                   key={index}
+//                   className={
+//                     currentPage ===
+//                     index + 1
+//                       ? "active-page"
+//                       : ""
+//                   }
+//                   onClick={() =>
+//                     setCurrentPage(
+//                       index + 1
+//                     )
+//                   }
+//                 >
+//                   {index + 1}
+//                 </button>
+//               )
+//             )}
+
+//             <button
+//               disabled={
+//                 currentPage ===
+//                 totalPages
+//               }
+//               onClick={() =>
+//                 setCurrentPage(
+//                   currentPage + 1
+//                 )
+//               }
+//             >
+//               Next
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </DashboardLayout>
+//   );
+// }
+
+// export default Employees;
+
+import {
+  useEffect,
+  useState,
+} from "react";
 
 import DashboardLayout from "../../components/layout/DashboardLayout";
 
 import {
   getEmployees,
+  addEmployee,
+  deleteEmployee,
 } from "../../services/employeeService";
 
 function Employees() {
-  const [employees, setEmployees] =
+
+  const [employees,
+    setEmployees] =
     useState([]);
 
-  const [loading, setLoading] =
-    useState(true);
+  const [filteredEmployees,
+    setFilteredEmployees] =
+    useState([]);
 
-  const [error, setError] =
+  const [searchTerm,
+    setSearchTerm] =
     useState("");
 
-  const [searchTerm, setSearchTerm] =
-    useState("");
-
-  const [department, setDepartment] =
+  const [department,
+    setDepartment] =
     useState("All");
 
-  const [currentPage, setCurrentPage] =
+  const [currentPage,
+    setCurrentPage] =
     useState(1);
 
-  const employeesPerPage = 4;
+  const employeesPerPage = 5;
 
-  const [newEmployee, setNewEmployee] =
+  const [editingId,
+    setEditingId] =
+    useState(null);
+
+  const [newEmployee,
+    setNewEmployee] =
     useState({
       name: "",
       email: "",
       department: "",
       role: "",
+      status: "Active",
     });
 
   useEffect(() => {
+
     fetchEmployees();
+
   }, []);
 
-  /* FETCH EMPLOYEES */
+  const fetchEmployees =
+    async () => {
 
-  const fetchEmployees = async () => {
-    try {
-      setLoading(true);
+      try {
 
-      const data =
-        await getEmployees();
+        const localEmployees =
+          localStorage.getItem(
+            "employees"
+          );
 
-      setEmployees(data);
+        if (localEmployees) {
 
-      setError("");
-    } catch (error) {
-      setError(
-        "Failed to fetch employees"
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+          const parsedEmployees =
+            JSON.parse(
+              localEmployees
+            );
 
-  /* ADD EMPLOYEE */
+          setEmployees(
+            parsedEmployees
+          );
 
-  const addEmployee = () => {
-    if (
-      !newEmployee.name ||
-      !newEmployee.email ||
-      !newEmployee.department ||
-      !newEmployee.role
-    ) {
-      alert("Please fill all fields");
+          setFilteredEmployees(
+            parsedEmployees
+          );
 
-      return;
-    }
+        } else {
 
-    const employee = {
-      id: employees.length + 1,
+          const data =
+            await getEmployees();
 
-      name: newEmployee.name,
+          setEmployees(data);
 
-      email: newEmployee.email,
+          setFilteredEmployees(
+            data
+          );
 
-      department:
-        newEmployee.department,
+          localStorage.setItem(
+            "employees",
+            JSON.stringify(data)
+          );
+        }
 
-      role: newEmployee.role,
+      } catch (error) {
 
-      status: "Active",
+        console.log(error);
+      }
     };
-
-    setEmployees([
-      ...employees,
-      employee,
-    ]);
-
-    setNewEmployee({
-      name: "",
-      email: "",
-      department: "",
-      role: "",
-    });
-
-    alert(
-      "Employee Added Successfully"
-    );
-  };
-
-  /* DELETE */
-
-  const deleteEmployee = (id) => {
-    const filtered =
-      employees.filter(
-        (employee) =>
-          employee.id !== id
-      );
-
-    setEmployees(filtered);
-
-    alert(
-      "Employee Deleted Successfully"
-    );
-  };
 
   /* SEARCH + FILTER */
 
-  const filteredEmployees =
-    employees.filter((employee) => {
-      const matchesSearch =
-        employee.name
-          .toLowerCase()
-          .includes(
-            searchTerm.toLowerCase()
+  useEffect(() => {
+
+    let updated =
+      employees;
+
+    updated =
+      updated.filter(
+        (employee) =>
+          employee.name
+            .toLowerCase()
+            .includes(
+              searchTerm.toLowerCase()
+            )
+      );
+
+    if (
+      department !== "All"
+    ) {
+
+      updated =
+        updated.filter(
+          (employee) =>
+            employee.department ===
+            department
+        );
+    }
+
+    setFilteredEmployees(
+      updated
+    );
+
+  }, [
+    searchTerm,
+    department,
+    employees,
+  ]);
+
+  /* ADD + EDIT */
+
+  const handleSubmit =
+    async () => {
+
+      if (
+        !newEmployee.name ||
+        !newEmployee.email ||
+        !newEmployee.department ||
+        !newEmployee.role
+      ) {
+
+        alert(
+          "Fill all fields"
+        );
+
+        return;
+      }
+
+      try {
+
+        /* EDIT */
+
+        if (editingId) {
+
+          const updatedEmployees =
+            employees.map(
+              (employee) =>
+
+                employee.id ===
+                editingId
+                  ? {
+                      ...employee,
+                      ...newEmployee,
+                    }
+                  : employee
+            );
+
+          setEmployees(
+            updatedEmployees
           );
 
-      const matchesDepartment =
-        department === "All"
-          ? true
-          : employee.department ===
-            department;
+          setFilteredEmployees(
+            updatedEmployees
+          );
 
-      return (
-        matchesSearch &&
-        matchesDepartment
+          localStorage.setItem(
+            "employees",
+            JSON.stringify(
+              updatedEmployees
+            )
+          );
+
+          alert(
+            "Employee Updated Successfully"
+          );
+        }
+
+        /* ADD */
+
+        else {
+
+          const response =
+            await addEmployee(
+              newEmployee
+            );
+
+          const employeeData = {
+
+            ...newEmployee,
+
+            id:
+              response.id ||
+              employees.length + 1,
+          };
+
+          const updatedEmployees = [
+
+            employeeData,
+
+            ...employees,
+          ];
+
+          setEmployees(
+            updatedEmployees
+          );
+
+          setFilteredEmployees(
+            updatedEmployees
+          );
+
+          localStorage.setItem(
+            "employees",
+            JSON.stringify(
+              updatedEmployees
+            )
+          );
+
+          alert(
+            "Employee Added Successfully"
+          );
+        }
+
+        /* RESET */
+
+        setNewEmployee({
+
+          name: "",
+
+          email: "",
+
+          department: "",
+
+          role: "",
+
+          status: "Active",
+        });
+
+        setEditingId(null);
+
+      } catch (error) {
+
+        console.log(error);
+
+        alert(
+          "Something Went Wrong"
+        );
+      }
+    };
+
+  /* EDIT BUTTON */
+
+  const handleEdit =
+    (employee) => {
+
+      setNewEmployee(employee);
+
+      setEditingId(
+        employee.id
       );
-    });
+    };
+
+  /* DELETE */
+
+  const handleDelete =
+    async (employeeId) => {
+
+      const confirmDelete =
+        window.confirm(
+          "Delete Employee?"
+        );
+
+      if (!confirmDelete)
+        return;
+
+      try {
+
+        await deleteEmployee(
+          employeeId
+        );
+
+        const updated =
+          employees.filter(
+            (employee) =>
+              employee.id !==
+              employeeId
+          );
+
+        setEmployees(updated);
+
+        setFilteredEmployees(
+          updated
+        );
+
+        localStorage.setItem(
+          "employees",
+          JSON.stringify(updated)
+        );
+
+      } catch (error) {
+
+        console.log(error);
+      }
+    };
 
   /* PAGINATION */
 
-  const totalPages = Math.ceil(
-    filteredEmployees.length /
-      employeesPerPage
-  );
-
   const indexOfLastEmployee =
-    currentPage * employeesPerPage;
+    currentPage *
+    employeesPerPage;
 
   const indexOfFirstEmployee =
     indexOfLastEmployee -
@@ -165,70 +811,30 @@ function Employees() {
       indexOfLastEmployee
     );
 
-  /* LOADING */
-
-  if (loading) {
-    return (
-      <DashboardLayout>
-        <div className="loading-state">
-          Loading Employees...
-        </div>
-      </DashboardLayout>
+  const totalPages =
+    Math.ceil(
+      filteredEmployees.length /
+        employeesPerPage
     );
-  }
-
-  /* ERROR */
-
-  if (error) {
-    return (
-      <DashboardLayout>
-        <div className="error-state">
-          <h2>{error}</h2>
-
-          <button
-            onClick={
-              fetchEmployees
-            }
-          >
-            Retry
-          </button>
-        </div>
-      </DashboardLayout>
-    );
-  }
-
-  /* EMPTY */
-
-  if (employees.length === 0) {
-    return (
-      <DashboardLayout>
-        <div className="empty-state">
-          No Employees Found
-        </div>
-      </DashboardLayout>
-    );
-  }
 
   return (
+
     <DashboardLayout>
+
       <div className="employee-page">
-        {/* HEADER */}
 
         <div className="employee-header">
-          <div>
-            <h1>
-              Employee Dashboard
-            </h1>
 
-            <p>
-              Manage employee records
-            </p>
-          </div>
+          <h1>
+            Employee Dashboard
+          </h1>
+
         </div>
 
-        {/* ADD EMPLOYEE */}
+        {/* FORM */}
 
         <div className="add-employee-form">
+
           <input
             type="text"
             placeholder="Name"
@@ -236,7 +842,8 @@ function Employees() {
             onChange={(e) =>
               setNewEmployee({
                 ...newEmployee,
-                name: e.target.value,
+                name:
+                  e.target.value,
               })
             }
           />
@@ -248,7 +855,8 @@ function Employees() {
             onChange={(e) =>
               setNewEmployee({
                 ...newEmployee,
-                email: e.target.value,
+                email:
+                  e.target.value,
               })
             }
           />
@@ -275,24 +883,31 @@ function Employees() {
             onChange={(e) =>
               setNewEmployee({
                 ...newEmployee,
-                role: e.target.value,
+                role:
+                  e.target.value,
               })
             }
           />
 
           <button
-            onClick={addEmployee}
+            onClick={handleSubmit}
           >
-            Add Employee
+
+            {editingId
+              ? "Update"
+              : "Add Employee"}
+
           </button>
+
         </div>
 
-        {/* SEARCH */}
+        {/* SEARCH + FILTER */}
 
         <div className="search-filter">
+
           <input
             type="text"
-            placeholder="Search employee..."
+            placeholder="Search Employee"
             value={searchTerm}
             onChange={(e) =>
               setSearchTerm(
@@ -309,6 +924,7 @@ function Employees() {
               )
             }
           >
+
             <option value="All">
               All Departments
             </option>
@@ -325,141 +941,154 @@ function Employees() {
               Finance
             </option>
 
-            <option value="Design">
-              Design
+            <option value="Development">
+              Development
             </option>
+
           </select>
+
         </div>
 
         {/* TABLE */}
 
-        <div className="table-wrapper">
-          <table className="employee-table">
-            <thead>
-              <tr>
-                <th>Name</th>
+        <table className="employee-table">
 
-                <th>Email</th>
+          <thead>
 
-                <th>Department</th>
+            <tr>
 
-                <th>Role</th>
+              <th>Name</th>
 
-                <th>Status</th>
+              <th>Email</th>
 
-                <th>Action</th>
-              </tr>
-            </thead>
+              <th>Department</th>
 
-            <tbody>
-              {currentEmployees.map(
-                (employee) => (
-                  <tr
-                    key={employee.id}
-                  >
-                    <td>
-                      {employee.name}
-                    </td>
+              <th>Role</th>
 
-                    <td>
-                      {employee.email}
-                    </td>
+              <th>Status</th>
 
-                    <td>
-                      {
-                        employee.department
-                      }
-                    </td>
+              <th>Edit</th>
 
-                    <td>
-                      {employee.role}
-                    </td>
+              <th>Delete</th>
 
-                    <td>
-                      <span className={
-                        employee.status === 
-                        "Active"
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            {currentEmployees.map(
+              (employee) => (
+
+              <tr key={employee.id}>
+
+                <td>
+                  {employee.name}
+                </td>
+
+                <td>
+                  {employee.email}
+                </td>
+
+                <td>
+                  {employee.department}
+                </td>
+
+                <td>
+                  {employee.role}
+                </td>
+
+                <td>
+
+                  <span
+                    className={
+                      employee.status ===
+                      "Active"
                         ? "status active"
                         : "status inactive"
-                      }
-                        >
-                        {
-                          employee.status
-                        }
-                      </span>
-                    </td>
+                    }
+                  >
+                    {employee.status}
+                  </span>
 
-                    <td>
-                      <button
-                        className="delete-btn"
-                        onClick={() =>
-                          deleteEmployee(
-                            employee.id
-                          )
-                        }
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                )
-              )}
-            </tbody>
-          </table>
+                </td>
 
-          {/* PAGINATION */}
+                <td>
 
-          <div className="pagination">
-            <button
-              disabled={
-                currentPage === 1
-              }
-              onClick={() =>
-                setCurrentPage(
-                  currentPage - 1
-                )
-              }
-            >
-              Previous
-            </button>
+                  <button
+                    className="edit-btn"
+                    onClick={() =>
+                      handleEdit(
+                        employee
+                      )
+                    }
+                  >
+                    Edit
+                  </button>
 
-            {[...Array(totalPages)].map(
-              (_, index) => (
-                <button
-                  key={index}
-                  className={
-                    currentPage ===
-                    index + 1
-                      ? "active-page"
-                      : ""
-                  }
-                  onClick={() =>
-                    setCurrentPage(
-                      index + 1
-                    )
-                  }
-                >
-                  {index + 1}
-                </button>
+                </td>
+
+                <td>
+
+                  <button
+                    className="delete-btn"
+                    onClick={() =>
+                      handleDelete(
+                        employee.id
+                      )
+                    }
+                  >
+                    Delete
+                  </button>
+
+                </td>
+
+              </tr>
+            ))}
+
+          </tbody>
+
+        </table>
+
+        {/* PAGINATION */}
+
+        <div className="pagination">
+
+          <button
+            disabled={
+              currentPage === 1
+            }
+            onClick={() =>
+              setCurrentPage(
+                currentPage - 1
               )
-            )}
+            }
+          >
+            Previous
+          </button>
 
-            <button
-              disabled={
-                currentPage ===
-                totalPages
-              }
-              onClick={() =>
-                setCurrentPage(
-                  currentPage + 1
-                )
-              }
-            >
-              Next
-            </button>
-          </div>
+          <span>
+            {currentPage}
+          </span>
+
+          <button
+            disabled={
+              currentPage ===
+              totalPages
+            }
+            onClick={() =>
+              setCurrentPage(
+                currentPage + 1
+              )
+            }
+          >
+            Next
+          </button>
+
         </div>
+
       </div>
+
     </DashboardLayout>
   );
 }

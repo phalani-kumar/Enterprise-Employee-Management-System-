@@ -422,7 +422,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .guidelines div {
-  background: #f8fafc;
+  background: #97bce0;
   padding: 18px;
   border-radius: 12px;
   text-align: center;
@@ -819,6 +819,16 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+/* Update */
+.edit-btn {
+  padding: 8px 14px;
+  border: none;
+  background: #3f9090;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* DELETE */
 
 .delete-btn {
@@ -856,6 +866,7 @@ body::-webkit-scrollbar-thumb {
 .dark-mode .employee-section,
 .dark-mode .palette-card,
 .dark-mode .guideline-card,
+.dark-mode .guidelines div,
 .dark-mode .stat-card,
 .dark-mode .date-box,
 .dark-mode .placeholder-card,
