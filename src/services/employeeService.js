@@ -21,6 +21,49 @@
 //     return response.data.data;
 //   };
 
+// import axios from "axios";
+
+// const API_URL =
+//   "http://127.0.0.1:8000";
+
+// export const getEmployees =
+//   async () => {
+//     try {
+
+//       const response =
+//         await axios.get(
+//           `${API_URL}/employees`
+//         );
+
+//       return response.data.data;
+
+//     } catch (error) {
+
+//       console.log(error);
+
+//       throw error;
+//     }
+//   };
+
+// export const getEmployeeById =
+//   async (id) => {
+//     try {
+
+//       const response =
+//         await axios.get(
+//           `${API_URL}/employees/${id}`
+//         );
+
+//       return response.data.data;
+
+//     } catch (error) {
+
+//       console.log(error);
+
+//       throw error;
+//     }
+//   };
+
 import axios from "axios";
 
 const API_URL =
@@ -28,38 +71,24 @@ const API_URL =
 
 export const getEmployees =
   async () => {
-    try {
 
-      const response =
-        await axios.get(
-          `${API_URL}/employees`
-        );
+    const response =
+      await axios.get(
+        `${API_URL}/employees`
+      );
 
-      return response.data.data;
-
-    } catch (error) {
-
-      console.log(error);
-
-      throw error;
-    }
+    return response.data.data;
   };
 
-export const getEmployeeById =
-  async (id) => {
-    try {
+export const addEmployee =
+  async (employeeData) => {
 
-      const response =
-        await axios.get(
-          `${API_URL}/employees/${id}`
-        );
+    const response =
+      await axios.post(
+        `${API_URL}/employees`,
+        employeeData
+      );
 
-      return response.data.data;
-
-    } catch (error) {
-
-      console.log(error);
-
-      throw error;
-    }
+    return response.data.data;
   };
+

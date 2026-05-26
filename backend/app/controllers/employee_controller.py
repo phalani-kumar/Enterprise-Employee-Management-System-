@@ -1,21 +1,35 @@
-from app.services.employee_service import (
-    get_transformed_employees
-)
+# from app.services.employee_service import (
+#     get_transformed_employees
+# )
 
-def get_all_employees():
+# def get_all_employees():
 
-    return get_transformed_employees()
+#     return get_transformed_employees()
 
-def get_employee_by_id(employee_id: int):
+# def get_employee_by_id(employee_id: int):
 
-    employees = get_transformed_employees()
+#     employees = get_transformed_employees()
 
-    for employee in employees:
+#     for employee in employees:
 
-        if employee["id"] == employee_id:
+#         if employee["id"] == employee_id:
 
-            return employee
+#             return employee
 
-    return {
-        "message": "Employee Not Found"
-    }
+#     return {
+#         "message": "Employee Not Found"
+#     }
+
+from pydantic import BaseModel
+
+class EmployeeSchema(BaseModel):
+
+    name: str
+
+    email: str
+
+    department: str
+
+    role: str
+
+    status: str

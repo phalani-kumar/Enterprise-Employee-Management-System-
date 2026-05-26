@@ -40,7 +40,7 @@ function Dashboard() {
           </div>
 
           <div className="date-box">
-            <h4>May 21, 2026</h4>
+            <h4>May 2026</h4>
           </div>
         </div>
 
@@ -195,4 +195,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
