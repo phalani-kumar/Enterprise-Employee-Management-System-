@@ -128,11 +128,11 @@ function Dashboard() {
           <div>
 
             <h1>
-              Employee Dashboard
+              Dashboard Page
             </h1>
 
             <p>
-              Welcome back Admin
+              Welcome
             </p>
 
           </div>

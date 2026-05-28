@@ -14,28 +14,16 @@
 
 #     status: str
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
+from pydantic import BaseModel
 
-from app.database.connection import Base
+class EmployeeSchema(BaseModel):
 
-class Employee(Base):
+    name: str
 
-    __tablename__ = "employees"
+    email: str
 
-    id = Column(
-        Integer,
-        primary_key=True,
-        index=True
-    )
+    department: str
 
-    name = Column(String)
+    role: str
 
-    email = Column(String)
-
-    department = Column(String)
-
-    role = Column(String)
-
-    status = Column(String)
+    status: str
