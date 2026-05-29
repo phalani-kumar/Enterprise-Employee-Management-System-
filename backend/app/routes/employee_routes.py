@@ -112,9 +112,207 @@
 #         "data": new_employee
 #     }
 
+# from fastapi import APIRouter
+
+# from app.models.employee_model import EmployeeSchema
+
+# import requests
+
+# employee_router = APIRouter()
+
+# API_URL = "https://jsonplaceholder.typicode.com/users"
+
+# # LOCAL MEMORY
+
+# employees = []
+
+# # FETCH API DATA FIRST TIME
+
+# def load_employees():
+
+#     global employees
+
+#     if len(employees) == 0:
+
+#         response = requests.get(API_URL)
+
+#         api_data = response.json()
+
+#         for index, user in enumerate(api_data):
+
+#             employees.append({
+
+#                 "id": user["id"],
+
+#                 "name": user["name"],
+
+#                 "email": user["email"],
+
+#                 "department":
+#                     "IT"
+#                     if index % 4 == 0
+#                     else "HR"
+#                     if index % 4 == 1
+#                     else "Finance"
+#                     if index % 4 == 2
+#                     else "Design",
+
+#                 "role":
+#                     "Frontend Developer"
+#                     if index % 2 == 0
+#                     else "Backend Developer",
+
+#                 "status":
+#                     "Active"
+#             })
+
+# # GET ALL EMPLOYEES
+
+# @employee_router.get("/employees")
+
+# def get_employees():
+
+#     load_employees()
+
+#     return employees
+
+# # ADD EMPLOYEE
+
+# @employee_router.post("/employees")
+
+# def add_employee(
+#     employee: EmployeeSchema
+# ):
+
+#     load_employees()
+
+#     new_employee = {
+
+#         "id":
+#         len(employees) + 1,
+
+#         "name":
+#         employee.name,
+
+#         "email":
+#         employee.email,
+
+#         "department":
+#         employee.department,
+
+#         "role":
+#         employee.role,
+
+#         "status":
+#         employee.status
+#     }
+
+#     employees.append(new_employee)
+
+#     return {
+
+#         "message":
+#         "Employee Added Successfully",
+
+#         "employee":
+#         new_employee
+#     }
+
+# # GET SINGLE EMPLOYEE
+
+# @employee_router.get("/employees/{employee_id}")
+
+# def get_employee(
+#     employee_id: int
+# ):
+
+#     load_employees()
+
+#     for employee in employees:
+
+#         if employee["id"] == employee_id:
+
+#             return employee
+
+#     return {
+
+#         "message":
+#         "Employee Not Found"
+#     }
+
+# # UPDATE EMPLOYEE
+
+# @employee_router.put("/employees/{employee_id}")
+
+# def update_employee(
+#     employee_id: int,
+#     updated_employee: EmployeeSchema
+# ):
+
+#     load_employees()
+
+#     for employee in employees:
+
+#         if employee["id"] == employee_id:
+
+#             employee["name"] = updated_employee.name
+
+#             employee["email"] = updated_employee.email
+
+#             employee["department"] = updated_employee.department
+
+#             employee["role"] = updated_employee.role
+
+#             employee["status"] = updated_employee.status
+
+#             return {
+
+#                 "message":
+#                 "Employee Updated Successfully",
+
+#                 "employee":
+#                 employee
+#             }
+
+#     return {
+
+#         "message":
+#         "Employee Not Found"
+#     }
+
+# # DELETE EMPLOYEE
+
+# @employee_router.delete("/employees/{employee_id}")
+
+# def delete_employee(
+#     employee_id: int
+# ):
+
+#     load_employees()
+
+#     for employee in employees:
+
+#         if employee["id"] == employee_id:
+
+#             employees.remove(employee)
+
+#             return {
+
+#                 "message":
+#                 "Employee Deleted Successfully"
+#             }
+
+#     return {
+
+#         "message":
+#         "Employee Not Found"
+#     }
+
 from fastapi import APIRouter
 
 from app.models.employee_model import EmployeeSchema
+
+from app.database.employee_db import employees
 
 import requests
 
@@ -122,51 +320,53 @@ employee_router = APIRouter()
 
 API_URL = "https://jsonplaceholder.typicode.com/users"
 
-# LOCAL MEMORY
-
-employees = []
-
-# FETCH API DATA FIRST TIME
-
 def load_employees():
+
+    # Prevent duplicate loading
 
     global employees
 
-    if len(employees) == 0:
+    if employees:
+        return
 
-        response = requests.get(API_URL)
+    response = requests.get(API_URL)
 
-        api_data = response.json()
+    data = response.json()
 
-        for index, user in enumerate(api_data):
+    employees.clear()
 
-            employees.append({
+    for index, user in enumerate(data):
 
-                "id": user["id"],
+        employees.append({
 
-                "name": user["name"],
+            "id": user["id"],
 
-                "email": user["email"],
+            "name": user["name"],
 
-                "department":
-                    "IT"
-                    if index % 4 == 0
-                    else "HR"
-                    if index % 4 == 1
-                    else "Finance"
-                    if index % 4 == 2
-                    else "Design",
+            "email": user["email"],
 
-                "role":
-                    "Frontend Developer"
-                    if index % 2 == 0
-                    else "Backend Developer",
+            "department":
+                "IT"
+                if index % 4 == 0
+                else "HR"
+                if index % 4 == 1
+                else "Finance"
+                if index % 4 == 2
+                else "Design",
 
-                "status":
-                    "Active"
-            })
+            "role":
+                "Frontend Developer"
+                if index % 2 == 0
+                else "Backend Developer",
 
-# GET ALL EMPLOYEES
+            "status":
+                "Active"
+                if index % 3 != 0
+                else "Inactive",
+
+            "attendance":
+                90 - index
+        })
 
 @employee_router.get("/employees")
 
@@ -176,35 +376,27 @@ def get_employees():
 
     return employees
 
-# ADD EMPLOYEE
-
 @employee_router.post("/employees")
 
-def add_employee(
-    employee: EmployeeSchema
-):
+def add_employee(employee: EmployeeSchema):
 
     load_employees()
 
     new_employee = {
 
-        "id":
-        len(employees) + 1,
+        "id": len(employees) + 1,
 
-        "name":
-        employee.name,
+        "name": employee.name,
 
-        "email":
-        employee.email,
+        "email": employee.email,
 
-        "department":
-        employee.department,
+        "department": employee.department,
 
-        "role":
-        employee.role,
+        "role": employee.role,
 
-        "status":
-        employee.status
+        "status": employee.status,
+
+        "attendance": 95
     }
 
     employees.append(new_employee)
@@ -218,38 +410,12 @@ def add_employee(
         new_employee
     }
 
-# GET SINGLE EMPLOYEE
-
-@employee_router.get("/employees/{employee_id}")
-
-def get_employee(
-    employee_id: int
-):
-
-    load_employees()
-
-    for employee in employees:
-
-        if employee["id"] == employee_id:
-
-            return employee
-
-    return {
-
-        "message":
-        "Employee Not Found"
-    }
-
-# UPDATE EMPLOYEE
-
 @employee_router.put("/employees/{employee_id}")
 
 def update_employee(
     employee_id: int,
     updated_employee: EmployeeSchema
 ):
-
-    load_employees()
 
     for employee in employees:
 
@@ -268,10 +434,7 @@ def update_employee(
             return {
 
                 "message":
-                "Employee Updated Successfully",
-
-                "employee":
-                employee
+                "Employee Updated Successfully"
             }
 
     return {
@@ -280,15 +443,9 @@ def update_employee(
         "Employee Not Found"
     }
 
-# DELETE EMPLOYEE
-
 @employee_router.delete("/employees/{employee_id}")
 
-def delete_employee(
-    employee_id: int
-):
-
-    load_employees()
+def delete_employee(employee_id: int):
 
     for employee in employees:
 

@@ -688,6 +688,7 @@ function Employees() {
 
       resetForm();
     };
+  
 
   /* EDIT BUTTON */
 
@@ -792,6 +793,8 @@ function Employees() {
       resetForm();
     };
 
+  
+
   /* DELETE EMPLOYEE */
 
   const deleteEmployee =
@@ -828,6 +831,7 @@ function Employees() {
         "Employee Deleted Successfully"
       );
     };
+  
 
   /* STATUS UPDATE */
 
@@ -1009,8 +1013,8 @@ function Employees() {
               Finance
             </option>
 
-            <option value="Design">
-              Design
+            <option value="Development">
+              Development
             </option>
 
           </select>
@@ -1095,8 +1099,8 @@ function Employees() {
               Finance
             </option>
 
-            <option value="Design">
-              Design
+            <option value="Development">
+              Development
             </option>
 
           </select>

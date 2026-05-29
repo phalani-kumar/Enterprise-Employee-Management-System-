@@ -1,39 +1,41 @@
-from sqlalchemy.orm import Session
+# from sqlalchemy.orm import Session
 
-from app.models.employee_model import Employee
+# # from app.models.employee_model import Employee
 
-def get_all_employees(db: Session):
+# def get_all_employees(db: Session):
 
-    return db.query(Employee).all()
-
-
-def get_employee_by_id(
-    db: Session,
-    employee_id: int
-):
-
-    return db.query(Employee).filter(
-        Employee.id == employee_id
-    ).first()
+#     return db.query(Employee).all()
 
 
-def create_employee(
-    db: Session,
-    employee_data
-):
+# def get_employee_by_id(
+#     db: Session,
+#     employee_id: int
+# ):
 
-    employee = Employee(
-        name=employee_data.name,
-        email=employee_data.email,
-        department=employee_data.department,
-        role=employee_data.role,
-        status=employee_data.status
-    )
+#     return db.query(Employee).filter(
+#         Employee.id == employee_id
+#     ).first()
 
-    db.add(employee)
 
-    db.commit()
+# def create_employee(
+#     db: Session,
+#     employee_data
+# ):
 
-    db.refresh(employee)
+#     employee = Employee(
+#         name=employee_data.name,
+#         email=employee_data.email,
+#         department=employee_data.department,
+#         role=employee_data.role,
+#         status=employee_data.status
+#     )
 
-    return employee
+#     db.add(employee)
+
+#     db.commit()
+
+#     db.refresh(employee)
+
+#     return employee
+
+employees = []

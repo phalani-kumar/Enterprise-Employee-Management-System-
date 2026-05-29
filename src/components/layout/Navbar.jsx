@@ -186,14 +186,6 @@ function Navbar() {
 
             <div className="profile-menu">
 
-              <p>
-                My Profile
-              </p>
-
-              <p>
-                Settings
-              </p>
-
               <button
                 onClick={logout}
               >

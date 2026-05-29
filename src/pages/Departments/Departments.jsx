@@ -1,26 +1,137 @@
+import { useEffect, useState } from "react";
+
 import DashboardLayout from "../../components/layout/DashboardLayout";
 
+import { getEmployees } from "../../services/employeeService";
+
 function Departments() {
+
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+
+  fetchEmployees();
+
+  window.addEventListener(
+    "storage",
+    fetchEmployees
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "storage",
+      fetchEmployees
+    );
+  };
+
+}, []);
+
+  const fetchEmployees = async () => {
+
+    try {
+
+      const data = await getEmployees();
+
+      setEmployees(data);
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+  };
+
+  // Department Data
+
+  const departmentData = {
+
+    IT: employees.filter(
+      emp => emp.department === "IT"
+    ),
+
+    HR: employees.filter(
+      emp => emp.department === "HR"
+    ),
+
+    Finance: employees.filter(
+      emp => emp.department === "Finance"
+    ),
+
+    Development: employees.filter(
+      emp => emp.department === "Development"
+    ),
+  };
 
   return (
 
     <DashboardLayout>
 
-      <div className="page-container">
+      <div className="department-page">
 
-        <h1>
-          Departments Page
-        </h1>
+        <div className="page-header">
 
-        <div className="placeholder-card">
-
-          <h3>
-            Department Management
-          </h3>
+          <h1>
+            Departments
+          </h1>
 
           <p>
-            Manage all company departments here.
+            Department employee information
           </p>
+
+        </div>
+
+        <div className="department-grid">
+
+          {Object.keys(departmentData).map(
+            (dept, index) => (
+
+              <div
+                key={index}
+                className="department-card"
+              >
+
+                <h2>
+                  {dept}
+                </h2>
+
+                <h3>
+
+                  {
+                    departmentData[dept].length
+                  }
+
+                  Employees
+
+                </h3>
+
+                <div className="department-users">
+
+                  {departmentData[dept].map(
+                    (employee) => (
+
+                      <div
+                        key={employee.id}
+                        className="department-user"
+                      >
+
+                        <p>
+                          {employee.name}
+                        </p>
+
+                        <span>
+                          {employee.role}
+                        </span>
+
+                      </div>
+                    )
+                  )}
+
+                </div>
+
+              </div>
+            )
+          )}
 
         </div>
 
