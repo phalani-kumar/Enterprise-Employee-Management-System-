@@ -4,7 +4,11 @@ import {
   Route,
 } from "react-router-dom";
 
+import { Navigate } from "react-router-dom";
+
 import Login from "./pages/Login/Login";
+
+import Signup from "./pages/Signup/Signup";
 
 import Dashboard from "./pages/Dashboard/Dashboard";
 
@@ -18,6 +22,9 @@ import Settings from "./pages/Settings/Settings";
 
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
+import ForgotPassword from
+"./pages/ForgotPassword/ForgotPassword";
+
 function App() {
 
   return (
@@ -26,11 +33,32 @@ function App() {
 
       <Routes>
 
+        <Route
+          path="/"
+          element={
+           <Navigate
+             to="/login"
+            replace
+            />
+            }
+        />
+
+        <Route
+  path="/forgot-password"
+  element={
+    <ForgotPassword />
+  }
+/> 
         {/* LOGIN */}
 
         <Route
-          path="/"
+          path="/login"
           element={<Login />}
+        />
+
+        <Route
+          path="/signup"
+          element={<Signup />}
         />
 
         {/* DASHBOARD */}

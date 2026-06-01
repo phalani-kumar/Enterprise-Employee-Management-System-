@@ -26,4 +26,4 @@ class EmployeeSchema(BaseModel):
 
     role: str
 
-    status: str
+    status: str = "Active"

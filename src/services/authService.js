@@ -52,11 +52,40 @@ export const loginUser =
 
     /* USERS LOGIN */
 
-    const response =
-      await axios.get(API_URL);
+    /* CHECK LOCAL SIGNUP USERS FIRST */
 
-    const users =
-      response.data;
+const localUsers =
+  JSON.parse(
+    localStorage.getItem("users")
+  ) || [];
+
+const localUser =
+  localUsers.find(
+    (user) =>
+      user.email.toLowerCase() ===
+        email.toLowerCase() &&
+      user.password === password
+  );
+
+if (localUser) {
+
+  localStorage.setItem(
+    "authUser",
+    JSON.stringify(
+      localUser
+    )
+  );
+
+  return localUser;
+}
+
+/* USERS LOGIN FROM API */
+
+const response =
+  await axios.get(API_URL);
+
+const users =
+  response.data;
 
     const matchedUser =
       users.find(

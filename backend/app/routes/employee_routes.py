@@ -464,3 +464,29 @@ def delete_employee(employee_id: int):
         "message":
         "Employee Not Found"
     }
+
+@employee_router.get(
+    "/attendance-report"
+)
+def attendance_report():
+
+    report = []
+
+    for employee in employees:
+
+        report.append({
+
+            "id":
+            employee["id"],
+
+            "name":
+            employee["name"],
+
+            "department":
+            employee["department"],
+
+            "attendance":
+            employee["attendance"]
+        })
+
+    return report

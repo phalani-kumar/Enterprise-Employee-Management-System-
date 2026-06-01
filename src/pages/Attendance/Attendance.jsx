@@ -27,6 +27,80 @@ function Attendance() {
 
 }, []);
 
+const currentUser =
+  JSON.parse(
+    localStorage.getItem(
+      "authUser"
+    )
+  );
+
+  const downloadCSV = () => {
+
+  const headers =
+    [
+      "ID",
+      "Name",
+      "Department",
+      "Status",
+      "Attendance"
+    ];
+
+  const rows =
+    employees.map(
+      (employee) => [
+
+        employee.id,
+
+        employee.name,
+
+        employee.department,
+
+        employee.status,
+
+        employee.attendance
+      ]
+    );
+
+  const csvContent =
+
+    [headers, ...rows]
+
+      .map(
+        (row) =>
+          row.join(",")
+      )
+
+      .join("\n");
+
+  const blob =
+    new Blob(
+
+      [csvContent],
+
+      {
+        type:
+          "text/csv",
+      }
+    );
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+  link.href = url;
+
+  link.download =
+    "attendance-report.csv";
+
+  link.click();
+};
+
   const fetchEmployees = async () => {
 
     try {
@@ -46,23 +120,38 @@ function Attendance() {
 
     <DashboardLayout>
 
-      <div className="attendance-page">
+  
+        <div className="attendance-header">
 
-        <div className="page-header">
+  <div>
 
-          <h1>
-            Attendance
-          </h1>
+    <h1>
+      Attendance
+    </h1>
 
-          <p>
-            Employee attendance analytics
-          </p>
+    <p>
+      Employee attendance analytics
+    </p>
 
-        </div>
+  </div>
 
-        <div className="attendance-table-wrapper">
+  {
+    currentUser?.role === "Admin" && (
 
-          <table className="attendance-table">
+      <button
+        className="download-btn"
+        onClick={downloadCSV}
+      >
+        Download Report
+      </button>
+    )
+  }
+
+</div>
+
+<div className="attendance-table-wrapper">
+
+  <table className="attendance-table">
 
             <thead>
 
@@ -165,7 +254,7 @@ function Attendance() {
 
         </div>
 
-      </div>
+    
 
     </DashboardLayout>
   );

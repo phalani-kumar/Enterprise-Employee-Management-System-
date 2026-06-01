@@ -76,6 +76,7 @@
 
 import {
   useState,
+  useEffect,
 } from "react";
 
 import {
@@ -103,6 +104,78 @@ function Navbar() {
   const [showMenu,
     setShowMenu] =
     useState(false);
+
+  const [notifications, setNotifications] =
+  useState([]);
+
+const [showNotifications,
+  setShowNotifications] =
+  useState(false);  
+
+    const [hasNotification,
+  setHasNotification] =
+  useState(false);
+
+  useEffect(() => {
+
+  const handleNotification =
+    () => {
+
+      setHasNotification(
+        true
+      );
+    };
+
+  window.addEventListener(
+    "employeeAction",
+    handleNotification
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "employeeAction",
+      handleNotification
+    );
+  };
+
+}, []);
+
+
+
+   useEffect(() => {
+
+  const loadNotifications =
+    () => {
+
+      const storedNotifications =
+        JSON.parse(
+          localStorage.getItem(
+            "notifications"
+          )
+        ) || [];
+
+      setNotifications(
+        storedNotifications
+      );
+    };
+
+  loadNotifications();
+
+  window.addEventListener(
+    "notificationUpdated",
+    loadNotifications
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "notificationUpdated",
+      loadNotifications
+    );
+  };
+
+}, []);
 
   /* DARK MODE */
 
@@ -155,11 +228,114 @@ function Navbar() {
 
         {/* NOTIFICATION */}
 
-        <button className="nav-icon-btn">
+        <div
+  className="notification-wrapper"
+>
 
-          <FaBell />
+  <button
+    className="nav-icon-btn"
+    onClick={() => {
 
-        </button>
+  if (!showNotifications) {
+
+    /* FIRST CLICK */
+
+    setShowNotifications(true);
+
+    setHasNotification(false);
+
+    localStorage.setItem(
+      "unreadNotifications",
+      "0"
+    );
+
+    setUnreadCount(0);
+
+  } else {
+
+    /* SECOND CLICK */
+
+    setShowNotifications(false);
+
+    localStorage.removeItem(
+      "notifications"
+    );
+
+    setNotifications([]);
+  }
+}}
+  >
+
+    <FaBell
+      className={
+        hasNotification
+          ? "bell-active"
+          : ""
+      }
+    />
+
+    {
+      notifications.length > 0 &&
+      !showNotifications && (
+
+        <span
+          className="notification-count"
+        >
+
+          {notifications.length}
+
+        </span>
+      )
+    }
+
+  </button>
+  {showNotifications && (
+
+    <div
+      className="notification-dropdown"
+    >
+
+      <h4>
+        Notifications
+      </h4>
+
+      {
+        notifications.length === 0 ? (
+
+          <p>
+            No Notifications
+          </p>
+
+        ) : (
+
+          notifications
+            .slice()
+            .reverse()
+            .map(
+              (
+                notification,
+                index
+              ) => (
+
+                <div
+                  key={index}
+                  className="notification-item"
+                >
+
+                  {
+                    notification
+                  }
+
+                </div>
+              )
+            )
+        )
+      }
+
+    </div>
+  )}
+
+</div>
 
         {/* PROFILE */}
 

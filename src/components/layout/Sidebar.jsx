@@ -106,26 +106,26 @@ function Sidebar() {
 
         </NavLink>
 
+        {/* EMPLOYEES */}
+
+          <NavLink
+             to="/employees"
+             className="sidebar-link"
+            >
+
+            <FaUsers />
+
+            <span>
+              Employees
+            </span>
+
+          </NavLink>
+
         {/* ADMIN ONLY PAGES */}
 
         {user?.role === "Admin" && (
 
           <>
-
-            {/* EMPLOYEES */}
-
-            <NavLink
-              to="/employees"
-              className="sidebar-link"
-            >
-
-              <FaUsers />
-
-              <span>
-                Employees
-              </span>
-
-            </NavLink>
 
             {/* DEPARTMENTS */}
 

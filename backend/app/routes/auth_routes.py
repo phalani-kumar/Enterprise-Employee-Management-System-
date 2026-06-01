@@ -1,72 +1,178 @@
+# from fastapi import APIRouter
+
+# from app.models.auth_model import LoginSchema
+
+# import requests
+
+# auth_router = APIRouter()
+
+# API_URL = "https://jsonplaceholder.typicode.com/users"
+
+# ADMIN_EMAIL = "admin@gmail.com"
+
+# ADMIN_PASSWORD = "admin123"
+
+# @auth_router.post("/login")
+
+# def login(data: LoginSchema):
+
+#     email = data.email
+
+#     password = data.password
+
+#     # ADMIN LOGIN
+
+#     if (
+#         email == ADMIN_EMAIL and
+#         password == ADMIN_PASSWORD
+#     ):
+
+#         return {
+
+#             "success": True,
+
+#             "role": "Admin",
+
+#             "message":
+#             "Admin Login Successful"
+#         }
+
+#     # API USERS
+
+#     response = requests.get(API_URL)
+
+#     users = response.json()
+
+#     matched_user = next(
+
+#         (
+#             user for user in users
+
+#             if user["email"].lower()
+#             == email.lower()
+#         ),
+
+#         None
+#     )
+
+#     # USER LOGIN
+
+#     if matched_user and len(password) >= 3:
+
+#         return {
+
+#             "success": True,
+
+#             "role": "User",
+
+#             "message":
+#             "User Login Successful",
+
+#             "user":
+#             matched_user
+#         }
+
+#     return {
+
+#         "success": False,
+
+#         "message":
+#         "Invalid Email or Password"
+#     }
+
 from fastapi import APIRouter
 
-from app.models.auth_model import LoginSchema
+from app.models.auth_model import (
+    SignupSchema,
+    LoginSchema,
+    ForgotPasswordSchema
+)
 
-import requests
+from app.database.users_db import users
 
 auth_router = APIRouter()
 
-API_URL = "https://jsonplaceholder.typicode.com/users"
+# SIGNUP
 
-ADMIN_EMAIL = "admin@gmail.com"
+@auth_router.post("/signup")
+def signup(data: SignupSchema):
 
-ADMIN_PASSWORD = "admin123"
-
-@auth_router.post("/login")
-
-def login(data: LoginSchema):
-
-    email = data.email
-
-    password = data.password
-
-    # ADMIN LOGIN
-
-    if (
-        email == ADMIN_EMAIL and
-        password == ADMIN_PASSWORD
-    ):
-
-        return {
-
-            "success": True,
-
-            "role": "Admin",
-
-            "message":
-            "Admin Login Successful"
-        }
-
-    # API USERS
-
-    response = requests.get(API_URL)
-
-    users = response.json()
-
-    matched_user = next(
+    existing_user = next(
 
         (
-            user for user in users
+            user
+            for user in users
 
             if user["email"].lower()
-            == email.lower()
+            == data.email.lower()
         ),
 
         None
     )
 
-    # USER LOGIN
+    if existing_user:
 
-    if matched_user and len(password) >= 3:
+        return {
+            "success": False,
+            "message": "Email already exists"
+        }
+
+    new_user = {
+
+        "id": len(users) + 1,
+
+        "name": data.name,
+
+        "email": data.email,
+
+        "password": data.password,
+
+        "role": data.role
+    }
+
+    users.append(new_user)
+
+    return {
+
+        "success": True,
+
+        "message":
+        "Signup Successful"
+    }
+
+
+# LOGIN
+
+@auth_router.post("/login")
+def login(data: LoginSchema):
+
+    matched_user = next(
+
+        (
+            user
+            for user in users
+
+            if user["email"].lower()
+            == data.email.lower()
+
+            and user["password"]
+            == data.password
+        ),
+
+        None
+    )
+
+    if matched_user:
 
         return {
 
             "success": True,
 
-            "role": "User",
-
             "message":
-            "User Login Successful",
+            "Login Successful",
+
+            "role":
+            matched_user["role"],
 
             "user":
             matched_user
@@ -77,5 +183,40 @@ def login(data: LoginSchema):
         "success": False,
 
         "message":
-        "Invalid Email or Password"
+        "Invalid Credentials"
+    }
+
+
+# FORGOT PASSWORD
+
+@auth_router.put("/forgot-password")
+def forgot_password(
+    data: ForgotPasswordSchema
+):
+
+    for user in users:
+
+        if (
+            user["email"].lower()
+            == data.email.lower()
+        ):
+
+            user["password"] = (
+                data.new_password
+            )
+
+            return {
+
+                "success": True,
+
+                "message":
+                "Password Updated Successfully"
+            }
+
+    return {
+
+        "success": False,
+
+        "message":
+        "User Not Found"
     }
