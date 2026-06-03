@@ -57,23 +57,18 @@ function ProtectedRoute({
   /* USER RESTRICTIONS */
 
   if (
-
-  user?.role ===
-    "User" &&
-
-  location.pathname !==
-    "/dashboard" &&
-
-  location.pathname !==
-    "/employees"
+  user?.role === "User" &&
+  ![
+    "/dashboard",
+    "/employees",
+    "/settings"
+  ].includes(location.pathname)
 ) {
 
   return (
-
     <Navigate
       to="/dashboard"
     />
-
   );
 }
 

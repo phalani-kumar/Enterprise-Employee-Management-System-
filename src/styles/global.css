@@ -395,7 +395,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .dark-bg {
-  background: #0f172a;
+  background: black;
 }
 
 .light-bg {
@@ -738,7 +738,7 @@ body::-webkit-scrollbar-thumb {
 /* DARK MODE */
 
 .dark-mode {
-  background: #0f172a;
+  background: black;
   color: white;
 }
 
@@ -751,7 +751,7 @@ body::-webkit-scrollbar-thumb {
 .dark-mode .add-employee-form,
 .dark-mode .search-filter input,
 .dark-mode .search-filter select {
-  background: #1e293b;
+  background: black;
   color: white;
 }
 
@@ -858,10 +858,17 @@ body::-webkit-scrollbar-thumb {
 /* DARK MODE */
 
 .dark-mode {
-  background: #0f172a;
+  background: black;
   color: white;
 }
-
+.dark-mode .request-table th,
+.dark-mode .request-table td,
+.dark-mode .attendance-table th,
+.dark-mode .department-card,
+.dark-mode .sidebar,
+.dark-mode .role-request-card,
+/* .dark-mode .role-request-card h2, */
+.dark-mode .role-request-card input,
 .dark-mode .navbar,
 .dark-mode .table-wrapper,
 .dark-mode .chart-section,
@@ -875,7 +882,16 @@ body::-webkit-scrollbar-thumb {
 .dark-mode .add-employee-form,
 .dark-mode .search-filter input,
 .dark-mode .search-filter select {
-  background: #1e293b;
+  background: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.dark-mode .department-user p,
+.dark-mode .department-user,
+.dark-mode .department-card h3,
+.dark-mode .role-request-card h2 {
+  background: black;
   color: white;
 }
 
@@ -886,7 +902,8 @@ body::-webkit-scrollbar-thumb {
 .dark-mode p,
 .dark-mode span,
 .dark-mode td,
-.dark-mode th {
+.dark-mode th 
+{
   color: white;
 }
 
@@ -1255,14 +1272,16 @@ body::-webkit-scrollbar-thumb {
 
 .dark-mode {
 
-  background: #0f172a;
+  background: black;
+
+  border-color: #334155;
 
   color: white;
 }
 
 .dark-mode .navbar {
 
-  background: #1e293b;
+  background: black;
 
   border-color: #334155;
 }
@@ -1274,14 +1293,16 @@ body::-webkit-scrollbar-thumb {
 
 .dark-mode .profile-menu {
 
-  background: #1e293b;
+  background: black;
 
   color: white;
 }
 
 .dark-mode .profile-menu p:hover {
 
-  background: #334155;
+  background: black;
+
+  border-color: #334155;
 }
 
 /* ERROR */
@@ -1770,7 +1791,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .dark-mode .attendance-table {
-  background: #0f172a;
+  background: black;
+  border-color: #334155;
   color: white;
 }
  
@@ -2014,7 +2036,7 @@ input:checked + .slider:before {
 
 .dark-mode .settings-card {
 
-  background: #1f2937;
+  background: black;
 
   color: white;
 }
@@ -2030,9 +2052,9 @@ input:checked + .slider:before {
 
 .dark-mode .settings-form input {
 
-  background: #374151;
+  background: black;
 
-  border: none;
+  border-color: white;
 
   color: white;
 }
@@ -2082,7 +2104,7 @@ input:checked + .slider:before {
 
 .dark-mode .analytics-card {
 
-  background: #1f2937;
+  background: black;
 }
 
 .dark-mode .analytics-card h2 {
@@ -2379,3 +2401,139 @@ button:disabled {
   opacity: 0.9;
 }
 
+/* ROLE REQUEST CARD */
+
+.role-request-card {
+  background: #ffffff;
+  padding: 24px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.role-request-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* INPUTS */
+
+.role-request-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.role-request-card input:focus {
+  border-color: #4a90e2;
+}
+
+/* SEND REQUEST BUTTON */
+
+.send-request-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.send-request-btn:hover {
+  background: #357abd;
+}
+
+/* ADMIN REQUEST TABLE */
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.request-table th,
+.request-table td {
+  border: 1px solid #e5e5e5;
+  padding: 12px;
+  text-align: center;
+}
+
+.request-table th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+.request-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* APPROVE BUTTON */
+
+.approve-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.approve-btn:hover {
+  background: #218838;
+}
+
+/* REJECT BUTTON */
+
+.reject-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reject-btn:hover {
+  background: #c82333;
+}
+
+/* STATUS COLORS */
+
+.status-pending {
+  color: #ff9800;
+  font-weight: 600;
+}
+
+.status-approved {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .request-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    margin-bottom: 5px;
+  }
+}

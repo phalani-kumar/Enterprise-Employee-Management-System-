@@ -20,6 +20,8 @@ import Attendance from "./pages/Attendance/Attendance";
 
 import Settings from "./pages/Settings/Settings";
 
+import RoleRequests from "./pages/admin/RoleRequests";
+
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 import ForgotPassword from
@@ -125,6 +127,13 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+  path="/role-requests"
+  element={
+    <RoleRequests />
+  }
+/>
 
 
       </Routes>

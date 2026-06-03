@@ -50,86 +50,44 @@ export const loginUser =
       return adminUser;
     }
 
-    /* USERS LOGIN */
+    try {
 
-    /* CHECK LOCAL SIGNUP USERS FIRST */
+      const response =
+        await axios.post(
+          "http://127.0.0.1:8000/login",
+          {
+            email,
+            password
+          }
+        );
 
-const localUsers =
-  JSON.parse(
-    localStorage.getItem("users")
-  ) || [];
+      if (
+        response.data.success
+      ) {
 
-const localUser =
-  localUsers.find(
-    (user) =>
-      user.email.toLowerCase() ===
-        email.toLowerCase() &&
-      user.password === password
-  );
+        localStorage.setItem(
+          "authUser",
+          JSON.stringify(
+            response.data.user
+          )
+        );
 
-if (localUser) {
-
-  localStorage.setItem(
-    "authUser",
-    JSON.stringify(
-      localUser
-    )
-  );
-
-  return localUser;
-}
-
-/* USERS LOGIN FROM API */
-
-const response =
-  await axios.get(API_URL);
-
-const users =
-  response.data;
-
-    const matchedUser =
-      users.find(
-        (user) =>
-          user.email.toLowerCase() ===
-          email.toLowerCase()
-      );
-
-    /* INVALID */
-
-    if (
-      !matchedUser ||
-      password.length < 3
-    ) {
+        return response.data.user;
+      }
 
       throw new Error(
-        "Invalid Email or Password"
+        response.data.message
+      );
+
+    } catch (error) {
+
+      throw new Error(
+        error.response?.data?.message ||
+        "Login Failed"
       );
     }
-
-    /* NORMAL USER */
-
-    const normalUser = {
-
-      id: matchedUser.id,
-
-      name:
-        matchedUser.name,
-
-      email:
-        matchedUser.email,
-
-      role: "User",
-    };
-
-    localStorage.setItem(
-      "authUser",
-      JSON.stringify(
-        normalUser
-      )
-    );
-
-    return normalUser;
   };
+
 
 /* LOGOUT */
 

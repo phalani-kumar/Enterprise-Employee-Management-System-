@@ -157,24 +157,20 @@ function Sidebar() {
 
             </NavLink>
 
-            {/* SETTINGS */}
-
-            <NavLink
-              to="/settings"
-              className="sidebar-link"
-            >
-
-              <FaCog />
-
-              <span>
-                Settings
-              </span>
-
-            </NavLink>
-
-          </>
+            
+         </>
 
         )}
+
+        {/* SETTINGS FOR BOTH USER & ADMIN */}
+
+<NavLink
+  to="/settings"
+  className="sidebar-link"
+>
+  <FaCog />
+  <span>Settings</span>
+</NavLink>
 
       </div>
 

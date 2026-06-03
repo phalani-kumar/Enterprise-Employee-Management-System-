@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
+import axios from "axios";
+
 function Signup() {
 
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ function Signup() {
   const [role, setRole] =
     useState("");
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
 
   e.preventDefault();
 
@@ -39,47 +41,16 @@ function Signup() {
     return;
   }
 
-  const users =
-    JSON.parse(
-      localStorage.getItem(
-        "users"
-      )
-    ) || [];
+  try {
 
-  const userExists =
-    users.find(
-      (user) =>
-        user.email.toLowerCase() ===
-        email.toLowerCase()
-    );
-
-  if (userExists) {
-
-    alert(
-      "User already exists"
-    );
-
-    return;
-  }
-
-  const newUser = {
-
-    id: Date.now(),
-
-    name,
-
-    email,
-
-    password,
-
-    role,
-  };
-
-  users.push(newUser);
-
-  localStorage.setItem(
-    "users",
-    JSON.stringify(users)
+  await axios.post(
+    "http://127.0.0.1:8000/signup",
+    {
+      name,
+      email,
+      password,
+      role
+    }
   );
 
   alert(
@@ -87,6 +58,15 @@ function Signup() {
   );
 
   navigate("/login");
+
+} catch (error) {
+
+  console.log(error);
+
+  alert(
+    "Signup Failed"
+  );
+}
 };
 
   return (
