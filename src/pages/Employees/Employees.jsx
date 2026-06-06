@@ -471,6 +471,13 @@ import {
   useState,
 } from "react";
 
+import {
+  getEmployees,
+  addEmployee,
+  updateEmployee,
+  deleteEmployee
+} from "../../services/employeeService";
+
 import axios from "axios";
 
 import DashboardLayout from "../../components/layout/DashboardLayout";
@@ -507,6 +514,10 @@ const [departments, setDepartments] = useState([
     const [showModal,
   setShowModal] =
   useState(false);
+
+  const [company,
+  setCompany] =
+  useState("");
 
   const [newEmployee,
     setNewEmployee] =
@@ -548,99 +559,18 @@ const isFormValid =
 
   useEffect(() => {
 
-    fetchEmployees();
-
-  }, []);
-
   const fetchEmployees =
     async () => {
 
-      try {
+      const data =
+        await getEmployees();
 
-        /* CHECK LOCAL STORAGE */
-
-        const storedEmployees =
-          JSON.parse(
-            localStorage.getItem(
-              "employees"
-            )
-          );
-
-        if (
-          storedEmployees &&
-          storedEmployees.length > 0
-        ) {
-
-          setEmployees(
-            storedEmployees
-          );
-
-          return;
-        }
-
-        /* FETCH FROM API */
-
-        const response =
-          await axios.get(
-            "https://jsonplaceholder.typicode.com/users"
-          );
-
-        const updatedEmployees =
-          response.data.map(
-            (
-              employee,
-              index
-            ) => ({
-
-              id: employee.id,
-
-              name:
-                employee.name,
-
-              email:
-                employee.email,
-
-              department:
-                index % 4 === 0
-                  ? "IT"
-                  : index % 4 === 1
-                  ? "HR"
-                  : index % 4 === 2
-                  ? "Finance"
-                  : "Design",
-
-              role:
-                index % 2 === 0
-                  ? "Frontend Developer"
-                  : "Backend Developer",
-
-              status:
-                index % 3 === 0
-                  ? "Inactive"
-                  : "Active",
-            })
-          );
-
-        setEmployees(
-          updatedEmployees
-        );
-
-        localStorage.setItem(
-
-          "employees",
-
-          JSON.stringify(
-            updatedEmployees
-          )
-        );
-
-      } catch (error) {
-
-        alert(
-          "Failed to fetch employees"
-        );
-      }
+      setEmployees(data);
     };
+
+  fetchEmployees();
+
+}, []);
 
   /* INPUT CHANGE */
 
@@ -658,109 +588,35 @@ const isFormValid =
 
   /* ADD EMPLOYEE */
 
-  const addEmployee =
-    () => {
+  const handleAddEmployee = async () => {
 
-      if (
-        !newEmployee.name ||
-        !newEmployee.email ||
-        !newEmployee.department ||
-        !newEmployee.role
-      ) {
+  try {
 
-        alert(
-          "Please fill all fields"
-        );
+    await addEmployee({
+      name: newEmployee.name,
+      email: newEmployee.email,
+      department: newEmployee.department,
+      role: newEmployee.role,
+      status: "Active"
+    });
 
-        return;
-      }
+    const data = await getEmployees();
 
-      const employee = {
+    setEmployees(data);
 
-        id: Date.now(),
+    alert("Employee Added Successfully");
 
-        name:
-          newEmployee.name,
+    resetForm();
 
-        email:
-          newEmployee.email,
+    setShowModal(false);
 
-        department:
-          newEmployee.department,
+  } catch (error) {
 
-        role:
-          newEmployee.role,
+    console.log(error);
 
-        status: "Active",
-      };
-
-      if (
-  !departments.includes(
-    newEmployee.department
-  )
-) {
-  setDepartments([
-    ...departments,
-    newEmployee.department,
-  ]);
-}
-
-      const updatedEmployees = [
-
-        ...employees,
-
-        employee,
-      ];
-
-      setEmployees(
-        updatedEmployees
-      );
-
-      localStorage.setItem(
-
-        "employees",
-
-        JSON.stringify(
-          updatedEmployees
-        )
-      );
-
-     alert(
-  "Employee Added Successfully"
-);
-
-
-const notifications =
-  JSON.parse(
-    localStorage.getItem(
-      "notifications"
-    )
-  ) || [];
-
-notifications.push(
-  `Employee Added: ${employee.name}`
-);
-
-localStorage.setItem(
-  "notifications",
-  JSON.stringify(notifications)
-);
-
-window.dispatchEvent(
-  new Event("notificationUpdated")
-);
-
-window.dispatchEvent(
-  new Event(
-    "employeeAction"
-  )
-);
-
-resetForm();
-
-setShowModal(false);
-    };
-  
+    alert("Failed to add employee");
+  }
+};
 
   /* EDIT BUTTON */
 
@@ -799,9 +655,7 @@ setShowModal(false);
 
   /* UPDATE EMPLOYEE */
 
-  const updateEmployee =
-    () => {
-
+  const handleUpdateEmployee = async () => {
       if (
         !newEmployee.name ||
         !newEmployee.email ||
@@ -816,47 +670,31 @@ setShowModal(false);
         return;
       }
 
-      const updatedEmployees =
-        employees.map(
-          (employee) =>
+ try {
 
-            employee.id === editId
+  const currentUser =
+    JSON.parse(
+      localStorage.getItem(
+        "authUser"
+      )
+    );
 
-              ? {
+  await updateEmployee(
+    editId,
+    {
+      ...newEmployee,
+      status: "Active",
+      company_id:
+        currentUser.company_id
+    }
+  );
 
-                  ...employee,
+const data =
+  await getEmployees();
 
-                  name:
-                    newEmployee.name,
+  console.log(data);
 
-                  email:
-                    newEmployee.email,
-
-                  department:
-                    newEmployee.department,
-
-                  role:
-                    newEmployee.role,
-
-                  status:
-                    employee.status,
-                }
-
-              : employee
-        );
-
-      setEmployees(
-        updatedEmployees
-      );
-
-      localStorage.setItem(
-
-        "employees",
-
-        JSON.stringify(
-          updatedEmployees
-        )
-      );
+setEmployees(data);
 
       alert(
         "Employee Updated Successfully"
@@ -894,14 +732,21 @@ window.dispatchEvent(
       resetForm();
 
       setShowModal(false);
-    };
 
+    } catch(error) {
+
+  console.log(error);
+
+  alert(
+    "Update Failed"
+  );
+ }
+};
   
 
   /* DELETE EMPLOYEE */
 
-  const deleteEmployee =
-    (id) => {
+  const handleDeleteEmployee = async (id) => {
 
       const confirmDelete =
         window.confirm(
@@ -911,24 +756,12 @@ window.dispatchEvent(
       if (!confirmDelete)
         return;
 
-      const updatedEmployees =
-        employees.filter(
-          (employee) =>
-            employee.id !== id
-        );
+      await deleteEmployee(id);
 
-      setEmployees(
-        updatedEmployees
-      );
+const data =
+  await getEmployees();
 
-      localStorage.setItem(
-
-        "employees",
-
-        JSON.stringify(
-          updatedEmployees
-        )
-      );
+setEmployees(data);
 
       alert(
         "Employee Deleted Successfully"
@@ -1200,7 +1033,7 @@ window.dispatchEvent(
             editId ? (
 
               <button
-                onClick={updateEmployee}
+                onClick={handleUpdateEmployee}
                 disabled={!isFormValid}
               >
 
@@ -1211,7 +1044,7 @@ window.dispatchEvent(
             ) : (
 
               <button
-                onClick={addEmployee}
+                onClick={handleAddEmployee}
                 disabled={!isFormValid}
               >
 
@@ -1339,6 +1172,7 @@ window.dispatchEvent(
                       {employee.role}
                     </td>
 
+
                     {/* STATUS */}
 
                     <td>
@@ -1410,7 +1244,7 @@ window.dispatchEvent(
                       <button
                         className="delete-btn"
                         onClick={() =>
-                          deleteEmployee(
+                          handleDeleteEmployee(
                             employee.id
                           )
                         }
@@ -1499,6 +1333,6 @@ window.dispatchEvent(
 
     </DashboardLayout>
   );
+  
 }
-
 export default Employees;

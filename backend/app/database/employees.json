@@ -1,0 +1,92 @@
+[
+    {
+        "id": 2,
+        "name": "Kumar",
+        "email": "dsfg@gmail.com",
+        "department": "IT",
+        "role": "developer",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 2,
+        "name": "phalani",
+        "email": "maramphalani265@gmail.com",
+        "department": "HR",
+        "role": "developer",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 3,
+        "name": "drftgyh",
+        "email": "sdrft@gmail.com",
+        "department": "IT",
+        "role": "tfgyhuj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 4,
+        "name": "drftgyh",
+        "email": "ftgyhu@gmail.com",
+        "department": "Finance",
+        "role": "ghj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 5,
+        "name": "Lean",
+        "email": "fvgbhnj@gmail.com",
+        "department": "Finance",
+        "role": "ghjk",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 6,
+        "name": "John",
+        "email": "dsftgh@gmail.com",
+        "department": "HR",
+        "role": "dfgthyj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 7,
+        "name": "David",
+        "email": "tyuhji@gmail.com",
+        "department": "IT",
+        "role": "fghju",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 8,
+        "name": "Mathew",
+        "email": "ftgyh@gmail.com",
+        "department": "Design",
+        "role": "tgyhuj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 9,
+        "name": "Surya",
+        "email": "surya@gmail.com",
+        "department": "IT",
+        "role": "tgyhuj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    }
+]

@@ -58,13 +58,18 @@ import {
   FaUsers,
   FaBuilding,
   FaCalendarCheck,
+  FaIndustry,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
 
+// import { HiOfficeBuilding } from "react-icons/hi";
+
 import {
   useAuth,
 } from "../../context/AuthContext";
+
+
 
 function Sidebar() {
 
@@ -156,6 +161,18 @@ function Sidebar() {
               </span>
 
             </NavLink>
+
+            <NavLink
+  to="/companies"
+  className="sidebar-link"
+>
+
+ <FaIndustry />
+  <span>
+    Companies
+  </span>
+
+</NavLink>
 
             
          </>

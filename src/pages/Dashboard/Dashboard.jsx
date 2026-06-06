@@ -415,23 +415,8 @@ function Dashboard() {
     setEmployees] =
     useState([]);
 
-  useEffect(() => {
-
+useEffect(() => {
   fetchEmployees();
-
-  window.addEventListener(
-    "storage",
-    fetchEmployees
-  );
-
-  return () => {
-
-    window.removeEventListener(
-      "storage",
-      fetchEmployees
-    );
-  };
-
 }, []);
 
   const fetchEmployees =
@@ -439,26 +424,10 @@ function Dashboard() {
 
       try {
 
-        const localEmployees =
-          localStorage.getItem(
-            "employees"
-          );
-
-        if (localEmployees) {
-
-          setEmployees(
-            JSON.parse(
-              localEmployees
-            )
-          );
-
-        } else {
-
           const data =
             await getEmployees();
 
           setEmployees(data);
-        }
 
       } catch (error) {
 

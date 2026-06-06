@@ -97,6 +97,9 @@ function Navbar() {
     logout,
   } = useAuth();
 
+  const companyName =
+  user?.company_name || "";
+
   const [darkMode,
     setDarkMode] =
     useState(false);
@@ -104,6 +107,9 @@ function Navbar() {
   const [showMenu,
     setShowMenu] =
     useState(false);
+
+    const [unreadCount, setUnreadCount] =
+  useState(0);
 
   const [notifications, setNotifications] =
   useState([]);
@@ -202,8 +208,15 @@ const [showNotifications,
         <h2>
           Employee Enterprise Management System
         </h2>
-
       </div>
+      
+      <div className="navbar-left">
+
+        <h3>
+          {companyName}
+        </h3>
+      </div>
+      
 
       {/* RIGHT */}
 

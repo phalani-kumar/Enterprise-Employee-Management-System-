@@ -23,16 +23,20 @@ function Signup() {
   const [role, setRole] =
     useState("");
 
+  const [company, setCompany] =
+  useState("");  
+
   const handleSignup = async (e) => {
 
   e.preventDefault();
 
   if (
-    !name ||
-    !email ||
-    !password ||
-    !role
-  ) {
+  !name ||
+  !email ||
+  !password ||
+  !role ||
+  !company
+) {
 
     alert(
       "Please fill all fields"
@@ -44,14 +48,19 @@ function Signup() {
   try {
 
   await axios.post(
-    "http://127.0.0.1:8000/signup",
-    {
-      name,
-      email,
-      password,
-      role
-    }
-  );
+  "http://127.0.0.1:8000/signup",
+  {
+    name,
+    email,
+    password,
+    role,
+
+    company_id:
+      company === "Company A"
+        ? 1
+        : 2
+  }
+);
 
   alert(
     "Signup Successful"
@@ -64,8 +73,9 @@ function Signup() {
   console.log(error);
 
   alert(
-    "Signup Failed"
-  );
+  error.response?.data?.message ||
+  "Signup Failed"
+);
 }
 };
 
@@ -113,6 +123,31 @@ function Signup() {
               )
             }
           />
+
+          <select
+
+  value={company}
+
+  onChange={(e) =>
+    setCompany(
+      e.target.value
+    )
+  }
+>
+
+  <option value="">
+    Select Company
+  </option>
+
+  <option value="Company A">
+    Company A
+  </option>
+
+  <option value="Company B">
+    Company B
+  </option>
+
+</select>
 
           <select
             value={role}

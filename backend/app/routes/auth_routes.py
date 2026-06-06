@@ -118,17 +118,17 @@ def signup(data: SignupSchema):
         }
 
     new_user = {
-
-        "id": len(users) + 1,
-
-        "name": data.name,
-
-        "email": data.email,
-
-        "password": data.password,
-
-        "role": data.role
-    }
+    "id": len(users) + 1,
+    "name": data.name,
+    "email": data.email,
+    "password": data.password,
+    "role": data.role,
+    "company_id": data.company_id,
+    "company_name":
+        "Company A"
+        if data.company_id == 1
+        else "Company B"
+}
 
     users.append(new_user)
 

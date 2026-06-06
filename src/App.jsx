@@ -18,6 +18,9 @@ import Departments from "./pages/Departments/Departments";
 
 import Attendance from "./pages/Attendance/Attendance";
 
+import Companies from
+"./pages/Companies/Companies";
+
 import Settings from "./pages/Settings/Settings";
 
 import RoleRequests from "./pages/admin/RoleRequests";
@@ -114,6 +117,20 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+
+  path="/companies"
+
+  element={
+
+    <ProtectedRoute>
+
+      <Companies />
+
+    </ProtectedRoute>
+  }
+/>
 
         {/* SETTINGS */}
 

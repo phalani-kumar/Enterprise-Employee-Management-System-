@@ -6,6 +6,7 @@ class SignupSchema(BaseModel):
     email: str
     password: str
     role: str
+    company_id: int
 
 
 class LoginSchema(BaseModel):

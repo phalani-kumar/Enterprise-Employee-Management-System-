@@ -58,8 +58,8 @@ function Departments() {
       emp => emp.department === "Finance"
     ),
 
-    Development: employees.filter(
-      emp => emp.department === "Development"
+    Design: employees.filter(
+      emp => emp.department === "Design"
     ),
   };
 
