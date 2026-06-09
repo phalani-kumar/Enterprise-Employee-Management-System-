@@ -44,24 +44,20 @@ function Departments() {
 
   // Department Data
 
-  const departmentData = {
+  const departmentData = {};
 
-    IT: employees.filter(
-      emp => emp.department === "IT"
-    ),
+employees.forEach((employee) => {
 
-    HR: employees.filter(
-      emp => emp.department === "HR"
-    ),
+  if (!departmentData[employee.department]) {
 
-    Finance: employees.filter(
-      emp => emp.department === "Finance"
-    ),
+    departmentData[employee.department] = [];
+  }
 
-    Design: employees.filter(
-      emp => emp.department === "Design"
-    ),
-  };
+  departmentData[employee.department].push(
+    employee
+  );
+
+});
 
   return (
 

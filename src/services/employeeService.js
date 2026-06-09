@@ -281,25 +281,39 @@ export const updateEmployee =
 // DELETE EMPLOYEE
 
 export const deleteEmployee =
-  async (id) => {
+  async (
+    id,
+    performed_by
+  ) => {
 
     const response =
       await axios.delete(
-
-        `${API_URL}/employees/${id}`
+        `${API_URL}/employees/${id}`,
+        {
+          data: {
+            performed_by
+          }
+        }
       );
-
-    // let employees =
-    //   JSON.parse(
-    //     localStorage.getItem(
-    //       "employees"
-    //     )
-    //   ) || [];
-
-    // employees = employees.filter(
-    //   employee =>
-    //     employee.id !== id
-    // );
 
     return response.data;
   };
+
+  export const updateEmployeeStatus =
+async (
+  employeeId,
+  status
+) => {
+
+  const response =
+    await axios.put(
+
+      `${API_URL}/employees/${employeeId}/status`,
+
+      {
+        status
+      }
+    );
+
+  return response.data;
+};

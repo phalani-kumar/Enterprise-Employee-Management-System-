@@ -394,6 +394,10 @@ import {
   YAxis,
   Tooltip,
   CartesianGrid,
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
 } from "recharts";
 
 import {
@@ -411,12 +415,25 @@ import {
 
 function Dashboard() {
 
+  const [pendingRequests,
+  setPendingRequests] =
+  useState(0);
+
   const [employees,
     setEmployees] =
     useState([]);
 
+  const [users, setUsers] =
+  useState([]);  
+
 useEffect(() => {
+
   fetchEmployees();
+
+  fetchPendingRequests();
+
+  fetchUsers();
+
 }, []);
 
   const fetchEmployees =
@@ -434,6 +451,64 @@ useEffect(() => {
         console.log(error);
       }
     };
+
+  const fetchUsers =
+  async () => {
+
+    try {
+
+      const response =
+        await fetch(
+          "http://127.0.0.1:8000/users"
+        );
+
+      const data =
+        await response.json();
+
+      setUsers(data);
+
+    } catch (error) {
+
+      console.log(error);
+    }
+  };  
+
+
+  const fetchPendingRequests =
+  async () => {
+
+    try {
+
+      
+      const currentUser =
+  JSON.parse(
+    localStorage.getItem("authUser")
+  );
+  const response =
+   await fetch(
+  `http://127.0.0.1:8000/role-request/${currentUser.company_id}`
+);
+
+      const data =
+        await response.json();
+
+      const pending =
+        data.filter(
+          (request) =>
+            request.status ===
+            "Pending"
+        );
+
+      setPendingRequests(
+        pending.length
+      );
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+  };  
 
   /* ACTIVE */
 
@@ -488,7 +563,11 @@ useEffect(() => {
 
   "#f59e0b",
 
-  "#dc2626"
+  "#dc2626",
+
+  "#8b5cf6",
+
+  "#ec4899"
 ];
 
 const attendanceAnalytics = 
@@ -508,6 +587,17 @@ const attendanceAnalytics =
     })
   );
 
+  const departmentData =
+  departments.map(
+    (department) => ({
+      name: department,
+      count: employees.filter(
+        (employee) =>
+          employee.department === department
+      ).length,
+    })
+  );
+
 
 
   return (
@@ -518,21 +608,21 @@ const attendanceAnalytics =
 
         {/* HEADER */}
 
-        <div className="dashboard-header">
+<div className="dashboard-header">
 
-          <div>
+  <div>
+    <h1>Dashboard Page</h1>
+    <p>Welcome</p>
+  </div>
 
-            <h1>
-              Dashboard Page
-            </h1>
+  <button
+  className="refresh-btn"
+  onClick={() => window.location.reload()}
+>
+  Refresh
+</button>
 
-            <p>
-              Welcome
-            </p>
-
-          </div>
-
-        </div>
+</div>
 
         {/* STATS */}
 
@@ -610,30 +700,29 @@ const attendanceAnalytics =
 
           </div>
 
-          {/* ATTENDANCE */}
+          {/* PENDING REQUESTS */}
 
           <div className="stat-card">
-
+          
             <div className="stat-icon orange">
-
+          
               <FaClipboardCheck />
-
+          
             </div>
-
+          
             <div>
-
+          
               <h2>
-                {attendance}%
+                {pendingRequests}
               </h2>
-
+          
               <p>
-                Attendance
+                Pending Requests
               </p>
-
+          
             </div>
-
+          
           </div>
-
         </div>
 
         {/* GRAPH + RECENT */}
@@ -742,29 +831,7 @@ const attendanceAnalytics =
         </div>
 
         <div className="extra-sections">
-          <div className="palette-card">
-            <h3>Color Palette</h3>
-
-            <div className="colors">
-              <div className="color blue-bg"></div>
-              <div className="color dark-bg"></div>
-              <div className="color light-bg"></div>
-              <div className="color green-bg"></div>
-              <div className="color orange-bg"></div>
-              <div className="color red-bg"></div>
-            </div>
-          </div>
-
-          <div className="guideline-card">
-            <h3>UI/UX Guidelines</h3>
-
-            <div className="guidelines">
-              <div>Responsive Layout</div>
-              <div>Modern UI</div>
-              <div>Reusable Components</div>
-              <div>Clean Typography</div>
-            </div>
-          </div>
+          
           {/* ANALYTICS SECTION */}
 
 <div className="analytics-grid">
@@ -807,6 +874,191 @@ const attendanceAnalytics =
       />
 
     </BarChart>
+
+  </ResponsiveContainer>
+
+</div>
+
+
+<div className="analytics-card">
+
+  <h2>
+    Employee Distribution By Department
+  </h2>
+
+  <ResponsiveContainer
+    width="100%"
+    height={320}
+  >
+
+    <BarChart
+      data={departmentData}
+    >
+
+      <CartesianGrid
+        strokeDasharray="3 3"
+      />
+
+      <XAxis
+        dataKey="name"
+      />
+
+      <YAxis />
+
+      <Tooltip />
+
+      <Bar
+        dataKey="count"
+        fill="#f59e0b"
+      />
+
+    </BarChart>
+
+  </ResponsiveContainer>
+
+</div>
+
+
+
+<div className="analytics-card">
+
+  <h2>
+    Employee Count By Role
+  </h2>
+
+  <ResponsiveContainer
+    width="100%"
+    height={320}
+  >
+
+    <PieChart>
+
+      <Pie
+       data={[
+  {
+    role: "Admin",
+    count: users.filter(
+      (user) =>
+        user.role === "Admin"
+    ).length
+  },
+
+  {
+    role: "User",
+    count: users.filter(
+      (user) =>
+        user.role === "User"
+    ).length
+  }
+]}
+        dataKey="count"
+        nameKey="role"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        label
+      >
+
+        {Object.values(
+          employees.reduce(
+            (acc, employee) => {
+
+              if (!acc[employee.role]) {
+
+                acc[employee.role] = {
+                  role: employee.role,
+                  count: 0,
+                };
+              }
+
+              acc[employee.role].count++;
+
+              return acc;
+
+            },
+            {}
+          )
+        ).map((entry, index) => (
+
+          <Cell
+            key={index}
+            fill={
+              COLORS[
+                index % COLORS.length
+              ]
+            }
+          />
+
+        ))}
+
+      </Pie>
+
+      <Tooltip />
+
+      <Legend />
+
+    </PieChart>
+
+  </ResponsiveContainer>
+
+</div>
+
+<div className="analytics-card">
+
+  <h2>
+    Employee Status Overview
+  </h2>
+
+  <ResponsiveContainer
+    width="100%"
+    height={320}
+  >
+
+    <PieChart>
+
+      <Pie
+        data={[
+          {
+            status: "Active",
+            count: employees.filter(
+              (employee) =>
+                employee.status === "Active"
+            ).length,
+          },
+          {
+            status: "Inactive",
+            count: employees.filter(
+              (employee) =>
+                employee.status === "Inactive"
+            ).length,
+          },
+          {
+            status: "On Leave",
+            count: employees.filter(
+              (employee) =>
+                employee.status === "On Leave"
+            ).length,
+          },
+        ]}
+        dataKey="count"
+        nameKey="status"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        label
+      >
+
+        <Cell fill="#16a34a" />
+        <Cell fill="#dc2626" />
+        <Cell fill="#f59e0b" />
+
+      </Pie>
+
+      <Tooltip />
+
+      <Legend />
+
+    </PieChart>
 
   </ResponsiveContainer>
 

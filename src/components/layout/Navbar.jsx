@@ -100,6 +100,9 @@ function Navbar() {
   const companyName =
   user?.company_name || "";
 
+  const companyId =
+  user?.company_id || "";
+
   const [darkMode,
     setDarkMode] =
     useState(false);
@@ -157,7 +160,8 @@ const [showNotifications,
       const storedNotifications =
         JSON.parse(
           localStorage.getItem(
-            "notifications"
+            `notifications_${companyId}`
+
           )
         ) || [];
 
@@ -181,7 +185,7 @@ const [showNotifications,
     );
   };
 
-}, []);
+}, [companyId]);
 
   /* DARK MODE */
 
@@ -271,7 +275,7 @@ const [showNotifications,
     setShowNotifications(false);
 
     localStorage.removeItem(
-      "notifications"
+      `notifications_${companyId}`
     );
 
     setNotifications([]);

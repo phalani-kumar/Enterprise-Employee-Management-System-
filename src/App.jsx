@@ -21,6 +21,9 @@ import Attendance from "./pages/Attendance/Attendance";
 import Companies from
 "./pages/Companies/Companies";
 
+import AuditLogs from
+"./pages/AuditLogs/AuditLogs";
+
 import Settings from "./pages/Settings/Settings";
 
 import RoleRequests from "./pages/admin/RoleRequests";
@@ -130,6 +133,21 @@ function App() {
 
     </ProtectedRoute>
   }
+/>
+
+<Route
+
+  path="/audit-logs"
+
+  element={
+
+<ProtectedRoute>
+
+  <AuditLogs />
+  
+  </ProtectedRoute>
+
+}
 />
 
         {/* SETTINGS */}

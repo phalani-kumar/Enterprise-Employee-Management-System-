@@ -22,10 +22,15 @@ function RoleRequests() {
   const fetchRequests =
     async () => {
 
-      const response =
-        await axios.get(
-          "http://127.0.0.1:8000/role-request"
-        );
+     const currentUser =
+  JSON.parse(
+    localStorage.getItem("authUser")
+  );
+
+const response =
+  await axios.get(
+    `http://127.0.0.1:8000/role-request/${currentUser.company_id}`
+  );
 
       setRequests(
         response.data

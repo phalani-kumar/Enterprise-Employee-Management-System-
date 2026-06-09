@@ -59,6 +59,7 @@ import {
   FaBuilding,
   FaCalendarCheck,
   FaIndustry,
+  FaClipboardList, 
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -163,6 +164,7 @@ function Sidebar() {
             </NavLink>
 
             <NavLink
+
   to="/companies"
   className="sidebar-link"
 >
@@ -174,7 +176,19 @@ function Sidebar() {
 
 </NavLink>
 
-            
+ <NavLink
+
+    to="/audit-logs"
+    className="sidebar-link"
+>
+
+ <FaClipboardList />
+  <span>
+     Logs
+  </span>
+
+</NavLink>
+ 
          </>
 
         )}

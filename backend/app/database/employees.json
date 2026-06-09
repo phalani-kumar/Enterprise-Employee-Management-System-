@@ -1,9 +1,9 @@
 [
     {
-        "id": 2,
+        "id": 1,
         "name": "Kumar",
         "email": "dsfg@gmail.com",
-        "department": "IT",
+        "department": "Operations",
         "role": "developer",
         "status": "Active",
         "attendance": 95,
@@ -21,9 +21,9 @@
     },
     {
         "id": 3,
-        "name": "drftgyh",
+        "name": "ytui",
         "email": "sdrft@gmail.com",
-        "department": "IT",
+        "department": "HR",
         "role": "tfgyhuj",
         "status": "Active",
         "attendance": 95,
@@ -33,9 +33,9 @@
         "id": 4,
         "name": "drftgyh",
         "email": "ftgyhu@gmail.com",
-        "department": "Finance",
+        "department": "Design",
         "role": "ghj",
-        "status": "Active",
+        "status": "Inactive",
         "attendance": 95,
         "company_id": 1
     },
@@ -45,7 +45,7 @@
         "email": "fvgbhnj@gmail.com",
         "department": "Finance",
         "role": "ghjk",
-        "status": "Active",
+        "status": "Inactive",
         "attendance": 95,
         "company_id": 2
     },
@@ -64,7 +64,7 @@
         "name": "David",
         "email": "tyuhji@gmail.com",
         "department": "IT",
-        "role": "fghju",
+        "role": "gyhuj",
         "status": "Active",
         "attendance": 95,
         "company_id": 2
@@ -83,8 +83,48 @@
         "id": 9,
         "name": "Surya",
         "email": "surya@gmail.com",
-        "department": "IT",
+        "department": "Development",
         "role": "tgyhuj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 10,
+        "name": "dfgh",
+        "email": "drftg@gmail.com",
+        "department": "IT",
+        "role": "developer",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 12,
+        "name": "Sai",
+        "email": "sai@gmail.com",
+        "department": "Finance",
+        "role": "dfghj",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 1
+    },
+    {
+        "id": 14,
+        "name": "dfgthjk",
+        "email": "retyu@gmail.com",
+        "department": "Finance",
+        "role": "gfchvb",
+        "status": "Active",
+        "attendance": 95,
+        "company_id": 2
+    },
+    {
+        "id": 16,
+        "name": "asdfg",
+        "email": "asdfg@gmail.com",
+        "department": "IT",
+        "role": "asdfgh",
         "status": "Active",
         "attendance": 95,
         "company_id": 2
