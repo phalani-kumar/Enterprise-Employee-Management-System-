@@ -2633,3 +2633,228 @@ button:disabled {
 .refresh-btn:hover {
   background-color: #1d4ed8;
 }
+
+.deactivated-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#eef2f7;
+}
+
+.deactivated-card{
+  width:500px;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);
+}
+
+.deactivated-card h1{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.deactivated-text{
+  color:#555;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+.user-info{
+  color:#777;
+  margin-bottom:20px;
+}
+
+.message-box{
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:15px;
+}
+
+.message-box label{
+  display:block;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.message-box textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  resize:none;
+}
+
+.reactivate-btn{
+  width:100%;
+  margin-top:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.logout-btn-deactivated{
+  width:100%;
+  margin-top:20px;
+  border:none;
+  background:transparent;
+  color:#555;
+  cursor:pointer;
+}
+
+.invitation-top-section {
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin-bottom: 30px;
+}
+
+.invitation-card {
+
+  flex: 1;
+
+  min-width: 0;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.invitation-card h2 {
+
+  margin-bottom: 15px;
+}
+
+.invitation-card input,
+.invitation-card select {
+
+  width: 100%;
+
+  padding: 10px;
+
+  margin-bottom: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+}
+
+.invitation-card button {
+
+  padding: 10px 15px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.pending-item {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #eee;
+
+  border-radius: 8px;
+}
+
+.copy-btn {
+
+  background: #2196f3;
+
+  color: white;
+
+  margin-right: 8px;
+}
+
+.revoke-btn {
+
+  background: #f44336;
+
+  color: white;
+}
+
+.member-heading {
+
+  margin-bottom: 15px;
+}
+
+.members-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: white;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.members-table th {
+
+  background: #1976d2;
+
+  color: white;
+
+  padding: 12px;
+
+  text-align: left;
+}
+
+.members-table td {
+
+  padding: 12px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.members-table tr:hover {
+
+  background: #f5f5f5;
+}
+
+.deactivate-btn {
+
+  background: #ff5252;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}

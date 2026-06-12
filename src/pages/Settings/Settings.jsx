@@ -48,6 +48,10 @@ const [adminEmail,
   setRequests] =
   useState([]);
 
+  const [reactivationRequests,
+  setReactivationRequests] =
+  useState([]);
+
 
   // SAVE SETTINGS
 
@@ -82,6 +86,8 @@ const [adminEmail,
   ) {
 
     fetchRequests();
+
+     fetchReactivationRequests();
   }
 
 }, []);
@@ -170,6 +176,52 @@ const rejectRequest =
 
     fetchRequests();
   };
+
+  const fetchReactivationRequests =
+async () => {
+
+  try {
+
+    const response =
+      await axios.get(
+
+        `http://127.0.0.1:8000/reactivation-request/${currentUser.company_id}`
+
+      );
+
+    setReactivationRequests(
+      response.data
+    );
+
+  } catch(error) {
+
+    console.log(error);
+  }
+};
+
+const approveReactivation =
+async (id) => {
+
+  await axios.put(
+
+    `http://127.0.0.1:8000/reactivation/${id}/approve`
+
+  );
+
+  fetchReactivationRequests();
+};
+
+const rejectReactivation =
+async (id) => {
+
+  await axios.put(
+
+    `http://127.0.0.1:8000/reactivation/${id}/reject`
+
+  );
+
+  fetchReactivationRequests();
+};
   
   return (
 
@@ -486,6 +538,105 @@ const rejectRequest =
 
     </div>
   )
+}
+
+{
+currentUser?.role === "Admin" && (
+
+<div className="role-request-card">
+
+<h2>
+Reactivation Requests
+</h2>
+
+<table className="request-table">
+
+<thead>
+
+<tr>
+
+<th>User Email</th>
+
+<th>Message</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{
+reactivationRequests.map(
+(request) => (
+
+<tr key={request.id}>
+
+<td>
+{request.user_email}
+</td>
+
+<td>
+{request.message}
+</td>
+
+<td>
+{request.status}
+</td>
+
+<td>
+
+{
+request.status ===
+"Pending" && (
+
+<>
+
+<button
+className="approve-btn"
+onClick={() =>
+approveReactivation(
+request.id
+)
+}
+>
+Approve
+</button>
+
+<button
+className="reject-btn"
+onClick={() =>
+rejectReactivation(
+request.id
+)
+}
+>
+Reject
+</button>
+
+</>
+
+)
+}
+
+</td>
+
+</tr>
+
+)
+)
+}
+
+</tbody>
+
+</table>
+
+</div>
+
+)
 }
 
         {/* SAVE BUTTON */}

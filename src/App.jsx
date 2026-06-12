@@ -28,6 +28,12 @@ import Settings from "./pages/Settings/Settings";
 
 import RoleRequests from "./pages/admin/RoleRequests";
 
+import UserInvitations from "./pages/UserInvitations/UserInvitations";
+
+import ReactivationRequests from "./pages/ReactivationRequests/ReactivationRequests";
+
+import AccountDeactivated from "./pages/AccountDeactivated";
+
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 import ForgotPassword from
@@ -167,6 +173,22 @@ function App() {
   path="/role-requests"
   element={
     <RoleRequests />
+  }
+/>
+
+<Route
+  path="/user-invitations"
+  element={
+    <ProtectedRoute>
+      <UserInvitations />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/account-deactivated"
+  element={
+    <AccountDeactivated />
   }
 />
 

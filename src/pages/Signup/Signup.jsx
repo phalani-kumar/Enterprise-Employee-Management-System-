@@ -1,4 +1,11 @@
-import { useState } from "react";
+import {
+  useState,
+  useEffect
+} from "react";
+
+import {
+  useSearchParams
+} from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
@@ -9,6 +16,16 @@ import axios from "axios";
 function Signup() {
 
   const navigate = useNavigate();
+
+  const [searchParams] =
+  useSearchParams();
+
+const token =
+  searchParams.get("token");
+
+const [isInvitation,
+  setIsInvitation] =
+  useState(false);
 
   const [name, setName] =
     useState("");
@@ -24,7 +41,36 @@ function Signup() {
     useState("");
 
   const [company, setCompany] =
-  useState("");  
+  useState(""); 
+  
+  useEffect(() => {
+
+  if (!token)
+    return;
+
+  axios.get(
+    `http://127.0.0.1:8000/invitation/${token}`
+  )
+  .then((response) => {
+
+    const invitation =
+      response.data;
+
+    setEmail(
+      invitation.email
+    );
+
+    setRole(
+      invitation.role
+    );
+
+    setCompany(
+      invitation.company_name
+    );
+
+  });
+
+}, [token]);
 
   const handleSignup = async (e) => {
 
@@ -106,6 +152,7 @@ function Signup() {
             type="email"
             placeholder="Email"
             value={email}
+            disabled={!!token}
             onChange={(e) =>
               setEmail(
                 e.target.value
@@ -127,7 +174,7 @@ function Signup() {
           <select
 
   value={company}
-
+   disabled={!!token}
   onChange={(e) =>
     setCompany(
       e.target.value
@@ -151,6 +198,7 @@ function Signup() {
 
           <select
             value={role}
+            disabled={!!token}
             onChange={(e) =>
               setRole(
                 e.target.value

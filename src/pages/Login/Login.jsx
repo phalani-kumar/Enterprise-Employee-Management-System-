@@ -72,12 +72,27 @@ function Login() {
     password
   );
 
+  console.log(user);
+
 setUser(user);
 
-navigate(
-  "/dashboard"
-);
+/* ACCOUNT DEACTIVATED CHECK */
 
+if (
+  user.status ===
+  "Deactivated"
+) {
+
+  navigate(
+    "/account-deactivated"
+  );
+
+} else {
+
+  navigate(
+    "/dashboard"
+  );
+}
       } catch (err) {
 
         setError(

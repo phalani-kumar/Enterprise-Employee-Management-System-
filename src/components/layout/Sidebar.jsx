@@ -59,6 +59,7 @@ import {
   FaBuilding,
   FaCalendarCheck,
   FaIndustry,
+  FaUserPlus,
   FaClipboardList, 
   FaCog,
   FaSignOutAlt,
@@ -69,8 +70,6 @@ import {
 import {
   useAuth,
 } from "../../context/AuthContext";
-
-
 
 function Sidebar() {
 
@@ -184,11 +183,21 @@ function Sidebar() {
 
  <FaClipboardList />
   <span>
-     Logs
+     Audit Logs
   </span>
 
 </NavLink>
- 
+
+<NavLink
+  to="/user-invitations"
+  className="sidebar-link"
+>
+  <FaUserPlus />
+  <span>
+    User Invitations
+  </span>
+</NavLink>
+
          </>
 
         )}

@@ -50,27 +50,47 @@ function ProtectedRoute({
   if (!user) {
 
     return (
-      <Navigate to="/login" />
+      <Navigate
+        to="/login"
+      />
     );
   }
 
-  /* USER RESTRICTIONS */
+  /* DEACTIVATED ACCOUNT */
 
   if (
-  user?.role === "User" &&
-  ![
-    "/dashboard",
-    "/employees",
-    "/settings"
-  ].includes(location.pathname)
+  user?.status === "Deactivated" &&
+  location.pathname !== "/account-deactivated"
 ) {
 
   return (
     <Navigate
-      to="/dashboard"
+      to="/account-deactivated"
+      replace
     />
   );
 }
+
+  /* USER RESTRICTIONS */
+
+  if (
+    user?.role === "User" &&
+    ![
+      "/dashboard",
+      "/employees",
+      "/settings",
+      "/account-deactivated"
+    ].includes(
+      location.pathname
+    )
+  ) {
+
+    return (
+      <Navigate
+        to="/dashboard"
+      />
+    );
+  }
 
   return children;
 }

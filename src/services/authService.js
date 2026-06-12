@@ -60,6 +60,13 @@ export const loginUser =
             password
           }
         );
+      
+       console.log(
+    "LOGIN RESPONSE",
+    response.data
+  );
+
+  
 
       if (
         response.data.success
