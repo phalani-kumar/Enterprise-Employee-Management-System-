@@ -1,9 +1,9 @@
 import json
 import os
 
-FILE_NAME = "users.json"
+FILE_NAME = "invitations.json"
 
-def load_users():
+def load_invitations():
 
     if os.path.exists(FILE_NAME):
 
@@ -13,10 +13,10 @@ def load_users():
 
     return []
 
-def save_users(data):
+def save_invitations(data):
 
     with open(FILE_NAME, "w") as file:
 
-        json.dump(data, file, indent=4)
+        json.dump(data, file)
 
-users = load_users()
+invitations = load_invitations()

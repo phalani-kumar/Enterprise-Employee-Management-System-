@@ -84,6 +84,12 @@ from app.routes.audit_routes import audit_router
 
 from app.routes.users_routes import user_router
 
+from app.routes.invitation_routes import router as invitation_router
+
+from app.routes.reactivation_routes import router as reactivation_router
+
+from app.routes.member_routes import member_router
+
 app = FastAPI()
 
 # CORS
@@ -122,6 +128,14 @@ app.include_router(
 app.include_router(audit_router)
 
 app.include_router(user_router)
+
+app.include_router(invitation_router)
+
+app.include_router(
+    reactivation_router
+)
+
+app.include_router(member_router)
 
 # HOME
 

@@ -501,7 +501,7 @@ def delete_employee(employee_id: int,
 )
 def update_employee_status(
     employee_id: int,
-    data: dict = Body(...)
+    data: dict
 ):
 
     load_employees()

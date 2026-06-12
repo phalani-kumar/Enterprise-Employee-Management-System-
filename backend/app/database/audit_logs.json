@@ -389,5 +389,166 @@
         "action": "Role Change Approved",
         "related_employee": "Madhu",
         "timestamp": "2026-06-09 12:00:50.016842"
+    },
+    {
+        "user_name": "jkl@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "jkl@gmail.com",
+        "timestamp": "2026-06-12 12:43:06.013362"
+    },
+    {
+        "user_name": "jkl@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "jkl@gmail.com",
+        "timestamp": "2026-06-12 12:43:36.681591"
+    },
+    {
+        "user_name": "jkl@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "jkl@gmail.com",
+        "timestamp": "2026-06-12 12:48:16.538501"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Approved",
+        "related_employee": "jkl@gmail.com",
+        "timestamp": "2026-06-12 12:50:02.348550"
+    },
+    {
+        "user_name": "asd@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "asd@gmail.com",
+        "timestamp": "2026-06-12 12:52:44.257060"
+    },
+    {
+        "user_name": "asd@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "asd@gmail.com",
+        "timestamp": "2026-06-12 12:53:46.649013"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Approved",
+        "related_employee": "asd@gmail.com",
+        "timestamp": "2026-06-12 12:54:23.940106"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Rejected",
+        "related_employee": "asd@gmail.com",
+        "timestamp": "2026-06-12 12:54:26.878748"
+    },
+    {
+        "user_name": "bnm@gmail.com",
+        "company_id": 1,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "bnm@gmail.com",
+        "timestamp": "2026-06-12 13:06:45.252224"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 1,
+        "action": "Reactivation Approved",
+        "related_employee": "bnm@gmail.com",
+        "timestamp": "2026-06-12 13:07:16.948061"
+    },
+    {
+        "user_name": "Admin B",
+        "company_id": 2,
+        "action": "User Deactivated",
+        "related_employee": "qwe",
+        "timestamp": "2026-06-12 13:13:36.228694"
+    },
+    {
+        "user_name": "qwe@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "qwe@gmail.com",
+        "timestamp": "2026-06-12 13:14:09.556851"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Approved",
+        "related_employee": "qwe@gmail.com",
+        "timestamp": "2026-06-12 13:15:36.468550"
+    },
+    {
+        "user_name": "Admin B",
+        "company_id": 2,
+        "action": "User Deactivated",
+        "related_employee": "cat",
+        "timestamp": "2026-06-12 14:48:22.560753"
+    },
+    {
+        "user_name": "cat@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "cat@gmail.com",
+        "timestamp": "2026-06-12 14:48:46.871633"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Approved",
+        "related_employee": "cat@gmail.com",
+        "timestamp": "2026-06-12 14:49:15.385923"
+    },
+    {
+        "user_name": "Admin B",
+        "company_id": 2,
+        "action": "User Deactivated",
+        "related_employee": "dog",
+        "timestamp": "2026-06-12 15:09:34.064565"
+    },
+    {
+        "user_name": "dog@gmail.com",
+        "company_id": 2,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "dog@gmail.com",
+        "timestamp": "2026-06-12 15:10:21.699527"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 2,
+        "action": "Reactivation Approved",
+        "related_employee": "dog@gmail.com",
+        "timestamp": "2026-06-12 15:10:47.294790"
+    },
+    {
+        "user_name": "Admin A",
+        "company_id": 1,
+        "action": "User Deactivated",
+        "related_employee": "zxc",
+        "timestamp": "2026-06-12 15:29:40.873878"
+    },
+    {
+        "user_name": "zxc@gmail.com",
+        "company_id": 1,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "zxc@gmail.com",
+        "timestamp": "2026-06-12 15:30:07.778792"
+    },
+    {
+        "user_name": "zxc@gmail.com",
+        "company_id": 1,
+        "action": "Reactivation Request Submitted",
+        "related_employee": "zxc@gmail.com",
+        "timestamp": "2026-06-12 15:34:09.085008"
+    },
+    {
+        "user_name": "Admin",
+        "company_id": 1,
+        "action": "Reactivation Approved",
+        "related_employee": "zxc@gmail.com",
+        "timestamp": "2026-06-12 15:34:34.933730"
     }
 ]
