@@ -36,6 +36,9 @@ import AccountDeactivated from "./pages/AccountDeactivated";
 
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
+import AttendanceRequests
+from "./pages/AttendanceRequests/AttendanceRequests";
+
 import ForgotPassword from
 "./pages/ForgotPassword/ForgotPassword";
 
@@ -189,6 +192,15 @@ function App() {
   path="/account-deactivated"
   element={
     <AccountDeactivated />
+  }
+/>
+
+<Route
+  path="/attendance-requests"
+  element={
+    <ProtectedRoute>
+      <AttendanceRequests />
+    </ProtectedRoute>
   }
 />
 

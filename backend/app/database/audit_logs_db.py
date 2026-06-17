@@ -1,7 +1,10 @@
 import json
 import os
 
-FILE_PATH = "app/database/audit_logs.json"
+FILE_PATH = os.path.join(
+    os.path.dirname(__file__),
+    "audit_logs.json"
+)
 
 
 def load_audit_logs():
@@ -30,6 +33,7 @@ def save_audit_logs(audit_logs):
             file,
             indent=4
         )
+        
 
 
 audit_logs = load_audit_logs()

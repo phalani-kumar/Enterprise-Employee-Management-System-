@@ -21,7 +21,8 @@
         "company_name": "Company A",
         "status": "Active",
         "deactivated_by": "",
-        "deactivation_reason": ""
+        "deactivation_reason": "",
+        "attendance_access": true
     },
     {
         "id": 3,
@@ -45,37 +46,40 @@
         "company_name": "Company B",
         "status": "Active",
         "deactivated_by": "",
-        "deactivation_reason": ""
+        "deactivation_reason": "",
+        "attendance_access": false
     },
     {
         "id": 5,
-        "name": "efgh",
-        "email": "efgh@gmail.com",
-        "password": "efgh123",
+        "name": "yui",
+        "email": "yui@gmail.com",
+        "password": "yui123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 6,
+        "name": "ert",
+        "email": "ert@gmail.com",
+        "password": "ert123",
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active"
     },
     {
-        "id": 6,
-        "name": "jkl",
-        "email": "jkl@gmail.com",
-        "password": "jkl123",
-        "role": "User",
-        "company_id": 2,
-        "company_name": "Company B",
-        "status": "Active"
-    },
-    {
         "id": 7,
-        "name": "asd",
-        "email": "asd@gmail.com",
-        "password": "asd123",
+        "name": "Venkat",
+        "email": "venkat@gmail.com",
+        "password": "venkat123",
         "role": "User",
-        "company_id": 2,
-        "company_name": "Company B",
-        "status": "Active"
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
     },
     {
         "id": 8,
@@ -86,55 +90,61 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "deactivated_by": "Admin A",
-        "deactivation_reason": "Account disabled by administrator"
+        "attendance_access": true
     },
     {
         "id": 9,
-        "name": "qwe",
-        "email": "qwe@gmail.com",
-        "password": "qwe123",
+        "name": "Gana",
+        "email": "gana@gmail.com",
+        "password": "gana123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 10,
+        "name": "wer",
+        "email": "wer@gmail.com",
+        "password": "wer123",
         "role": "User",
         "company_id": 2,
         "company_name": "Company B",
         "status": "Active",
-        "deactivated_by": "Admin B",
-        "deactivation_reason": "Account disabled by administrator"
-    },
-    {
-        "id": 10,
-        "name": "cat",
-        "email": "cat@gmail.com",
-        "password": "cat123",
-        "role": "User",
-        "company_id": 2,
-        "company_name": "Company B",
-        "status": "Deactivated",
-        "deactivated_by": "Admin B",
-        "deactivation_reason": "Account disabled by administrator"
+        "attendance_access": true
     },
     {
         "id": 11,
-        "name": "dog",
-        "email": "dog@gmail.com",
-        "password": "dog123",
-        "role": "User",
-        "company_id": 2,
-        "company_name": "Company B",
-        "status": "Deactivated",
-        "deactivated_by": "Admin B",
-        "deactivation_reason": "Account disabled by administrator"
-    },
-    {
-        "id": 12,
-        "name": "zxc",
-        "email": "zxc@gmail.com",
-        "password": "zxc123",
+        "name": "you",
+        "email": "you@gmail.com",
+        "password": "you123",
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
-        "status": "Deactivated",
-        "deactivated_by": "Admin A",
-        "deactivation_reason": "Account disabled by administrator"
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 12,
+        "name": "fgh",
+        "email": "fgh@gmail.com",
+        "password": "fgh123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 13,
+        "name": "rty",
+        "email": "rty@gmail.com",
+        "password": "rty123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
     }
 ]

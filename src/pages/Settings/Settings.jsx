@@ -7,6 +7,13 @@ import axios from "axios";
 
 import DashboardLayout from "../../components/layout/DashboardLayout";
 
+import {
+  getLeaveRequests,
+  approveLeave,
+  rejectLeave
+}
+from "../../services/leaveService";
+
 function Settings() {
 
   const [darkMode,
@@ -50,6 +57,11 @@ const [adminEmail,
 
   const [reactivationRequests,
   setReactivationRequests] =
+  useState([]);
+
+  const [leaveRequests,
+  setLeaveRequests]
+  =
   useState([]);
 
 
@@ -221,6 +233,43 @@ async (id) => {
   );
 
   fetchReactivationRequests();
+};
+
+useEffect(() => {
+
+  if (
+    currentUser?.role !==
+    "Admin"
+  ) return;
+
+  loadLeaveRequests();
+
+}, []);
+
+const loadLeaveRequests =
+async () => {
+
+  try {
+
+    const response =
+      await getLeaveRequests(
+        currentUser.company_id
+      );
+
+    setLeaveRequests(
+
+  response.data.filter(
+    leave =>
+      leave.status === "Pending"
+  )
+
+);
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
 };
   
   return (
@@ -633,6 +682,164 @@ Reject
 </tbody>
 
 </table>
+
+</div>
+
+)
+}
+
+{
+currentUser?.role === "Admin" && (
+
+<div className="leave-requests-section">
+
+  <h2>
+    Leave Requests
+  </h2>
+
+   <table className="request-table">
+
+    <thead>
+
+      <tr>
+
+        <th>
+          Employee
+        </th>
+
+        <th>
+          Leave Type
+        </th>
+
+        <th>
+          From
+        </th>
+
+        <th>
+          To
+        </th>
+
+        <th>
+          Reason
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Action
+        </th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      {
+      leaveRequests.map(
+        (leave) => (
+
+          <tr
+            key={leave.id}
+          >
+
+            <td>
+              {leave.user_name}
+            </td>
+
+            <td>
+              {leave.leave_type}
+            </td>
+
+            <td>
+              {leave.from_date}
+            </td>
+
+            <td>
+              {leave.to_date}
+            </td>
+
+            <td>
+              {leave.reason}
+            </td>
+
+            {/* <td>
+              {leave.status}
+            </td> */}
+
+            <td
+
+              className={
+              leave.status === "Approved"
+                ? "status-approved"
+                : leave.status === "Rejected"
+                ? "status-rejected"
+                : "status-pending"
+              }
+            >
+              {leave.status}
+            </td>
+
+             <td>
+
+              {
+              leave.status ===
+              "Pending" && (
+
+                <>
+
+                  <button
+
+                    onClick={
+                      async () => {
+
+                        await approveLeave(
+                          leave.id
+                        );
+
+                        loadLeaveRequests();
+                      }
+                    }
+
+                  >
+                    Approve
+                  </button>
+
+                  <button
+
+                    onClick={
+                      async () => {
+
+                        await rejectLeave(
+                          leave.id
+                        );
+
+                        loadLeaveRequests();
+                      }
+                    }
+
+                  >
+                    Reject
+                  </button>
+
+                </>
+
+              )
+              }
+
+            </td>
+
+          </tr>
+
+        )
+      )
+      }
+
+    </tbody>
+
+  </table>
 
 </div>
 

@@ -87,6 +87,18 @@ import {
 } from "react-icons/fa";
 
 import {
+
+getAttendanceRequests,
+
+approveAttendanceAccess,
+
+rejectAttendanceAccess
+
+}
+
+from "../../services/attendanceService";
+
+import {
   useAuth,
 } from "../../context/AuthContext";
 
@@ -116,6 +128,18 @@ function Navbar() {
 
   const [notifications, setNotifications] =
   useState([]);
+
+  const [
+
+attendanceRequests,
+
+setAttendanceRequests
+
+] = useState([]);
+
+const [leaveRequests, setLeaveRequests] =
+  useState([]);
+
 
 const [showNotifications,
   setShowNotifications] =
@@ -186,6 +210,38 @@ const [showNotifications,
   };
 
 }, [companyId]);
+
+useEffect(() => {
+
+  if (
+    user?.role !== "Admin"
+  ) return;
+
+  const loadRequests =
+    async () => {
+
+      try {
+
+        const response =
+          await getAttendanceRequests(
+            companyId
+          );
+
+        setAttendanceRequests(
+          response.data
+        );
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+    };
+
+  loadRequests();
+
+}, [companyId, user]);
+
 
   /* DARK MODE */
 
@@ -292,14 +348,18 @@ const [showNotifications,
     />
 
     {
-      notifications.length > 0 &&
-      !showNotifications && (
+  (
+    notifications.length +
+    attendanceRequests.length 
+  ) > 0 &&
+  !showNotifications && (
 
         <span
           className="notification-count"
         >
 
-          {notifications.length}
+          {notifications.length+
+          attendanceRequests.length}
 
         </span>
       )
@@ -308,49 +368,203 @@ const [showNotifications,
   </button>
   {showNotifications && (
 
+  <div className="notification-dropdown">
+
+    <h4>
+      Notifications
+    </h4>
+
+    {/* Attendance Access Requests */}
+
+    {
+      attendanceRequests.map(
+        (request) => (
+
+          <div
+            key={request.id}
+            className="notification-item"
+          >
+
+            <p>
+
+              <strong>
+                {request.user_name}
+              </strong>
+
+            </p>
+
+            <p>
+              {request.user_email}
+            </p>
+
+            <p>
+              Requested:
+              {" "}
+              {request.timestamp}
+            </p>
+
+            <div
+              className="notification-actions"
+            >
+
+              <button
+
+                onClick={async () => {
+
+                  await approveAttendanceAccess(
+                    request.id
+                  );
+
+                  setAttendanceRequests(
+                    attendanceRequests.filter(
+                      (item) =>
+                        item.id !==
+                        request.id
+                    )
+                  );
+                }}
+              >
+
+                Approve
+
+              </button>
+
+              <button
+
+                onClick={async () => {
+
+                  await rejectAttendanceAccess(
+                    request.id
+                  );
+
+                  setAttendanceRequests(
+                    attendanceRequests.filter(
+                      (item) =>
+                        item.id !==
+                        request.id
+                    )
+                  );
+                }}
+              >
+
+                Reject
+
+              </button>
+
+            </div>
+
+          </div>
+        )
+      )
+    }
+
+
+    {
+leaveRequests.map(
+  (request) => (
+
     <div
-      className="notification-dropdown"
+      key={request.id}
+      className="notification-item"
     >
 
-      <h4>
-        Notifications
-      </h4>
+      <strong>
 
-      {
-        notifications.length === 0 ? (
+        Leave Request
 
-          <p>
-            No Notifications
-          </p>
+      </strong>
 
-        ) : (
+      <p>
 
-          notifications
-            .slice()
-            .reverse()
-            .map(
-              (
-                notification,
-                index
-              ) => (
+        {request.user_name}
 
-                <div
-                  key={index}
-                  className="notification-item"
-                >
+      </p>
 
-                  {
-                    notification
-                  }
+      <p>
 
-                </div>
-              )
-            )
-        )
-      }
+        {request.leave_type}
+
+      </p>
+
+      <p>
+
+        {request.from_date}
+
+        {" - "}
+
+        {request.to_date}
+
+      </p>
+
+      <button
+
+        onClick={async () => {
+
+          await approveLeave(
+            request.id
+          );
+
+          window.location.reload();
+        }}
+
+      >
+        Approve
+      </button>
+
+      <button
+
+        onClick={async () => {
+
+          await rejectLeave(
+            request.id
+          );
+
+          window.location.reload();
+        }}
+
+      >
+        Reject
+      </button>
 
     </div>
-  )}
+
+  )
+)
+}
+
+    {/* Existing Notifications */}
+
+    {
+      notifications.map(
+        (
+          notification,
+          index
+        ) => (
+
+          <div
+            key={index}
+            className="notification-item"
+          >
+
+            {notification}
+
+          </div>
+        )
+      )
+    }
+
+    {
+      attendanceRequests.length === 0 &&
+      notifications.length === 0 && (
+
+        <p>
+          No Notifications
+        </p>
+      )
+    }
+
+  </div>
+)}
 
 </div>
 

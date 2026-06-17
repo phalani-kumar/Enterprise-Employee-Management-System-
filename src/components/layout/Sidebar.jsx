@@ -65,8 +65,6 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-// import { HiOfficeBuilding } from "react-icons/hi";
-
 import {
   useAuth,
 } from "../../context/AuthContext";
@@ -126,6 +124,14 @@ function Sidebar() {
 
           </NavLink>
 
+          <NavLink
+  to="/attendance"
+  className="sidebar-link"
+>
+  <FaCalendarCheck />
+  <span>Attendance</span>
+</NavLink>
+
         {/* ADMIN ONLY PAGES */}
 
         {user?.role === "Admin" && (
@@ -143,21 +149,6 @@ function Sidebar() {
 
               <span>
                 Departments
-              </span>
-
-            </NavLink>
-
-            {/* ATTENDANCE */}
-
-            <NavLink
-              to="/attendance"
-              className="sidebar-link"
-            >
-
-              <FaCalendarCheck />
-
-              <span>
-                Attendance
               </span>
 
             </NavLink>
@@ -197,6 +188,7 @@ function Sidebar() {
     User Invitations
   </span>
 </NavLink>
+
 
          </>
 

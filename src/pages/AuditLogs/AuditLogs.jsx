@@ -27,6 +27,7 @@ function AuditLogs() {
 
       setLogs(data);
     };
+    console.log("Audit Logs:", logs);
 
   return (
 

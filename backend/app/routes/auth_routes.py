@@ -252,6 +252,8 @@ def login(data: LoginSchema):
 
     if matched_user:
 
+        print(matched_user)
+
         return {
 
             "success": True,
