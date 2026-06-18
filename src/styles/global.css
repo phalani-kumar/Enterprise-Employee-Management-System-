@@ -3032,3 +3032,24 @@ button:disabled {
   font-weight: 600;
 }
 
+.transfer-btn {
+
+  background-color: #f59e0b;
+
+  color: white;
+
+  border: none;
+
+  padding: 6px 12px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.transfer-btn:hover {
+
+  background-color: #d97706;
+}

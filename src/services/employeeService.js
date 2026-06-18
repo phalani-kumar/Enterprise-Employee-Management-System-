@@ -317,3 +317,23 @@ async (
 
   return response.data;
 };
+
+export const transferEmployee =
+(employeeId, data) =>
+
+axios.put(
+
+`${API_URL}/employees/${employeeId}/transfer`,
+
+data
+
+);
+
+export const getDepartmentTransfers =
+(companyId) =>
+
+axios.get(
+
+`${API_URL}/department-transfers/${companyId}`
+
+);

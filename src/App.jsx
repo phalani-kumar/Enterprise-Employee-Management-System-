@@ -42,6 +42,9 @@ from "./pages/AttendanceRequests/AttendanceRequests";
 import ForgotPassword from
 "./pages/ForgotPassword/ForgotPassword";
 
+import DepartmentTransferHistory
+from "./pages/admin/DepartmentTransferHistory";
+
 function App() {
 
   return (
@@ -200,6 +203,15 @@ function App() {
   element={
     <ProtectedRoute>
       <AttendanceRequests />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/department-transfer-history"
+  element={
+    <ProtectedRoute>
+      <DepartmentTransferHistory />
     </ProtectedRoute>
   }
 />

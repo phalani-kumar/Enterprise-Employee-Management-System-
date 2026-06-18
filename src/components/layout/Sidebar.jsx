@@ -60,7 +60,8 @@ import {
   FaCalendarCheck,
   FaIndustry,
   FaUserPlus,
-  FaClipboardList, 
+  FaClipboardList,
+  FaExchangeAlt,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -178,6 +179,20 @@ function Sidebar() {
   </span>
 
 </NavLink>
+
+
+
+  <NavLink
+    to="/department-transfer-history"
+    className="sidebar-link"
+  >
+    <FaExchangeAlt />
+    <span>
+    Department Transfer History
+    </span>
+  </NavLink>
+
+
 
 <NavLink
   to="/user-invitations"

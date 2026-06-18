@@ -325,6 +325,11 @@ from app.database.audit_logs_db import (
     save_audit_logs
 )
 
+from app.database.department_transfer_db import (
+    department_transfers,
+    save_transfers
+)
+
 from fastapi import Body
 
 import json
@@ -522,7 +527,25 @@ def update_employee_status(
     return {
         "message":
         "Employee Not Found"
-    } 
+    }
+
+@employee_router.get(
+    "/department-transfers/{company_id}"
+)
+def get_department_transfers(
+    company_id: int
+):
+
+    return [
+
+        transfer
+
+        for transfer in department_transfers
+
+        if transfer["company_id"]
+        == company_id
+
+    ]   
 
 @employee_router.get(
     "/attendance-report"
@@ -549,3 +572,91 @@ def attendance_report():
         })
 
     return report
+
+@employee_router.put(
+    "/employees/{employee_id}/transfer"
+)
+def transfer_employee(
+    employee_id: int,
+    data: dict
+):
+
+    load_employees()
+
+    print("TRANSFER REQUEST:", data)
+
+    for employee in employees:
+
+        if employee["id"] == employee_id:
+
+            old_department = employee["department"]
+
+            employee["department"] = data[
+                "new_department"
+            ]
+
+            save_employees(
+                employees
+            )
+
+            department_transfers.append({
+
+                "employee_id":
+                employee["id"],
+            
+                "employee_name":
+                employee["name"],
+            
+                "from_department":
+                old_department,
+            
+                "to_department":
+                data["new_department"],
+            
+                "transferred_by":
+                data["performed_by"],
+            
+                "company_id":
+                employee["company_id"],
+            
+                "timestamp":
+                str(datetime.now())
+            })
+            
+            save_transfers(
+                department_transfers
+            )
+
+            audit_logs.append({
+
+                "user_name":
+                data["performed_by"],
+
+                "company_id":
+                employee["company_id"],
+
+                "action":
+                f"Department Transfer ({old_department} → {data['new_department']})",
+
+                "related_employee":
+                employee["name"],
+
+                "timestamp":
+                str(datetime.now())
+            })
+
+            save_audit_logs(
+                audit_logs
+            )
+
+            return {
+
+                "message":
+                "Department transferred successfully"
+            }
+
+    return {
+
+        "message":
+        "Employee not found"
+    }
