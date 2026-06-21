@@ -146,5 +146,103 @@
         "company_name": "Company A",
         "status": "Active",
         "attendance_access": true
+    },
+    {
+        "id": 14,
+        "name": "Ganesh",
+        "email": "Ganesh@gmail.com",
+        "password": "ganesh123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Deactivated",
+        "deactivated_by": "Admin A",
+        "deactivation_reason": "Account disabled by administrator"
+    },
+    {
+        "id": 15,
+        "name": "lkj",
+        "email": "lkj@gmail.com",
+        "password": "lkj123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Deactivated",
+        "deactivated_by": "Admin A",
+        "deactivation_reason": "Account disabled by administrator"
+    },
+    {
+        "id": 16,
+        "name": "poi",
+        "email": "poi@gmail.com",
+        "password": "poi123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 17,
+        "name": "kiran",
+        "email": "kiran@gmail.com",
+        "password": "kiran123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 18,
+        "name": "red",
+        "email": "red@gmail.com",
+        "password": "red123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 19,
+        "name": "blue",
+        "email": "blue@gmail.com",
+        "password": "blue123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active",
+        "attendance_access": true
+    },
+    {
+        "id": 20,
+        "name": "qwe",
+        "email": "qwe@gmail.com",
+        "password": "qwe123",
+        "role": "User",
+        "company_id": 2,
+        "company_name": "Company B",
+        "status": "Active"
+    },
+    {
+        "id": 21,
+        "name": "tyu",
+        "email": "tyu@gmail.com",
+        "password": "tyu123",
+        "role": "User",
+        "company_id": 1,
+        "company_name": "Company A",
+        "status": "Active"
+    },
+    {
+        "id": 22,
+        "name": "qwr",
+        "email": "qwr@gmail.com",
+        "password": "qwr123",
+        "role": "User",
+        "company_id": 2,
+        "company_name": "Company B",
+        "status": "Active"
     }
 ]

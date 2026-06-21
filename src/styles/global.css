@@ -1543,10 +1543,10 @@ body::-webkit-scrollbar-thumb {
 
 /* LOGO */
 
-.sidebar-logo {
+/* .sidebar-logo {
 
-  margin-bottom: 40px;
-}
+  margin-bottom: 5px;
+} */
 
 .sidebar-logo h2 {
 
@@ -1563,7 +1563,7 @@ body::-webkit-scrollbar-thumb {
 
   flex-direction: column;
 
-  gap: 12px;
+  /* gap: -20px; */
 
   flex: 1;
 }

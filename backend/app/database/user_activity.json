@@ -1,0 +1,142 @@
+[
+    {
+        "user_id": 1,
+        "company_id": 1,
+        "user_name": "Admin A",
+        "email": "admina@gmail.com",
+        "last_login": "2026-06-21 15:06:22.955052",
+        "last_logout": "2026-06-21 15:07:30.068322",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 8,
+        "company_id": 1,
+        "user_name": "bnm",
+        "email": "bnm@gmail.com",
+        "last_login": "2026-06-18 22:07:01.188687",
+        "last_logout": "2026-06-18 22:07:06.562551",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 9,
+        "company_id": 1,
+        "user_name": "Gana",
+        "email": "gana@gmail.com",
+        "last_login": "2026-06-19 18:47:39.761933",
+        "last_logout": "2026-06-19 18:50:34.064945",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 14,
+        "company_id": 1,
+        "user_name": "Ganesh",
+        "email": "Ganesh@gmail.com",
+        "last_login": "2026-06-19 12:47:03.016045",
+        "last_logout": "2026-06-19 12:27:05.195584",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 15,
+        "company_id": 1,
+        "user_name": "lkj",
+        "email": "lkj@gmail.com",
+        "last_login": "2026-06-19 13:04:36.968049",
+        "last_logout": "2026-06-19 13:02:41.083136",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 16,
+        "company_id": 1,
+        "user_name": "poi",
+        "email": "poi@gmail.com",
+        "last_login": "2026-06-19 13:27:49.745880",
+        "last_logout": "2026-06-19 13:28:09.802726",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 17,
+        "company_id": 1,
+        "user_name": "kiran",
+        "email": "kiran@gmail.com",
+        "last_login": "2026-06-19 17:30:25.851830",
+        "last_logout": "2026-06-19 17:30:31.742381",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 18,
+        "company_id": 1,
+        "user_name": "red",
+        "email": "red@gmail.com",
+        "last_login": "2026-06-19 17:38:51.742498",
+        "last_logout": "2026-06-19 17:39:01.650038",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 19,
+        "company_id": 1,
+        "user_name": "blue",
+        "email": "blue@gmail.com",
+        "last_login": "2026-06-19 18:00:13.671928",
+        "last_logout": "2026-06-19 18:00:20.989827",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 3,
+        "company_id": 2,
+        "user_name": "Admin B",
+        "email": "adminb@gmail.com",
+        "last_login": "2026-06-21 15:15:06.436590",
+        "last_logout": "2026-06-21 15:15:20.655890",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 6,
+        "company_id": 1,
+        "user_name": "ert",
+        "email": "ert@gmail.com",
+        "last_login": "2026-06-19 19:49:27.559703",
+        "last_logout": "2026-06-19 19:49:31.355846",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 20,
+        "company_id": 2,
+        "user_name": "qwe",
+        "email": "qwe@gmail.com",
+        "last_login": "2026-06-19 19:01:25.435549",
+        "last_logout": "2026-06-19 19:01:30.897480",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 21,
+        "company_id": 1,
+        "user_name": "tyu",
+        "email": "tyu@gmail.com",
+        "last_login": "2026-06-21 15:02:00.857582",
+        "last_logout": "2026-06-21 15:02:04.904336",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "user_id": 22,
+        "company_id": 2,
+        "user_name": "qwr",
+        "email": "qwr@gmail.com",
+        "last_login": "2026-06-21 15:13:56.144512",
+        "last_logout": "2026-06-21 15:14:00.512880",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "127.0.0.1"
+    }
+]

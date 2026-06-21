@@ -45,6 +45,9 @@ import ForgotPassword from
 import DepartmentTransferHistory
 from "./pages/admin/DepartmentTransferHistory";
 
+import UserActivity
+from "./pages/admin/UserActivity";
+
 function App() {
 
   return (
@@ -216,6 +219,14 @@ function App() {
   }
 />
 
+<Route
+  path="/user-activity"
+  element={
+    <ProtectedRoute>
+      <UserActivity />
+    </ProtectedRoute>
+  }
+/>
 
       </Routes>
 

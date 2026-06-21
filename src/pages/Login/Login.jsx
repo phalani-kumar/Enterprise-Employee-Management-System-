@@ -34,6 +34,11 @@ import { useAuth } from "../../context/AuthContext";
 import { loginUser } from "../../services/authService";
 
 import {
+  trackLogin
+}
+from "../../services/activityService";
+
+import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
@@ -75,6 +80,37 @@ function Login() {
   console.log(user);
 
 setUser(user);
+
+const currentUser = user;
+
+const ipResponse = await fetch(
+  "https://api.ipify.org?format=json"
+);
+
+const ipData = await ipResponse.json();
+
+const currentIp = ipData.ip;
+
+await trackLogin({
+
+  user_id:
+    currentUser.id,
+
+  company_id:
+    currentUser.company_id,
+
+  user_name:
+    currentUser.name,
+
+  email:
+    currentUser.email,
+
+  browser:
+    navigator.userAgent,
+
+  ip_address: currentIp
+
+});
 
 /* ACCOUNT DEACTIVATED CHECK */
 

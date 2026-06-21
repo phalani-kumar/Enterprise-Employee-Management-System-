@@ -120,7 +120,9 @@ def request_access(data: dict):
 
     data["user_name"],
 
-    "Attendance Access Requested"
+    "Attendance Access Requested",
+
+    data["user_name"]
     )
 
     notification = (
@@ -200,9 +202,11 @@ def approve_request(
 
                        request["company_id"],
 
-                       request["user_name"],
+                        "Admin",
 
-                       "Attendance Access Approved"
+                       "Attendance Access Approved",
+
+                        request["user_name"]
                     )    
 
             return {
@@ -236,9 +240,11 @@ def reject_request(
 
                request["company_id"],
            
-               request["user_name"],
+               "Admin",
            
-               "Attendance Access Rejected"
+               "Attendance Access Rejected",
+
+                request["user_name"]
             )
 
             return {
@@ -273,65 +279,7 @@ def get_requests(
     ]
 
 
-# @router.put(
-#     "/attendance-request/{request_id}/approve"
-# )
-# def approve_request(
-#     request_id: int
-# ):
-
-#     for request in attendance_requests:
-
-#         if request["id"] == request_id:
-
-#             request["status"] = "Approved"
-
-#             for user in users:
-
-#                 if (
-#                     user["id"]
-#                     ==
-#                     request["user_id"]
-#                 ):
-
-#                     user[
-#                         "attendance_access"
-#                     ] = True
-
-#             save_users(users)
-
-#             save_requests(
-#                 attendance_requests
-#             )
-
-#             return {
-#                 "message":
-#                 "Approved"
-#             }
-
-
-# @router.put(
-#     "/attendance-request/{request_id}/reject"
-# )
-# def reject_request(
-#     request_id: int
-# ):
-
-#     for request in attendance_requests:
-
-#         if request["id"] == request_id:
-
-#             request["status"] = "Rejected"
-
-#             save_requests(
-#                 attendance_requests
-#             )
-
-#             return {
-#                 "message":
-#                 "Rejected"
-#             }
-        
+       
 @router.post("/attendance/checkin")
 def check_in(data: dict):
     print("CHECK IN API HIT")
@@ -364,7 +312,9 @@ def check_in(data: dict):
    
        data["user_name"],
    
-       "Check-In"
+       "Check-In",
+
+       data["user_name"]
     )
 
     return {
@@ -399,21 +349,26 @@ def check_out(user_id: int):
                     record["check_in"]
                 )
 
-            hours = round(
-
-                (
-                    checkout_time -
-                    checkin_time
-                ).seconds / 3600,
-
-                2
+            time_difference = (
+                checkout_time -
+                checkin_time
             )
-
+            
+            total_minutes = int(
+                time_difference.total_seconds() / 60
+            )
+            
+            hours = total_minutes // 60
+            
+            minutes = total_minutes % 60
+            
             record["check_out"] = (
                 str(checkout_time)
             )
-
-            record["hours"] = hours
+            
+            record["hours"] = (
+                f"{hours}h {minutes}m"
+            )
 
             save_records(
                 attendance_records
@@ -425,7 +380,10 @@ def check_out(user_id: int):
           
               record["user_name"],
           
-              "Check-Out"
+              "Check-Out",
+
+              record["user_name"]
+
             )
 
             return {
@@ -444,6 +402,8 @@ def check_out(user_id: int):
 def attendance_history(
     user_id: int
 ):
+    
+    print(attendance_records)
 
     return [
 

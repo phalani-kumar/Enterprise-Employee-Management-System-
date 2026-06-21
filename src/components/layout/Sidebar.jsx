@@ -62,6 +62,7 @@ import {
   FaUserPlus,
   FaClipboardList,
   FaExchangeAlt,
+  FaHistory,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -192,7 +193,15 @@ function Sidebar() {
     </span>
   </NavLink>
 
-
+  <NavLink
+    to= "/user-activity"
+    className="sidebar-link"
+  >
+    <FaHistory />
+    <span>
+    User Activity
+    </span>
+  </NavLink>
 
 <NavLink
   to="/user-invitations"

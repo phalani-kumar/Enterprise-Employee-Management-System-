@@ -96,7 +96,27 @@ useState("");
 
 useEffect(() => {
 
+  const handleAttendanceUpdate = () => {
+
+    loadAttendanceHistory();
+
+  };
+
   loadAttendanceHistory();
+
+  window.addEventListener(
+    "attendanceUpdated",
+    handleAttendanceUpdate
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "attendanceUpdated",
+      handleAttendanceUpdate
+    );
+
+  };
 
 }, []);
 
@@ -217,39 +237,12 @@ const handleCheckIn = async () => {
       "Checked In"
     );
 
-    const record = {
 
-      date:
-        new Date().toLocaleDateString(),
+    await loadAttendanceHistory();
 
-      checkIn:
-        now,
-
-      checkOut:
-        "-"
-    };
-
-    const updatedHistory = [
-
-      record,
-
-      ...attendanceHistory
-
-    ];
-
-    setAttendanceHistory(
-      updatedHistory
-    );
-
-    localStorage.setItem(
-
-      `attendance_history_${currentUser.id}`,
-
-      JSON.stringify(
-        updatedHistory
-      )
-
-    );
+window.dispatchEvent(
+  new Event("attendanceUpdated")
+);
 
   } catch (error) {
 
@@ -276,33 +269,15 @@ const handleCheckOut = async () => {
       "Checked Out"
     );
 
-    const updatedHistory = [
+    await loadAttendanceHistory();
 
-      ...attendanceHistory
+window.dispatchEvent(
+  new Event("attendanceUpdated")
+);
 
-    ];
-
-    if (
-      updatedHistory.length > 0
-    ) {
-
-      updatedHistory[0].checkOut =
-        now;
-    }
-
-    setAttendanceHistory(
-      updatedHistory
-    );
-
-    localStorage.setItem(
-
-      `attendance_history_${currentUser.id}`,
-
-      JSON.stringify(
-        updatedHistory
-      )
-
-    );
+    window.dispatchEvent(
+  new Event("attendanceUpdated")
+);
 
   } catch (error) {
 
@@ -382,15 +357,7 @@ setMyLeaves(
   updatedLeaves
 );
 
-localStorage.setItem(
 
-  `my_leaves_${currentUser.id}`,
-
-  JSON.stringify(
-    updatedLeaves
-  )
-
-);
 
     setStartDate("");
 
@@ -797,18 +764,25 @@ item.check_in
 <td>Present</td>
 
 <td>
-{item.check_in}
-</td>
-
-<td>
-{item.check_out || "--"}
+{
+new Date(
+  item.check_in
+).toLocaleTimeString()
+}
 </td>
 
 <td>
 {
-item.hours
-? `${item.hours} hrs`
+item.check_out
+? new Date(
+    item.check_out
+  ).toLocaleTimeString()
 : "--"
+}
+</td>
+<td>
+{
+item.hours || "--"
 }
 </td>
 

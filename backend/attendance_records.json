@@ -78,5 +78,61 @@
         "check_in": "2026-06-17 12:00:55.088022",
         "check_out": "2026-06-17 12:02:11.123746",
         "hours": 0.02
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-18 13:08:30.880072",
+        "check_out": "2026-06-18 13:20:21.749511",
+        "hours": 0.2
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-18 13:35:09.827922",
+        "check_out": "2026-06-18 13:35:15.859914",
+        "hours": 0.0
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-18 13:35:28.357908",
+        "check_out": "2026-06-18 13:37:41.669364",
+        "hours": 0.04
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-18 13:42:55.867195",
+        "check_out": "2026-06-18 13:44:39.474326",
+        "hours": 0.03
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-18 14:12:07.991823",
+        "check_out": "2026-06-18 14:13:56.063202",
+        "hours": "0h 1m"
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-19 11:54:39.267240",
+        "check_out": null,
+        "hours": 0
+    },
+    {
+        "user_id": 9,
+        "user_name": "Gana",
+        "company_id": 1,
+        "check_in": "2026-06-19 13:07:50.237404",
+        "check_out": "2026-06-19 13:08:48.330966",
+        "hours": "0h 0m"
     }
 ]

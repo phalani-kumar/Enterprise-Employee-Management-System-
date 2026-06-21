@@ -102,6 +102,7 @@ def submit_leave(data: dict):
         data["user_name"],
 
         "Leave Request Submitted"
+
     )
 
     return leave
@@ -176,9 +177,10 @@ def reject_leave(
 
               leave["company_id"],
           
-              leave["user_name"],
+             leave["user_name"],
           
               "Leave Request Rejected"
+
             )
 
             return {

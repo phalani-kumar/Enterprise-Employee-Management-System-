@@ -5,6 +5,11 @@ import {
 } from "react";
 
 import {
+  trackLogout
+}
+from "../services/activityService";
+
+import {
   getCurrentUser,
   logoutUser,
 } from "../services/authService";
@@ -21,12 +26,48 @@ export const AuthProvider =
         getCurrentUser()
       );
 
-    const logout = () => {
+    const logout = async () => {
 
-      logoutUser();
+  const currentUser =
+    JSON.parse(
+      localStorage.getItem(
+        "authUser"
+      )
+    );
 
-      setUser(null);
-    };
+  if (currentUser) {
+
+    try {
+
+      await trackLogout({
+
+        user_id:
+          currentUser.id,
+
+        company_id:
+          currentUser.company_id,
+
+        user_name:
+          currentUser.name
+
+      });
+
+    } catch (error) {
+
+      console.log(
+        "Logout tracking failed",
+        error
+      );
+
+    }
+
+  }
+
+  logoutUser();
+
+  setUser(null);
+
+};
 
     return (
 
