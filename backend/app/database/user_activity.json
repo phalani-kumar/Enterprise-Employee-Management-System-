@@ -4,8 +4,8 @@
         "company_id": 1,
         "user_name": "Admin A",
         "email": "admina@gmail.com",
-        "last_login": "2026-06-21 15:06:22.955052",
-        "last_logout": "2026-06-21 15:07:30.068322",
+        "last_login": "2026-06-23 12:51:55.167895",
+        "last_logout": "2026-06-23 12:53:02.700921",
         "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
         "ip_address": "127.0.0.1"
     },
@@ -94,9 +94,9 @@
         "company_id": 2,
         "user_name": "Admin B",
         "email": "adminb@gmail.com",
-        "last_login": "2026-06-21 15:15:06.436590",
+        "last_login": "2026-06-22 21:56:52.273978",
         "last_logout": "2026-06-21 15:15:20.655890",
-        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
         "ip_address": "127.0.0.1"
     },
     {

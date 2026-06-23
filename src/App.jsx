@@ -48,6 +48,8 @@ from "./pages/admin/DepartmentTransferHistory";
 import UserActivity
 from "./pages/admin/UserActivity";
 
+import DataExportCenter from "./pages/admin/DataExportCenter";
+
 function App() {
 
   return (
@@ -224,6 +226,15 @@ function App() {
   element={
     <ProtectedRoute>
       <UserActivity />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/data-export-center"
+  element={
+    <ProtectedRoute>
+      <DataExportCenter />
     </ProtectedRoute>
   }
 />

@@ -3053,3 +3053,61 @@ button:disabled {
 
   background-color: #d97706;
 }
+
+.export-form {
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: end;
+
+  margin-bottom: 30px;
+
+  flex-wrap: wrap;
+}
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form-group label {
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+}
+
+.form-group select {
+
+  padding: 10px;
+
+  min-width: 220px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+}
+
+.export-btn {
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  background: #2563eb;
+
+  color: white;
+}
+
+.export-btn:hover {
+
+  opacity: 0.9;
+}

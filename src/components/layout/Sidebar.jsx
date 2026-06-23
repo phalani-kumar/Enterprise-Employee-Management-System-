@@ -63,6 +63,7 @@ import {
   FaClipboardList,
   FaExchangeAlt,
   FaHistory,
+  FaFileExport,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -202,6 +203,16 @@ function Sidebar() {
     User Activity
     </span>
   </NavLink>
+
+  <NavLink
+      to="/data-export-center"
+      className="sidebar-link"
+  >
+      <FaFileExport />
+      <span>
+      Data Export Center
+      </span>
+    </NavLink>
 
 <NavLink
   to="/user-invitations"
