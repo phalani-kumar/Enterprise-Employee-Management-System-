@@ -3111,3 +3111,49 @@ button:disabled {
 
   opacity: 0.9;
 }
+
+/* Suspend Button */
+
+.suspend-btn {
+
+  background-color: #f39c12;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  margin-left: 8px;
+
+  transition: 0.3s ease;
+
+}
+
+.suspend-btn:hover {
+
+  background-color: #d68910;
+
+}
+
+.suspend-btn:active {
+
+  transform: scale(0.97);
+
+}
+
+.suspend-btn:disabled {
+
+  background-color: #c7c7c7;
+
+  cursor: not-allowed;
+
+}

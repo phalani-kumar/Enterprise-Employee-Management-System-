@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "red@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 2,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "blue@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 3,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "red@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 4,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "red@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 5,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "poi@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 6,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "poi@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 7,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "poi@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 8,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "blue@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 9,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "blue@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 10,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "lkj@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 11,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "red@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 12,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "poi@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 13,
+        "company_id": 2,
+        "title": "Reinstatement Request",
+        "message": "dsa@gmail.com requested reinstatement.",
+        "read": false
+    },
+    {
+        "id": 14,
+        "company_id": 1,
+        "title": "Reinstatement Request",
+        "message": "poi@gmail.com requested reinstatement.",
+        "read": false
+    }
+]

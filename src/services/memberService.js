@@ -27,6 +27,24 @@ export const deactivateUser =
   );
 };
 
+export const suspendUser = async (
+  userId,
+  adminName
+) => {
+
+  return axios.put(
+
+    `${API}/users/${userId}/suspend`,
+
+    {
+      admin_name: adminName,
+      reason: "Account suspended by administrator"
+    }
+
+  );
+
+};
+
 export const activateUser =
 (id) => {
 

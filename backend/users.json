@@ -9,7 +9,9 @@
         "company_name": "Company A",
         "status": "Active",
         "deactivated_by": "",
-        "deactivation_reason": ""
+        "deactivation_reason": "",
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 2,
@@ -22,7 +24,9 @@
         "status": "Active",
         "deactivated_by": "",
         "deactivation_reason": "",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 3,
@@ -34,7 +38,9 @@
         "company_name": "Company B",
         "status": "Active",
         "deactivated_by": "",
-        "deactivation_reason": ""
+        "deactivation_reason": "",
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 4,
@@ -47,7 +53,9 @@
         "status": "Active",
         "deactivated_by": "",
         "deactivation_reason": "",
-        "attendance_access": false
+        "attendance_access": false,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 5,
@@ -58,7 +66,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 6,
@@ -68,7 +78,9 @@
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
-        "status": "Active"
+        "status": "Active",
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 7,
@@ -79,7 +91,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 8,
@@ -90,7 +104,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 9,
@@ -101,7 +117,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 10,
@@ -112,7 +130,9 @@
         "company_id": 2,
         "company_name": "Company B",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 11,
@@ -123,7 +143,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 12,
@@ -134,7 +156,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 13,
@@ -145,7 +169,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 14,
@@ -157,7 +183,9 @@
         "company_name": "Company A",
         "status": "Deactivated",
         "deactivated_by": "Admin A",
-        "deactivation_reason": "Account disabled by administrator"
+        "deactivation_reason": "Account disabled by administrator",
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 15,
@@ -167,9 +195,13 @@
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
-        "status": "Deactivated",
+        "status": "Active",
         "deactivated_by": "Admin A",
-        "deactivation_reason": "Account disabled by administrator"
+        "deactivation_reason": "Account disabled by administrator",
+        "suspended_reason": "",
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator",
+        "suspension_date": "26-06-2026 17:05"
     },
     {
         "id": 16,
@@ -180,7 +212,11 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator",
+        "suspension_date": "26-06-2026 17:31"
     },
     {
         "id": 17,
@@ -191,7 +227,9 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 18,
@@ -202,7 +240,11 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator",
+        "suspension_date": "26-06-2026 17:28"
     },
     {
         "id": 19,
@@ -213,7 +255,10 @@
         "company_id": 1,
         "company_name": "Company A",
         "status": "Active",
-        "attendance_access": true
+        "attendance_access": true,
+        "suspended_reason": "",
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator"
     },
     {
         "id": 20,
@@ -223,7 +268,9 @@
         "role": "User",
         "company_id": 2,
         "company_name": "Company B",
-        "status": "Active"
+        "status": "Active",
+        "suspended_reason": "",
+        "suspended_by": ""
     },
     {
         "id": 21,
@@ -233,7 +280,12 @@
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
-        "status": "Active"
+        "status": "Active",
+        "deactivated_by": "Admin A",
+        "deactivation_reason": "Account disabled by administrator",
+        "suspended_reason": "",
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator"
     },
     {
         "id": 22,
@@ -243,6 +295,22 @@
         "role": "User",
         "company_id": 2,
         "company_name": "Company B",
-        "status": "Active"
+        "status": "Active",
+        "suspended_reason": "",
+        "suspended_by": ""
+    },
+    {
+        "id": 23,
+        "name": "dsa",
+        "email": "dsa@gmail.com",
+        "password": "dsa123",
+        "role": "User",
+        "company_id": 2,
+        "company_name": "Company B",
+        "status": "Suspended",
+        "suspended_by": "Admin B",
+        "suspension_reason": "Account suspended by administrator",
+        "suspension_date": "26-06-2026 17:34",
+        "suspended_reason": ""
     }
 ]

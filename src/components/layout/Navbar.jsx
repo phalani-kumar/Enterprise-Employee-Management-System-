@@ -223,24 +223,80 @@ useEffect(() => {
       try {
 
         const response =
-          await getAttendanceRequests(
-            companyId
+          await axios.get(
+            `http://127.0.0.1:8000/reinstatement-request/${companyId}`
           );
 
-        setAttendanceRequests(
-          response.data
-        );
+        const requests =
+          response.data.filter(
+            item =>
+              item.status === "Pending"
+          );
+
+        if (
+          requests.length > 0
+        ) {
+
+          const existing =
+            JSON.parse(
+              localStorage.getItem(
+                `notifications_${companyId}`
+              )
+            ) || [];
+
+          requests.forEach(
+            request => {
+
+              const text =
+                `${request.user_email} requested reinstatement`;
+
+              if (
+                !existing.includes(text)
+              ) {
+
+                existing.push(text);
+
+              }
+
+            }
+          );
+
+          localStorage.setItem(
+            `notifications_${companyId}`,
+            JSON.stringify(existing)
+          );
+
+          window.dispatchEvent(
+            new Event(
+              "notificationUpdated"
+            )
+          );
+
+        }
 
       } catch (error) {
 
         console.log(error);
 
       }
+
     };
 
   loadRequests();
 
-}, [companyId, user]);
+  const interval =
+    setInterval(
+      loadRequests,
+      5000
+    );
+
+  return () =>
+    clearInterval(interval);
+
+}, [
+  companyId,
+  user
+]);
 
 
   /* DARK MODE */

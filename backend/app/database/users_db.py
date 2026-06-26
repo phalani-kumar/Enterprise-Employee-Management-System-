@@ -20,3 +20,27 @@ def save_users(data):
         json.dump(data, file, indent=4)
 
 users = load_users()
+
+for user in users:
+
+    user.setdefault(
+        "status",
+        "Active"
+    )
+
+    user.setdefault(
+        "suspended_reason",
+        ""
+    )
+
+    user.setdefault(
+        "suspended_by",
+        ""
+    )
+
+    # user.setdefault(
+    #     "suspended_date",
+    #     ""
+    # )
+
+save_users(users)

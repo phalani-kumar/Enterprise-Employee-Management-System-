@@ -59,6 +59,10 @@ const [adminEmail,
   setReactivationRequests] =
   useState([]);
 
+  const [reinstatementRequests,
+  setReinstatementRequests] =
+  useState([]);
+
   const [leaveRequests,
   setLeaveRequests]
   =
@@ -99,7 +103,10 @@ const [adminEmail,
 
     fetchRequests();
 
-     fetchReactivationRequests();
+    fetchReactivationRequests();
+
+    fetchReinstatementRequests();
+
   }
 
 }, []);
@@ -233,6 +240,56 @@ async (id) => {
   );
 
   fetchReactivationRequests();
+};
+
+const fetchReinstatementRequests =
+async () => {
+
+  try {
+
+    const response =
+      await axios.get(
+
+        `http://127.0.0.1:8000/reinstatement-request/${currentUser.company_id}`
+
+      );
+
+    setReinstatementRequests(
+      response.data
+    );
+
+  } catch(error) {
+
+    console.log(error);
+
+  }
+
+};
+
+const approveReinstatement =
+async (id) => {
+
+  await axios.put(
+
+    `http://127.0.0.1:8000/reinstatement/${id}/approve`
+
+  );
+
+  fetchReinstatementRequests();
+
+};
+
+const rejectReinstatement =
+async (id) => {
+
+  await axios.put(
+
+    `http://127.0.0.1:8000/reinstatement/${id}/reject`
+
+  );
+
+  fetchReinstatementRequests();
+
 };
 
 useEffect(() => {
@@ -664,6 +721,126 @@ request.id
 }
 >
 Reject
+</button>
+
+</>
+
+)
+}
+
+</td>
+
+</tr>
+
+)
+)
+}
+
+</tbody>
+
+</table>
+
+</div>
+
+)
+}
+
+{
+currentUser?.role === "Admin" && (
+
+<div className="role-request-card">
+
+<h2>
+Reinstatement Requests
+</h2>
+
+<table className="request-table">
+
+<thead>
+
+<tr>
+
+<th>User Email</th>
+
+<th>Message</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{
+reinstatementRequests.map(
+(request) => (
+
+<tr key={request.id}>
+
+<td>
+{request.user_email}
+</td>
+
+<td>
+{request.message}
+</td>
+
+<td
+
+className={
+request.status === "Approved"
+? "status-approved"
+: request.status === "Rejected"
+? "status-rejected"
+: "status-pending"
+}
+
+>
+
+{request.status}
+
+</td>
+
+<td>
+
+{
+request.status === "Pending" && (
+
+<>
+
+<button
+
+className="approve-btn"
+
+onClick={() =>
+approveReinstatement(
+request.id
+)
+}
+
+>
+
+Approve
+
+</button>
+
+<button
+
+className="reject-btn"
+
+onClick={() =>
+rejectReinstatement(
+request.id
+)
+}
+
+>
+
+Reject
+
 </button>
 
 </>

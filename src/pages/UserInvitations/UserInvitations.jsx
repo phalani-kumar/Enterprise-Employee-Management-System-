@@ -13,7 +13,8 @@ import {
 
 import {
   getMembers,
-  deactivateUser
+  deactivateUser,
+  suspendUser
 } from "../../services/memberService";
 
 function UserInvitations() {
@@ -285,23 +286,45 @@ Active Members
   {
     member.id !== currentUser.id && (
 
-      <button
-        className="deactivate-btn"
-        onClick={async () => {
+      <>
+  <button
+    className="deactivate-btn"
+    onClick={async () => {
 
-          await deactivateUser(
-            member.id,
-            currentUser.name
-          );
+      await deactivateUser(
+        member.id,
+        currentUser.name
+      );
 
-          fetchMembers();
+      fetchMembers();
 
-        }}
-      >
+    }}
+  >
 
-        Deactivate
+    Deactivate
 
-      </button>
+  </button>
+
+  <button
+    className="suspend-btn"
+    onClick={async () => {
+
+      await suspendUser(
+        member.id,
+        currentUser.name
+      );
+
+      fetchMembers();
+
+    }}
+  >
+
+    Suspend
+
+  </button>
+</>
+
+      
     )
   }
      </td>

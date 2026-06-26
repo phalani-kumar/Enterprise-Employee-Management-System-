@@ -37,3 +37,28 @@ def save_audit_logs(audit_logs):
 
 
 audit_logs = load_audit_logs()
+
+from datetime import datetime
+
+def add_audit_log(
+    company_id,
+    user_name,
+    action,
+    related_employee=""
+):
+
+    audit_logs.append({
+
+        "company_id": company_id,
+
+        "user_name": user_name,
+
+        "action": action,
+
+        "related_employee": related_employee,
+
+        "timestamp": str(datetime.now())
+
+    })
+
+    save_audit_logs(audit_logs)

@@ -50,6 +50,9 @@ from "./pages/admin/UserActivity";
 
 import DataExportCenter from "./pages/admin/DataExportCenter";
 
+import AccountSuspended
+from "./pages/suspended/AccountSuspended";
+
 function App() {
 
   return (
@@ -236,6 +239,13 @@ function App() {
     <ProtectedRoute>
       <DataExportCenter />
     </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/account-suspended"
+  element={
+    <AccountSuspended />
   }
 />
 

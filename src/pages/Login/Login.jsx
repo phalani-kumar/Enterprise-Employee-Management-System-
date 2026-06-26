@@ -112,15 +112,22 @@ await trackLogin({
 
 });
 
-/* ACCOUNT DEACTIVATED CHECK */
+/* USER STATUS CHECK */
 
 if (
-  user.status ===
-  "Deactivated"
+  user.status === "Deactivated"
 ) {
 
   navigate(
     "/account-deactivated"
+  );
+
+} else if (
+  user.status === "Suspended"
+) {
+
+  navigate(
+    "/account-suspended"
   );
 
 } else {
