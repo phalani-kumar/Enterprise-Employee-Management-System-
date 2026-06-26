@@ -3063,5 +3063,12 @@
         "action": "Reinstatement Approved",
         "related_employee": "poi",
         "timestamp": "2026-06-26 22:23:49.198906"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-26 22:35:02.025307"
     }
 ]
