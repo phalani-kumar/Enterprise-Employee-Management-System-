@@ -337,3 +337,40 @@ axios.get(
 `${API_URL}/department-transfers/${companyId}`
 
 );
+
+export const getCurrentEmployee = async () => {
+
+  const currentUser =
+    JSON.parse(
+      localStorage.getItem("authUser")
+    );
+
+  const response =
+    await axios.get(
+      `${API_URL}/profile/${currentUser.id}`
+    );
+
+  return response.data;
+
+};
+
+export const updateProfile = async (profileData) => {
+
+  const currentUser =
+    JSON.parse(
+      localStorage.getItem("authUser")
+    );
+
+  const response =
+    await axios.put(
+
+      `${API_URL}/profile/${currentUser.id}`,
+
+      profileData
+
+    );
+
+  return response.data;
+
+};
+

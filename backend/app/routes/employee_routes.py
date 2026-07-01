@@ -337,6 +337,58 @@ import json
 
 employee_router = APIRouter()
 
+def calculate_profile_completion(user):
+
+    required_fields = [
+
+        "first_name",
+
+        "last_name",
+
+        "email",
+
+        "phone_number",
+
+        "department",
+
+        "designation",
+
+        "profile_picture",
+
+        "address",
+
+        "date_of_joining",
+
+        "employee_id"
+
+    ]
+
+    completed = 0
+
+    missing = []
+
+    for field in required_fields:
+
+        if user.get(field):
+
+            completed += 1
+
+        else:
+
+            missing.append(field)
+
+    percentage = int(
+
+        (completed / len(required_fields)) * 100
+
+    )
+
+    user["profile_completion"] = percentage
+
+    user["missing_fields"] = missing
+
+    return user
+
 
 def load_employees():
 
@@ -363,6 +415,10 @@ def get_employees(company_id: int):
 
         if employee["company_id"] == company_id
     ]
+
+    for employee in filtered_employees:
+
+       calculate_profile_completion(employee)
 
     return filtered_employees
 
@@ -393,10 +449,28 @@ def add_employee(employee: EmployeeSchema):
 
     "attendance": 95,
 
-    "company_id": employee.company_id
+    "company_id": employee.company_id,
+
+"first_name": "",
+
+"last_name": "",
+
+"phone_number": "",
+
+"designation": "",
+
+"profile_picture": "",
+
+"address": "",
+
+"date_of_joining": "",
+
+"employee_id": ""
 }
 
     employees.append(new_employee)
+
+    calculate_profile_completion(new_employee)
 
     save_employees(employees)
 
@@ -441,6 +515,8 @@ def update_employee(
             employee["status"] = updated_employee.status
 
             employee["company_id"] = updated_employee.company_id
+
+            calculate_profile_completion(employee)
 
             save_employees(employees)
 
@@ -660,3 +736,114 @@ def transfer_employee(
         "message":
         "Employee not found"
     }
+
+@employee_router.put(
+    "/employees/{employee_id}/profile"
+)
+def update_profile(
+    employee_id: int,
+    data: dict
+):
+
+    load_employees()
+
+    for employee in employees:
+
+        if employee["id"] == employee_id:
+
+            employee["first_name"] = data.get(
+                "first_name",
+                employee.get("first_name", "")
+            )
+
+            employee["last_name"] = data.get(
+                "last_name",
+                employee.get("last_name", "")
+            )
+
+            employee["phone_number"] = data.get(
+                "phone_number",
+                employee.get("phone_number", "")
+            )
+
+            employee["department"] = data.get(
+                "department",
+                employee.get("department", "")
+            )
+
+            employee["designation"] = data.get(
+                "designation",
+                employee.get("designation", "")
+            )
+
+            employee["profile_picture"] = data.get(
+                "profile_picture",
+                employee.get("profile_picture", "")
+            )
+
+            employee["address"] = data.get(
+                "address",
+                employee.get("address", "")
+            )
+
+            employee["date_of_joining"] = data.get(
+                "date_of_joining",
+                employee.get("date_of_joining", "")
+            )
+
+            employee["employee_id"] = data.get(
+                "employee_id",
+                employee.get("employee_id", "")
+            )
+
+            old_score = employee.get(
+                "profile_completion",
+                0
+            )
+
+            calculate_profile_completion(employee)
+
+            save_employees(employees)
+
+            if old_score != employee["profile_completion"]:
+
+                audit_logs.append({
+
+                    "user_name": employee["name"],
+
+                    "company_id": employee["company_id"],
+
+                    "action": f"Profile Completion Changed ({old_score}% → {employee['profile_completion']}%)",
+
+                    "related_employee": employee["name"],
+
+                    "timestamp": str(datetime.now())
+
+                })
+
+                if employee["profile_completion"] == 100:
+
+                    audit_logs.append({
+
+                        "user_name": employee["name"],
+
+                        "company_id": employee["company_id"],
+
+                        "action": "Profile Reached 100% Completion",
+
+                        "related_employee": employee["name"],
+
+                        "timestamp": str(datetime.now())
+
+                    })
+
+                save_audit_logs(audit_logs)
+
+            return employee
+
+    return {
+
+        "message": "Employee Not Found"
+
+    }
+

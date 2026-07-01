@@ -3070,5 +3070,1377 @@
         "action": "User Logout",
         "related_employee": "Admin A",
         "timestamp": "2026-06-26 22:35:02.025307"
+    },
+    {
+        "company_id": 2,
+        "user_name": "mnb",
+        "action": "User Login",
+        "related_employee": "mnb",
+        "timestamp": "2026-06-27 11:58:37.407960"
+    },
+    {
+        "company_id": 2,
+        "user_name": "mnb",
+        "action": "User Logout",
+        "related_employee": "mnb",
+        "timestamp": "2026-06-27 11:58:41.214172"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Login",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 11:58:53.868078"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Suspended",
+        "related_employee": "mnb",
+        "timestamp": "2026-06-27 11:59:01.108054"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Logout",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 11:59:11.712378"
+    },
+    {
+        "company_id": 2,
+        "user_name": "mnb",
+        "action": "User Login",
+        "related_employee": "mnb",
+        "timestamp": "2026-06-27 11:59:23.201954"
+    },
+    {
+        "company_id": 2,
+        "user_name": "mnb@gmail.com",
+        "action": "Reinstatement Request Submitted",
+        "related_employee": "mnb@gmail.com",
+        "timestamp": "2026-06-27 11:59:27.668927"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Login",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 11:59:43.164169"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin",
+        "action": "Reinstatement Approved",
+        "related_employee": "mnb",
+        "timestamp": "2026-06-27 11:59:50.814822"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Logout",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 12:00:33.641325"
+    },
+    {
+        "company_id": 2,
+        "user_name": "cxz",
+        "action": "User Login",
+        "related_employee": "cxz",
+        "timestamp": "2026-06-27 12:01:49.465463"
+    },
+    {
+        "company_id": 2,
+        "user_name": "cxz",
+        "action": "User Logout",
+        "related_employee": "cxz",
+        "timestamp": "2026-06-27 12:01:53.078632"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Login",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 12:02:06.520410"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Suspended",
+        "related_employee": "cxz",
+        "timestamp": "2026-06-27 12:02:13.944461"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Logout",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 12:02:20.408777"
+    },
+    {
+        "company_id": 2,
+        "user_name": "cxz",
+        "action": "User Login",
+        "related_employee": "cxz",
+        "timestamp": "2026-06-27 12:02:31.121326"
+    },
+    {
+        "company_id": 2,
+        "user_name": "cxz@gmail.com",
+        "action": "Reinstatement Request Submitted",
+        "related_employee": "cxz@gmail.com",
+        "timestamp": "2026-06-27 12:02:34.448157"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Login",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 12:02:50.981157"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin",
+        "action": "Reinstatement Approved",
+        "related_employee": "cxz",
+        "timestamp": "2026-06-27 12:03:01.401407"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Logout",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-27 12:03:21.341825"
+    },
+    {
+        "company_id": 1,
+        "user_name": "simha",
+        "action": "User Login",
+        "related_employee": "simha",
+        "timestamp": "2026-06-27 22:05:36.990212"
+    },
+    {
+        "company_id": 1,
+        "user_name": "simha",
+        "action": "Attendance Access Requested",
+        "related_employee": "simha",
+        "timestamp": "2026-06-27 22:05:40.120456"
+    },
+    {
+        "company_id": 1,
+        "user_name": "simha",
+        "action": "User Logout",
+        "related_employee": "simha",
+        "timestamp": "2026-06-27 22:05:44.960461"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-27 22:05:57.373856"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-27 22:07:04.248261"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-28 14:38:57.919230"
+    },
+    {
+        "user_name": "Admin A",
+        "company_id": 1,
+        "action": "Employee Updated",
+        "related_employee": "dfgh",
+        "timestamp": "2026-06-28 14:39:44.020173"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 13:36:10.064152"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 13:46:37.517050"
+    },
+    {
+        "company_id": 1,
+        "user_name": "bnm",
+        "action": "User Login",
+        "related_employee": "bnm",
+        "timestamp": "2026-06-29 13:46:51.364950"
+    },
+    {
+        "company_id": 1,
+        "user_name": "bnm",
+        "action": "User Logout",
+        "related_employee": "bnm",
+        "timestamp": "2026-06-29 13:47:29.422591"
+    },
+    {
+        "company_id": 1,
+        "user_name": "bnm",
+        "action": "User Login",
+        "related_employee": "bnm",
+        "timestamp": "2026-06-29 13:48:03.816115"
+    },
+    {
+        "company_id": 1,
+        "user_name": "bnm",
+        "action": "User Logout",
+        "related_employee": "bnm",
+        "timestamp": "2026-06-29 13:48:08.266762"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 13:48:25.225487"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 17:06:52.869685"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:06:32.236522"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:09:36.639864"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:52:57.639144"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:53:47.421533"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:54:04.318677"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:55:04.116969"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:55:04.392188"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 18:55:04.892791"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 19:11:07.812756"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-29 19:12:00.934985"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 11:20:42.537269"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 12:39:24.720786"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 12:40:02.910264"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 12:40:19.625142"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 12:41:24.545886"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 12:42:37.518777"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Login",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 12:44:19.814109"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Profile Updated",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 12:46:26.566654"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Logout",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 12:46:51.307666"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 12:47:05.394856"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 13:04:58.495229"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Login",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 13:09:08.609310"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Logout",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 13:09:22.963169"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Login",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 13:10:11.277253"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "Profile Updated",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 13:11:01.879613"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Logout",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 13:11:18.141983"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 13:11:39.037250"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 15:39:48.648129"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 15:52:00.819351"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 15:52:21.539406"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 15:53:22.315405"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 15:53:35.276336"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 15:54:07.956586"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 15:54:16.751030"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 15:54:35.979692"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 16:01:29.332799"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 16:02:27.530340"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "Profile Updated",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 18:36:25.417876"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 18:38:35.115031"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 18:38:48.882428"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 18:39:34.420750"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 18:39:48.410100"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 18:41:19.672249"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 18:41:33.598639"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 18:43:33.122322"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 18:43:52.572821"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 18:44:05.488774"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:44:37.078045"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:44:49.834936"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:45:09.882019"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:45:26.841819"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:45:32.451585"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:45:50.773224"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:46:02.683657"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:46:14.226168"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:46:33.584939"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:46:43.714946"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:46:58.389030"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:49:04.726183"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:49:19.391606"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:49:39.138111"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:49:48.452597"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:50:00.128636"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:50:09.706583"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:50:22.519904"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:50:35.721600"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 19:50:42.939250"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 19:50:55.448945"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 20:09:03.373212"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:09:19.228375"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:09:33.923085"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:09:43.568571"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 20:09:59.754997"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 20:10:29.109692"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:10:41.078640"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "Profile Updated",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:10:57.197558"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-06-30 20:11:10.025126"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 20:11:23.380582"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 21:37:16.407595"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Login",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:37:39.508731"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "Profile Updated",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:39:13.703911"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Logout",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:39:28.588704"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 21:39:47.816115"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 21:40:49.382844"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Login",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:41:02.673971"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "Profile Updated",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:41:43.641628"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Joe",
+        "action": "User Logout",
+        "related_employee": "Joe",
+        "timestamp": "2026-06-30 21:41:54.532976"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 21:42:14.658454"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:15:00.054676"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:15:59.503165"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Login",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:16:18.871514"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Completion Changed (50% \u2192 80%)",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:17:16.775142"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Profile Updated",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:17:16.981755"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Logout",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:17:30.417482"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:17:47.770548"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:19:19.299555"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Login",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:19:37.118714"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Completion Changed (80% \u2192 60%)",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:20:38.130145"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Profile Updated",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:20:38.323975"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Logout",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:21:02.372716"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:21:17.064280"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:21:44.558360"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Login",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:22:13.754711"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Completion Changed (60% \u2192 100%)",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:23:36.553277"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Profile 100% Completed",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:23:36.578851"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "Profile Updated",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:23:36.767548"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ravi",
+        "action": "User Logout",
+        "related_employee": "Ravi",
+        "timestamp": "2026-06-30 22:23:48.677374"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 22:24:11.451592"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:09:16.513510"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:09:36.015982"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Completion Changed (10% \u2192 90%)",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:12:10.663073"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Profile Updated",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:12:10.846895"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:12:20.866390"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:12:35.205382"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:13:16.593651"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:13:33.775683"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Completion Changed (90% \u2192 70%)",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:13:58.506605"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Profile Updated",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:13:58.700185"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:14:09.835792"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:14:30.200855"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:17:33.302176"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:17:50.903436"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Completion Changed (70% \u2192 100%)",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:22.559122"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Profile 100% Completed",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:22.592667"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "Profile Updated",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:22.780895"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:30.383741"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:51.020335"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-06-30 23:19:55.817912"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:20:13.138029"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:22:42.577728"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Ganesh",
+        "action": "User Login",
+        "related_employee": "Ganesh",
+        "timestamp": "2026-06-30 23:23:00.867843"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:23:33.226574"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:23:54.334885"
+    },
+    {
+        "company_id": 1,
+        "user_name": "kiran",
+        "action": "User Login",
+        "related_employee": "kiran",
+        "timestamp": "2026-06-30 23:24:09.171817"
+    },
+    {
+        "company_id": 1,
+        "user_name": "kiran",
+        "action": "Completion Changed (10% \u2192 50%)",
+        "related_employee": "kiran",
+        "timestamp": "2026-06-30 23:24:43.787290"
+    },
+    {
+        "company_id": 1,
+        "user_name": "kiran",
+        "action": "Profile Updated",
+        "related_employee": "kiran",
+        "timestamp": "2026-06-30 23:24:43.987874"
+    },
+    {
+        "company_id": 1,
+        "user_name": "kiran",
+        "action": "User Logout",
+        "related_employee": "kiran",
+        "timestamp": "2026-06-30 23:24:54.884361"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:25:09.379617"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-06-30 23:29:42.154259"
+    },
+    {
+        "company_id": 2,
+        "user_name": "Admin B",
+        "action": "User Login",
+        "related_employee": "Admin B",
+        "timestamp": "2026-06-30 23:29:55.607176"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Login",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:17:58.858622"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Completion Changed (10% \u2192 70%)",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:21:34.050949"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Profile Updated",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:21:34.146538"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Logout",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:21:45.408654"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:21:57.945258"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:22:10.037148"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:22:24.029740"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:22:41.502078"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Login",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:22:57.726096"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Completion Changed (70% \u2192 100%)",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:24:26.109806"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Profile 100% Completed",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:24:26.121064"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Profile Updated",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:24:26.270232"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Logout",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:24:40.107650"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:24:59.740250"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:25:33.941473"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Login",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:25:50.929981"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Completion Changed (100% \u2192 70%)",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:26:16.223356"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "Profile Updated",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:26:16.327394"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Logout",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-01 10:26:26.302159"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:26:38.839179"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-01 10:31:43.019840"
     }
 ]

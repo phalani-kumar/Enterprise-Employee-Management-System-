@@ -3157,3 +3157,599 @@ button:disabled {
   cursor: not-allowed;
 
 }
+
+/* .profile-page{
+
+padding:20px;
+
+}
+
+.profile-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:10px;
+
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+
+}
+
+.progress{
+
+width:100%;
+
+height:20px;
+
+background:#ddd;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin:20px 0;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+background:#4caf50;
+
+transition:.5s;
+
+}
+
+.profile-card ul{
+
+margin-top:10px;
+
+padding-left:20px;
+
+}
+
+.profile-card li{
+
+margin-bottom:6px;
+
+color:red;
+
+} */
+
+/* ===========================
+   PROFILE PAGE
+=========================== */
+
+.profile-page {
+
+  padding: 25px;
+
+}
+
+.profile-page h1 {
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  color: #1f2937;
+
+  margin-bottom: 20px;
+
+}
+
+.profile-card {
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 30px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+.profile-card h2 {
+
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+}
+
+.profile-card p {
+
+  margin-bottom: 12px;
+
+  color: #555;
+
+}
+
+.profile-card hr {
+
+  margin: 25px 0;
+
+  border: none;
+
+  border-top: 1px solid #e5e7eb;
+
+}
+
+/* ===========================
+   PROFILE FORM
+=========================== */
+
+.profile-form {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px 25px;
+
+}
+
+.profile-form label {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-weight: 600;
+
+  color: #374151;
+
+}
+
+.profile-form input,
+
+.profile-form textarea {
+
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.3s;
+
+  box-sizing: border-box;
+
+}
+
+.profile-form input:focus,
+
+.profile-form textarea:focus {
+
+  border-color: #2563eb;
+
+  box-shadow: 0 0 4px rgba(37,99,235,.3);
+
+}
+
+.profile-form textarea {
+
+  resize: vertical;
+
+}
+
+/* Full width textarea */
+
+.profile-form textarea,
+
+.profile-form .full-width {
+
+  grid-column: span 2;
+
+}
+
+/* ===========================
+   SAVE BUTTON
+=========================== */
+
+.save-profile-btn {
+
+  grid-column: span 2;
+
+  width: 220px;
+
+  padding: 12px;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+.save-profile-btn:hover {
+
+  background: #1d4ed8;
+
+}
+
+/* ===========================
+   PROGRESS BAR
+=========================== */
+
+.progress {
+
+  width: 100%;
+
+  height: 20px;
+
+  background: #e5e7eb;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  margin: 15px 0 25px;
+
+}
+
+.progress-bar {
+
+  height: 100%;
+
+  background: linear-gradient(
+
+    90deg,
+
+    #16a34a,
+
+    #22c55e
+
+  );
+
+  transition: width .5s ease;
+
+}
+
+/* ===========================
+   MISSING FIELDS
+=========================== */
+
+.profile-card ul {
+
+  margin-top: 10px;
+
+  padding-left: 20px;
+
+}
+
+.profile-card li {
+
+  margin-bottom: 8px;
+
+  color: #dc2626;
+
+  font-weight: 500;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+.profile-form{
+
+grid-template-columns:1fr;
+
+}
+
+.save-profile-btn{
+
+grid-column:span 1;
+
+width:100%;
+
+}
+
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+
+.profile-image-section{
+
+grid-column:span 2;
+
+margin-top:10px;
+
+}
+
+.profile-image-preview{
+
+margin-top:15px;
+
+margin-bottom:15px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.profile-image-preview img{
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:4px solid #2563eb;
+
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+
+}
+
+.image-placeholder{
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+background:#e5e7eb;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:600;
+
+color:#6b7280;
+
+border:2px dashed #9ca3af;
+
+}
+
+.profile-image-section input{
+
+margin-top:10px;
+
+}
+
+/* ==============================
+   Profile Completion Table
+============================== */
+
+.completion-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+
+}
+
+.completion-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+.completion-table td{
+
+    padding:12px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    vertical-align:middle;
+
+}
+
+.completion-table tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+/* ==============================
+   Progress Bar
+============================== */
+
+.mini-progress{
+
+    width:180px;
+
+    height:12px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:inline-block;
+
+    margin-right:10px;
+
+    vertical-align:middle;
+
+}
+
+.mini-progress-fill{
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #16a34a,
+
+        #22c55e
+
+    );
+
+    border-radius:20px;
+
+    transition:width .4s ease;
+
+}
+
+
+/* ==============================
+   Completion %
+============================== */
+
+.completion-table span{
+
+    font-weight:600;
+
+    color:#2563eb;
+
+}
+
+
+/* ==============================
+   Analytics Card
+============================== */
+
+.analytics-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    margin-top:20px;
+
+}
+
+.analytics-card h2{
+
+    margin-bottom:15px;
+
+    color:#1e293b;
+
+}
+
+
+/* ==============================
+   Dark Mode
+============================== */
+
+.dark-mode .analytics-card{
+
+    background:#1e293b;
+
+}
+
+.dark-mode .analytics-card h2{
+
+    color:white;
+
+}
+
+.dark-mode .completion-table td{
+
+    border-bottom:1px solid #334155;
+
+    color:white;
+
+}
+
+.dark-mode .completion-table tr:hover{
+
+    background:#334155;
+
+}
+
+.dark-mode .mini-progress{
+
+    background:#475569;
+
+}
+
+.notification-item{
+
+padding:12px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+.notification-item.unread{
+
+background:#eef6ff;
+
+font-weight:bold;
+
+}
+
+.notification-item small{
+
+display:block;
+
+margin-top:5px;
+
+font-size:12px;
+
+color:#777;
+
+}
+
+.delete-notification{
+
+margin-top:8px;
+
+padding:5px 10px;
+
+border:none;
+
+background:red;
+
+color:white;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}

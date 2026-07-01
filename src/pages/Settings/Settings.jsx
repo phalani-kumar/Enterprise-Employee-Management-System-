@@ -17,30 +17,38 @@ from "../../services/leaveService";
 function Settings() {
 
   const [darkMode,
-    setDarkMode] =
-    useState(false);
+  setDarkMode] =
+  useState(() => {
+
+    return JSON.parse(
+      localStorage.getItem(
+        "darkMode"
+      )
+    ) || false;
+
+  });
 
   const [notifications,
     setNotifications] =
     useState(true);
-
-  const [email,
-    setEmail] =
-    useState(
-      "admin@gmail.com"
-    );
-
-  const [name,
-    setName] =
-    useState(
-      "Admin User"
-    );
 
   const currentUser =
   JSON.parse(
     localStorage.getItem(
       "authUser"
     )
+  );  
+
+  const [email,
+  setEmail] =
+  useState(
+    currentUser?.email || ""
+  );
+
+const [name,
+  setName] =
+  useState(
+    currentUser?.name || ""
   );
 
 const [currentPassword,
@@ -68,6 +76,37 @@ const [adminEmail,
   =
   useState([]);
 
+  useEffect(() => {
+
+  const updateDarkMode = () => {
+
+    const savedMode =
+      JSON.parse(
+        localStorage.getItem(
+          "darkMode"
+        )
+      ) || false;
+
+    setDarkMode(savedMode);
+
+  };
+
+  window.addEventListener(
+    "darkModeChanged",
+    updateDarkMode
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "darkModeChanged",
+      updateDarkMode
+    );
+
+  };
+
+}, []);
+
 
   // SAVE SETTINGS
 
@@ -82,17 +121,58 @@ const [adminEmail,
 
   // DARK MODE
 
-  const handleDarkMode =
+  const handleDarkMode = () => {
+
+  const newMode = !darkMode;
+
+  setDarkMode(newMode);
+
+  document.body.classList.toggle(
+    "dark-mode",
+    newMode
+  );
+
+  localStorage.setItem(
+    "darkMode",
+    JSON.stringify(newMode)
+  );
+
+  window.dispatchEvent(
+    new Event("darkModeChanged")
+  );
+
+};
+ useEffect(() => {
+
+  const updateDarkMode =
     () => {
 
-      setDarkMode(
-        !darkMode
-      );
+      const mode =
+        JSON.parse(
+          localStorage.getItem(
+            "darkMode"
+          )
+        ) || false;
 
-      document.body.classList.toggle(
-        "dark-mode"
-      );
+      setDarkMode(mode);
+
     };
+
+  window.addEventListener(
+    "darkModeChanged",
+    updateDarkMode
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "darkModeChanged",
+      updateDarkMode
+    );
+
+  };
+
+}, []); 
   
   useEffect(() => {
 
@@ -118,7 +198,7 @@ const fetchRequests =
 
       const response =
         await axios.get(
-         `http://127.0.0.1:8000/role-request/${currentUser.company_id}`
+         `http://127.0.0.1:8001/role-request/${currentUser.company_id}`
         );
 
       setRequests(
@@ -138,7 +218,7 @@ const fetchRequests =
 
       await axios.post(
 
-        "http://127.0.0.1:8000/role-request",
+        "http://127.0.0.1:8001/role-request",
 
         {
 
@@ -177,7 +257,7 @@ const fetchRequests =
 
     await axios.put(
 
-      `http://127.0.0.1:8000/role-request/${id}/approve`
+      `http://127.0.0.1:8001/role-request/${id}/approve`
 
     );
 
@@ -189,7 +269,7 @@ const rejectRequest =
 
     await axios.put(
 
-      `http://127.0.0.1:8000/role-request/${id}/reject`
+      `http://127.0.0.1:8001/role-request/${id}/reject`
 
     );
 
@@ -204,7 +284,7 @@ async () => {
     const response =
       await axios.get(
 
-        `http://127.0.0.1:8000/reactivation-request/${currentUser.company_id}`
+        `http://127.0.0.1:8001/reactivation-request/${currentUser.company_id}`
 
       );
 
@@ -223,7 +303,7 @@ async (id) => {
 
   await axios.put(
 
-    `http://127.0.0.1:8000/reactivation/${id}/approve`
+    `http://127.0.0.1:8001/reactivation/${id}/approve`
 
   );
 
@@ -235,7 +315,7 @@ async (id) => {
 
   await axios.put(
 
-    `http://127.0.0.1:8000/reactivation/${id}/reject`
+    `http://127.0.0.1:8001/reactivation/${id}/reject`
 
   );
 
@@ -250,7 +330,7 @@ async () => {
     const response =
       await axios.get(
 
-        `http://127.0.0.1:8000/reinstatement-request/${currentUser.company_id}`
+        `http://127.0.0.1:8001/reinstatement-request/${currentUser.company_id}`
 
       );
 
@@ -271,7 +351,7 @@ async (id) => {
 
   await axios.put(
 
-    `http://127.0.0.1:8000/reinstatement/${id}/approve`
+    `http://127.0.0.1:8001/reinstatement/${id}/approve`
 
   );
 
@@ -284,7 +364,7 @@ async (id) => {
 
   await axios.put(
 
-    `http://127.0.0.1:8000/reinstatement/${id}/reject`
+    `http://127.0.0.1:8001/reinstatement/${id}/reject`
 
   );
 

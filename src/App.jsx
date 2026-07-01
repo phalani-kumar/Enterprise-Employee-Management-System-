@@ -53,6 +53,8 @@ import DataExportCenter from "./pages/admin/DataExportCenter";
 import AccountSuspended
 from "./pages/suspended/AccountSuspended";
 
+import Profile from "./pages/Profile";
+
 function App() {
 
   return (
@@ -247,6 +249,14 @@ function App() {
   element={
     <AccountSuspended />
   }
+/>
+
+<Route
+
+path="/profile"
+
+element={<Profile/>}
+
 />
 
       </Routes>

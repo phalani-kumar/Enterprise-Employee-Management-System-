@@ -410,8 +410,14 @@ import {
 import DashboardLayout from "../../components/layout/DashboardLayout";
 
 import {
-  getEmployees,
+  getEmployees
 } from "../../services/employeeService";
+
+import {
+
+    getProfileCompletion
+
+} from "../../services/authService";
 
 function Dashboard() {
 
@@ -424,7 +430,23 @@ function Dashboard() {
     useState([]);
 
   const [users, setUsers] =
-  useState([]);  
+  useState([]); 
+  
+  const [
+
+    completionUsers,
+
+    setCompletionUsers
+
+  ] = useState([]);
+
+const [
+
+    threshold,
+
+    setThreshold
+
+  ] = useState(80);
 
 useEffect(() => {
 
@@ -433,6 +455,8 @@ useEffect(() => {
   fetchPendingRequests();
 
   fetchUsers();
+
+  fetchCompletion();
 
 }, []);
 
@@ -451,6 +475,7 @@ useEffect(() => {
         console.log(error);
       }
     };
+
 
   const fetchUsers =
   async () => {
@@ -471,8 +496,17 @@ useEffect(() => {
 
       console.log(error);
     }
-  };  
+  };
 
+  const fetchCompletion = async () => {
+
+    const data = await getProfileCompletion();
+
+    console.log(data);
+
+    setCompletionUsers(data);
+
+};
 
   const fetchPendingRequests =
   async () => {
@@ -919,7 +953,6 @@ const attendanceAnalytics =
 </div>
 
 
-
 <div className="analytics-card">
 
   <h2>
@@ -1063,6 +1096,162 @@ const attendanceAnalytics =
   </ResponsiveContainer>
 
 </div>
+
+{
+JSON.parse(localStorage.getItem("authUser"))?.role === "Admin" && (
+
+<div className="analytics-card">
+
+<h2>
+
+User Profile Completion
+
+</h2>
+
+<div style={{marginBottom:"15px"}}>
+
+<label>
+
+Completion Threshold :
+
+</label>
+
+<select
+
+value={threshold}
+
+onChange={(e)=>
+
+setThreshold(Number(e.target.value))
+
+}
+
+>
+
+<option value={100}>100%</option>
+
+{/* <option value={90}>90%</option> */}
+
+<option value={80}>80%</option>
+
+{/* <option value={70}>70%</option> */}
+
+<option value={50}>50%</option>
+
+<option value={40}>40%</option>
+
+</select>
+
+</div>
+
+<table className="completion-table">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Role</th>
+
+<th>Completion</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{
+
+completionUsers
+
+.filter(
+
+user =>
+
+user.profile_completion <= threshold
+
+)
+
+.map(user=>(
+
+<tr key={user.id}>
+
+<td>{user.name}</td>
+
+<td>{user.role}</td>
+
+<td>
+
+<div className="mini-progress">
+
+<div
+
+className="mini-progress-fill"
+
+style={{
+
+width:`${user.profile_completion}%`
+
+}}
+
+></div>
+
+</div>
+
+<span>
+
+{user.profile_completion}%
+
+</span>
+
+</td>
+
+<td>
+
+{
+
+user.profile_completion===100 ?
+
+"Complete"
+
+:
+
+user.profile_completion>=80 ?
+
+"Good"
+
+:
+
+user.profile_completion>=50 ?
+
+"Incomplete"
+
+:
+
+"At Risk"
+
+}
+
+</td>
+
+</tr>
+
+))
+
+}
+
+</tbody>
+
+</table>
+
+</div>
+
+)
+}
 
 </div>
         

@@ -79,6 +79,8 @@ import {
   useEffect,
 } from "react";
 
+import axios from "axios";
+
 import {
   FaMoon,
   FaSun,
@@ -98,6 +100,10 @@ rejectAttendanceAccess
 
 from "../../services/attendanceService";
 
+import { Link }
+
+from "react-router-dom";
+
 import {
   useAuth,
 } from "../../context/AuthContext";
@@ -116,15 +122,22 @@ function Navbar() {
   user?.company_id || "";
 
   const [darkMode,
-    setDarkMode] =
-    useState(false);
+  setDarkMode] =
+  useState(
 
+    JSON.parse(
+      localStorage.getItem(
+        "darkMode"
+      )
+    ) || false
+
+  );
   const [showMenu,
     setShowMenu] =
     useState(false);
 
-    const [unreadCount, setUnreadCount] =
-  useState(0);
+  //   const [unreadCount, setUnreadCount] =
+  // useState(0);
 
   const [notifications, setNotifications] =
   useState([]);
@@ -175,39 +188,80 @@ const [showNotifications,
 }, []);
 
 
+    const loadNotifications = async () => {
 
-   useEffect(() => {
+    try {
 
-  const loadNotifications =
-    () => {
+        const response = await axios.get(
 
-      const storedNotifications =
-        JSON.parse(
-          localStorage.getItem(
-            `notifications_${companyId}`
+            `http://127.0.0.1:8000/notifications/${companyId}/${user.role}`
 
-          )
-        ) || [];
+        );
 
-      setNotifications(
-        storedNotifications
-      );
-    };
+        console.log(response.data);
 
-  loadNotifications();
+        setNotifications(response.data);
 
-  window.addEventListener(
-    "notificationUpdated",
-    loadNotifications
-  );
+         const unread = response.data.filter(
+            notification => !notification.read
+        );
 
-  return () => {
+        setHasNotification(unread.length > 0);
 
-    window.removeEventListener(
-      "notificationUpdated",
-      loadNotifications
-    );
-  };
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+};
+
+const markAllRead = async () => {
+
+    try {
+
+        for (const notification of notifications) {
+
+            if (!notification.read) {
+
+                await axios.put(
+
+                    `http://127.0.0.1:8000/notifications/read/${notification.id}`
+
+                );
+
+            }
+
+        }
+
+        await loadNotifications();
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+};
+
+useEffect(() => {
+
+    if (!companyId) return;
+
+    loadNotifications();
+
+    const interval = setInterval(() => {
+
+        loadNotifications();
+
+    }, 3000);
+
+    return () => clearInterval(interval);
 
 }, [companyId]);
 
@@ -224,7 +278,7 @@ useEffect(() => {
 
         const response =
           await axios.get(
-            `http://127.0.0.1:8000/reinstatement-request/${companyId}`
+            `http://127.0.0.1:8001/reinstatement-request/${companyId}`
           );
 
         const requests =
@@ -253,8 +307,6 @@ useEffect(() => {
               if (
                 !existing.includes(text)
               ) {
-
-                existing.push(text);
 
               }
 
@@ -301,17 +353,78 @@ useEffect(() => {
 
   /* DARK MODE */
 
-  const toggleDarkMode =
+  const toggleDarkMode = () => {
+
+  const newMode = !darkMode;
+
+  setDarkMode(newMode);
+
+  document.body.classList.toggle(
+    "dark-mode",
+    newMode
+  );
+
+  localStorage.setItem(
+    "darkMode",
+    JSON.stringify(newMode)
+  );
+
+  window.dispatchEvent(
+    new Event("darkModeChanged")
+  );
+
+};
+
+  useEffect(() => {
+
+  const savedMode =
+    JSON.parse(
+      localStorage.getItem(
+        "darkMode"
+      )
+    );
+
+  if (savedMode) {
+
+    document.body.classList.add(
+      "dark-mode"
+    );
+
+  }
+
+}, []);
+
+useEffect(() => {
+
+  const updateDarkMode =
     () => {
 
-      setDarkMode(
-        !darkMode
-      );
+      const mode =
+        JSON.parse(
+          localStorage.getItem(
+            "darkMode"
+          )
+        ) || false;
 
-      document.body.classList.toggle(
-        "dark-mode"
-      );
+      setDarkMode(mode);
+
     };
+
+  window.addEventListener(
+    "darkModeChanged",
+    updateDarkMode
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "darkModeChanged",
+      updateDarkMode
+    );
+
+  };
+
+}, []);
 
   return (
 
@@ -363,37 +476,34 @@ useEffect(() => {
 
   <button
     className="nav-icon-btn"
-    onClick={() => {
+    onClick={async () => {
 
-  if (!showNotifications) {
+    if (!showNotifications) {
 
-    /* FIRST CLICK */
+        for (const notification of notifications) {
 
-    setShowNotifications(true);
+        if (!notification.read) {
 
-    setHasNotification(false);
+          await axios.put(
+            `http://127.0.0.1:8000/notifications/read/${notification.id}`
+          );
 
-    localStorage.setItem(
-      "unreadNotifications",
-      "0"
-    );
+        }
 
-    setUnreadCount(0);
+      }
 
-  } else {
+      loadNotifications();
 
-    /* SECOND CLICK */
+      setShowNotifications(true);
 
-    setShowNotifications(false);
+    } else {
 
-    localStorage.removeItem(
-      `notifications_${companyId}`
-    );
+      setShowNotifications(false);
 
-    setNotifications([]);
-  }
-}}
-  >
+    }
+
+  }}
+>
 
     <FaBell
       className={
@@ -403,23 +513,30 @@ useEffect(() => {
       }
     />
 
-    {
-  (
-    notifications.length +
-    attendanceRequests.length 
-  ) > 0 &&
-  !showNotifications && (
+   {
+(
+notifications.filter(
+notification => !notification.read
+).length
++
+attendanceRequests.length
+) > 0 &&
+!showNotifications && (
 
-        <span
-          className="notification-count"
-        >
+<span className="notification-count">
 
-          {notifications.length+
-          attendanceRequests.length}
+{
+notifications.filter(
+notification => !notification.read
+).length
++
+attendanceRequests.length
+}
 
-        </span>
-      )
-    }
+</span>
+
+)
+}
 
   </button>
   {showNotifications && (
@@ -598,12 +715,64 @@ leaveRequests.map(
         ) => (
 
           <div
-            key={index}
-            className="notification-item"
+          key={notification.id}
+          className={
+          notification.read
+          
+          ?
+          
+          "notification-item"
+          
+          :
+          
+          "notification-item unread"
+          }
           >
+          
+          <p>
+          
+          {notification.message}
+          
+          </p>
+          
+          <small>
+          
+          {notification.created_at}
+          
+          </small>
 
-            {notification}
+          <button
 
+          className="delete-notification"
+          
+          onClick={async () => {
+
+              try {
+          
+                  await axios.delete(
+          
+                      `http://127.0.0.1:8000/notifications/${notification.id}`
+          
+                  );
+          
+                  await loadNotifications();
+          
+              }
+          
+              catch (error) {
+          
+                  console.log(error);
+          
+              }
+          
+          }}
+          
+          >
+          
+          Delete
+          
+          </button>
+          
           </div>
         )
       )
@@ -649,12 +818,26 @@ leaveRequests.map(
 
             <div className="profile-menu">
 
-              <button
-                onClick={logout}
-              >
-                Logout
-              </button>
-
+            <Link to="/profile">
+            
+            <button>
+            
+            Profile
+            
+            </button>
+            
+            </Link>
+            
+            <button
+            
+            onClick={logout}
+            
+            >
+            
+            Logout
+            
+            </button>
+            
             </div>
           )}
 
