@@ -53,6 +53,10 @@ import DataExportCenter from "./pages/admin/DataExportCenter";
 import AccountSuspended
 from "./pages/suspended/AccountSuspended";
 
+import HolidayCalendar from "./pages/holiday/HolidayCalendar";
+
+import HolidayView from "./pages/holiday/HolidayView";
+
 import Profile from "./pages/Profile";
 
 function App() {
@@ -247,15 +251,45 @@ function App() {
 <Route
   path="/account-suspended"
   element={
+    <ProtectedRoute>
     <AccountSuspended />
+    </ProtectedRoute>
   }
+/>
+
+<Route
+
+path="/holiday-calendar"
+
+element={
+  <ProtectedRoute>
+    <HolidayCalendar/>
+    </ProtectedRoute>
+  }
+
+/>
+
+<Route
+
+path="/holiday-view"
+
+element={
+  <ProtectedRoute>
+    <HolidayView/>
+    </ProtectedRoute>
+  }
+
 />
 
 <Route
 
 path="/profile"
 
-element={<Profile/>}
+element={
+  <ProtectedRoute>
+  <Profile/>
+  </ProtectedRoute>
+}
 
 />
 

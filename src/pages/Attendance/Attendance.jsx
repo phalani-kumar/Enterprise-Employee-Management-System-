@@ -4,6 +4,8 @@ import DashboardLayout from "../../components/layout/DashboardLayout";
 
 import { getEmployees } from "../../services/employeeService";
 
+import { getCompanyHolidays } from "../../services/holidayService";
+
 import {
   requestAttendanceAccess,
   checkIn,
@@ -51,6 +53,8 @@ const [attendanceHistory,
 setAttendanceHistory] =
 useState([]);
 
+const [holidays, setHolidays] = useState([]);
+
 const [leaveType,
 setLeaveType] =
 useState("");
@@ -91,6 +95,34 @@ useState("");
       fetchEmployees
     );
   };
+
+}, []);
+
+useEffect(() => {
+
+    const loadHolidays = async () => {
+
+        try {
+
+            const data = await getCompanyHolidays(
+
+                currentUser.company_id
+
+            );
+
+            setHolidays(data);
+
+        }
+
+        catch (error) {
+
+            console.log(error);
+
+        }
+
+    };
+
+    loadHolidays();
 
 }, []);
 
@@ -284,6 +316,46 @@ window.dispatchEvent(
     console.log(error);
 
   }
+};
+
+const isHoliday = (date) => {
+
+    const attendanceDate = new Date(date);
+
+    return holidays.some((holiday) => {
+
+        const holidayDate = new Date(
+
+            holiday.holiday_date
+
+        );
+
+        if (holiday.recurring) {
+
+            return (
+
+                attendanceDate.getDate() === holidayDate.getDate()
+
+                &&
+
+                attendanceDate.getMonth() === holidayDate.getMonth()
+
+            );
+
+        }
+
+        return (
+
+            attendanceDate.toLocaleDateString()
+
+            ===
+
+            holidayDate.toLocaleDateString()
+
+        );
+
+    });
+
 };
 
 const handleLeaveSubmit =
@@ -550,6 +622,30 @@ currentUser?.role === "User" && (
   {/* Attendance Dashboard */}
 
     <div className="attendance-dashboard-card">
+    
+    {
+    isHoliday(new Date()) && (
+    
+    <div className="holiday-banner">
+    
+    <h3>
+    
+    🎉 Today is a Holiday
+    
+    </h3>
+    
+    <p>
+    
+    {
+    holidays.find(h => isHoliday(h.holiday_date))?.holiday_name
+    }
+    
+    </p>
+    
+    </div>
+    
+    )
+    }
   
       <h2>
         Today's Attendance
@@ -596,15 +692,29 @@ currentUser?.role === "User" && (
         <button
           className="checkin-btn"
           onClick={handleCheckIn}
+          disabled={isHoliday(new Date())}
         >
-          Check In
+          {
+          isHoliday(new Date())
+          ?
+          "Holiday"
+          :
+          "Check In"
+          }
         </button>
   
         <button
           className="checkout-btn"
           onClick={handleCheckOut}
+          disabled={isHoliday(new Date())}
         >
-          Check Out
+          {
+          isHoliday(new Date())
+          ?
+          "Holiday"
+          :
+          "Check Out"
+          }
         </button>
   
       </div>
@@ -761,7 +871,30 @@ item.check_in
 }
 </td>
 
-<td>Present</td>
+<td>
+
+{
+isHoliday(item.check_in)
+
+?
+
+<span className="holiday-status">
+
+Holiday
+
+</span>
+
+:
+
+<span className="present-status">
+
+Present
+
+</span>
+
+}
+
+</td>
 
 <td>
 {
@@ -781,9 +914,21 @@ item.check_out
 }
 </td>
 <td>
+
 {
-item.hours || "--"
+
+isHoliday(item.check_in)
+
+?
+
+"Holiday"
+
+:
+
+(item.hours || "--")
+
 }
+
 </td>
 
 </tr>

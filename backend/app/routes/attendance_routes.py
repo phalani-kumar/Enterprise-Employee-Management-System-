@@ -2,6 +2,8 @@ from fastapi import APIRouter
 
 from datetime import datetime
 
+from app.database.holiday_db import load_holidays
+
 from app.database.attendance_requests_db import (
     attendance_requests,
     save_requests
@@ -62,6 +64,33 @@ def add_audit_log(
     save_audit_logs(
         audit_logs
     )
+
+def is_today_holiday(company_id):
+
+    holidays = load_holidays()
+
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    current_year = datetime.now().year
+
+    for holiday in holidays:
+
+        if holiday["company_id"] != company_id:
+            continue
+
+        if holiday["recurring"]:
+
+            month_day = holiday["holiday_date"][5:]
+
+            if today[5:] == month_day:
+                return holiday
+
+        else:
+
+            if holiday["holiday_date"] == today:
+                return holiday
+
+    return None
 
 @router.post(
     "/attendance/request-access"
@@ -284,6 +313,18 @@ def get_requests(
 def check_in(data: dict):
     print("CHECK IN API HIT")
 
+    holiday = is_today_holiday(data["company_id"])
+
+    if holiday:
+    
+        return {
+    
+            "holiday": True,
+    
+            "message": f"Today is {holiday['holiday_name']}. Attendance is not required."
+    
+        }
+
     record = {
 
         "user_id": data["user_id"],
@@ -328,6 +369,36 @@ def check_in(data: dict):
 )
 def check_out(user_id: int):
     print("CHECK OUT API HIT")
+
+    user = next(
+
+    (
+
+        u
+
+        for u in users
+
+        if u["id"] == user_id
+
+    ),
+
+    None
+
+    )
+    
+    if user:
+    
+        holiday = is_today_holiday(user["company_id"])
+    
+        if holiday:
+    
+            return {
+    
+                "holiday": True,
+    
+                "message": "Holiday. Check-Out not required."
+    
+            }
 
     for record in reversed(
         attendance_records
@@ -414,3 +485,24 @@ def attendance_history(
         if record["user_id"]
         == user_id
     ]
+
+@router.get("/attendance/status/{company_id}")
+def attendance_status(company_id: int):
+
+    holiday = is_today_holiday(company_id)
+
+    if holiday:
+
+        return {
+
+            "holiday": True,
+
+            "holiday_name": holiday["holiday_name"]
+
+        }
+
+    return {
+
+        "holiday": False
+
+    }

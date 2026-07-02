@@ -64,6 +64,7 @@ import {
   FaExchangeAlt,
   FaHistory,
   FaFileExport,
+   FaCalendarAlt,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -214,6 +215,23 @@ function Sidebar() {
       </span>
     </NavLink>
 
+  <NavLink 
+      to="/holiday-calendar"
+      className="sidebar-link"
+  >
+
+      <FaCalendarAlt />
+
+      <span>
+
+      Holiday Calendar
+
+      </span>
+
+  </NavLink>
+
+ 
+
 <NavLink
   to="/user-invitations"
   className="sidebar-link"
@@ -228,6 +246,26 @@ function Sidebar() {
          </>
 
         )}
+
+        {
+      user?.role==="User" &&
+      
+      <NavLink 
+        to="/holiday-view"
+        className="sidebar-link"
+      >
+      
+      <FaCalendarAlt/>
+
+      <span>
+      
+      Holiday Calendar
+      
+      </span>
+      
+      </NavLink>
+      
+      }
 
         {/* SETTINGS FOR BOTH USER & ADMIN */}
 
@@ -267,6 +305,7 @@ function Sidebar() {
         Logout
 
       </button>
+
 
     </div>
   );

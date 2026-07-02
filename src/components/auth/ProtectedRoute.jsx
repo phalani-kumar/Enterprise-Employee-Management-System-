@@ -79,6 +79,8 @@ function ProtectedRoute({
       "/dashboard",
       "/employees",
       "/attendance",
+      "/holiday-view",
+      "/profile",
       "/settings",
       "/account-deactivated"
     ].includes(
