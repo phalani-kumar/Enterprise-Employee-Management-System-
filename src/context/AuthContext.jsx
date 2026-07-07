@@ -2,12 +2,15 @@ import {
   createContext,
   useContext,
   useState,
+  useEffect,
 } from "react";
 
 import {
   trackLogout
 }
 from "../services/activityService";
+
+import { updateActivity } from "../services/loginDeviceService";
 
 import {
   getCurrentUser,
@@ -25,6 +28,22 @@ export const AuthProvider =
       useState(
         getCurrentUser()
       );
+
+      useEffect(() => {
+
+          const sessionId = localStorage.getItem("session_id");
+      
+          if (!sessionId) return;
+      
+          const timer = setInterval(() => {
+      
+              updateActivity(sessionId);
+      
+          },60000);
+      
+          return () => clearInterval(timer);
+      
+      },[]);
 
     const logout = async () => {
 
@@ -64,6 +83,8 @@ export const AuthProvider =
   }
 
   logoutUser();
+
+  localStorage.removeItem("session_id");
 
   setUser(null);
 

@@ -13,6 +13,9 @@ class LoginSchema(BaseModel):
 
     email: str
     password: str
+    browser: str
+    ip_address: str
+    device_name: str
 
 
 class ForgotPasswordSchema(BaseModel):

@@ -468,7 +468,7 @@
         "role": "User",
         "company_id": 1,
         "company_name": "Company A",
-        "status": "Active",
+        "status": "Suspended",
         "profile_completion": 70,
         "missing_fields": [
             "designation",
@@ -485,7 +485,9 @@
         "date_of_joining": "2026-07-01",
         "employee_id": "",
         "suspended_reason": "",
-        "suspended_by": ""
+        "suspended_by": "Admin A",
+        "suspension_reason": "Account suspended by administrator",
+        "suspension_date": "03-07-2026 14:33"
     },
     {
         "id": 30,

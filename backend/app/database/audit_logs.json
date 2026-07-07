@@ -5625,5 +5625,1459 @@
         "action": "User Logout",
         "related_employee": "Admin B",
         "timestamp": "2026-07-02 22:03:45.823226"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-03 14:33:14.255024"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Suspended",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-03 14:33:32.560890"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-03 14:33:37.660044"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Shyam",
+        "action": "User Login",
+        "related_employee": "Shyam",
+        "timestamp": "2026-07-03 14:33:56.319640"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 12:45:07.038308"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 12:46:13.654458"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-05 12:46:33.653214"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-05 12:47:02.972850"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 12:47:25.774844"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 20:44:48.005282"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.152",
+        "session_identifier": "60fd6f8a-76f4-4e64-8f3b-e0772e420416",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 20:52:02.545766"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.152",
+        "session_identifier": "176c6186-63fa-4c44-9e63-c491af95663b",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 20:52:02.557691"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.152",
+        "session_identifier": "d931fd05-d8d6-4bce-a273-342804318b60",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 20:52:02.570407"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 20:52:52.695151"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 20:53:17.667341"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 20:58:13.589252"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 20:58:27.555811"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 21:19:18.906614"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 21:19:33.981689"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 21:19:44.448219"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 21:19:58.901506"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 21:20:14.894340"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 21:40:28.413183"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "79054186-8d83-4a12-b553-b813039757d5",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 21:40:34.162408"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "b6f1d070-22e4-47ef-81bd-41da9c878a61",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 21:40:34.176596"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "5f28f165-d4fe-4149-ace3-bf57898679b6",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 21:40:34.189776"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 21:40:39.538578"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 21:41:34.912109"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 21:41:50.628363"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 22:19:16.037444"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "1ae8d99c-7b39-4c93-b79e-fa4bdadbfd62",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 22:19:22.898415"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "2d5cf2c7-e16b-4bc4-8115-7a91ac8a7121",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 22:19:22.935243"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.19",
+        "session_identifier": "18b66c91-6627-4028-9b41-57f9eb6935ed",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 22:19:22.992918"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.19",
+        "session_identifier": "fad5597f-e1fc-4e8c-bd92-2f01e6a9eaae",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 22:19:23.032096"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 22:20:13.734275"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 22:20:30.285776"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 22:21:10.655666"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 23:28:37.548716"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "4139787b-4b86-4734-aaff-d4102afd0bb9",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 23:28:46.539649"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "9a9d40ae-c166-4312-9c4c-7f9076e76ac5",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-05 23:28:46.596179"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 23:29:19.664432"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 23:29:39.465930"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-05 23:29:49.122789"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 23:30:02.329216"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-05 23:31:08.743468"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 08:35:37.892684"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "2597ef96-adfa-49a0-b3c4-fb6d686ad1cc",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 08:35:42.382422"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "d0f69465-3053-4f7d-b015-8259e99981d0",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 08:35:42.421790"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "417f0051-86d9-435e-858b-2cef0b6f7d7f",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 08:35:42.464322"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 08:38:16.920866"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 08:38:31.800417"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.150",
+        "session_identifier": "f7b6232b-6f17-4a82-93b1-1843b03d3fa3",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 10:12:21.336232"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.150",
+        "session_identifier": "fd8b3443-3087-4d2c-ac94-4ff0269ffeb8",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 10:12:21.438399"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 17:08:28.181513"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 17:09:19.343895"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 17:09:32.586205"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "89c8d1e3-ee14-4dee-ab81-a8a530b01c21",
+        "action": "User Logout",
+        "performed_by": "Gana",
+        "timestamp": "2026-07-06 17:09:56.144531"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 17:11:01.379385"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 17:11:16.146738"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "9819cd34-27d5-40d8-b858-ab8b9dcab3ba",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 18:04:01.346292"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "37fb6335-3a6c-40f3-95e3-6c893cf7dba8",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 18:04:01.397076"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 18:05:57.490596"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 18:06:22.692318"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 18:08:18.573065"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 18:08:32.671676"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 18:56:02.206140"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 18:56:17.625007"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 19:04:25.714592"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "2e16f067-162f-4c4f-96d0-7db592612ba1",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 19:04:30.024842"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "a5e390ce-be32-4f0f-96e8-966554f24817",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 19:04:30.037971"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 19:04:34.509889"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 19:05:13.951528"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "0319de1d-f5ff-4b0e-8cc6-62a41505d704",
+        "action": "User Logout",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 19:06:23.553894"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 19:06:41.056065"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 19:06:55.006950"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "c13052ca-5104-454a-b417-0b653baf3432",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:15.713298"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "c13052ca-5104-454a-b417-0b653baf3432",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:15.746774"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "4bb05b9b-8f5f-4cb4-985f-683970ca48fa",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:32.290016"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "4bb05b9b-8f5f-4cb4-985f-683970ca48fa",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:32.326234"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "1b47153a-e717-4940-a694-ecdd29c5fa83",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:34.308421"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "1b47153a-e717-4940-a694-ecdd29c5fa83",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 19:07:34.325143"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 19:09:53.527910"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 19:10:08.416944"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.18",
+        "session_identifier": "3303f000-55f5-4f32-8b34-7058acff5e57",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 19:45:01.558021"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 19:45:27.193237"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Login",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 19:45:42.890288"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.112",
+        "session_identifier": "2a6faeec-e041-4636-956f-80a32b8c19ef",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 20:19:22.201093"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Gana",
+        "action": "User Logout",
+        "related_employee": "Gana",
+        "timestamp": "2026-07-06 20:19:50.916339"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 20:20:07.369987"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 20:57:01.982666"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 20:57:02.037294"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "106.76.175.112",
+        "session_identifier": "e6dfcba8-bfe7-4bbc-bf74-919f346d76f5",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 20:57:22.806028"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 20:57:29.203284"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 20:57:43.561116"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:15:46.181624"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:15:56.236821"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 21:16:13.161321"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "b88fcea8-0bbb-46f7-8077-091e12b12fbe",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 21:37:53.169575"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "268683a6-ac8c-4caa-acaa-56d6920a03c2",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 21:37:53.205108"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.1",
+        "session_identifier": "9b810805-3d5a-49fd-a1b4-77600286acbe",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 21:47:43.815135"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.1",
+        "session_identifier": "b69546dd-10de-41f4-bd4b-637e1329abb9",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 21:47:43.880418"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "de36c388-e3d4-484a-936f-d199a5180fb0",
+        "action": "User Login",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-06 21:47:43.962853"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "de36c388-e3d4-484a-936f-d199a5180fb0",
+        "action": "Trusted Device Added",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-06 21:47:44.025430"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:47:44.116591"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:47:53.229924"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "efd5735b-3672-46e1-8da6-7bbc2e897456",
+        "action": "User Login",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:48:11.752154"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "efd5735b-3672-46e1-8da6-7bbc2e897456",
+        "action": "Trusted Device Added",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:48:11.798017"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 21:48:11.865423"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "b6f1d070-22e4-47ef-81bd-41da9c878a61",
+        "action": "Trusted Device Removed",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:48:24.519324"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.130",
+        "session_identifier": "2d5cf2c7-e16b-4bc4-8115-7a91ac8a7121",
+        "action": "Trusted Device Removed",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:48:39.989932"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "9ec2cc35-2b33-4ed4-ae2c-a9cb77d74e66",
+        "action": "User Logout",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:49:48.117658"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 21:50:40.761235"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:50:58.026514"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "acc6f90b-c184-481e-8a1a-76ac7c2cd10b",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 21:54:20.272753"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "acc6f90b-c184-481e-8a1a-76ac7c2cd10b",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 21:54:20.330253"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "de36c388-e3d4-484a-936f-d199a5180fb0",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 21:54:20.421609"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "de36c388-e3d4-484a-936f-d199a5180fb0",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 21:54:20.479931"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 21:55:14.961079"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "ad135779-12eb-46ca-8968-fb21f8b9956f",
+        "action": "User Login",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:55:39.672821"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "ad135779-12eb-46ca-8968-fb21f8b9956f",
+        "action": "Trusted Device Added",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 21:55:39.725722"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 21:55:39.812146"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "5b782723-f0c6-41e0-8fc8-4fa7654a415f",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 22:30:42.406067"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "7e105722-2916-4add-a9da-a2cea69a1490",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 22:30:42.433815"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "ad135779-12eb-46ca-8968-fb21f8b9956f",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-06 22:30:42.455998"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 22:34:04.596205"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 22:38:50.232515"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 22:39:15.354364"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 22:39:29.896847"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 22:41:24.104626"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "New Device Detected",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 22:41:24.104640"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "35b4b984-557b-4d3b-931a-8060f2da9efd",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 22:42:17.359542"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
+        "ip_address": "160.238.72.135",
+        "session_identifier": "35b4b984-557b-4d3b-931a-8060f2da9efd",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-06 22:42:17.402303"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 22:59:14.444697"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "313e85b6-ead1-4ad9-b76a-6e19a275da72",
+        "action": "User Login",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 23:01:52.858507"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "313e85b6-ead1-4ad9-b76a-6e19a275da72",
+        "action": "Trusted Device Added",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 23:01:52.871986"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 23:01:52.896355"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "New Device Detected",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 23:01:52.896374"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win31",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "313e85b6-ead1-4ad9-b76a-6e19a275da72",
+        "action": "Trusted Device Renamed",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-06 23:02:32.201244"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-06 23:02:34.718423"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "c6f3bf0b-d206-418a-babd-7377593fe8a3",
+        "action": "User Login",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-06 23:02:47.762106"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "c6f3bf0b-d206-418a-babd-7377593fe8a3",
+        "action": "Trusted Device Added",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-06 23:02:47.780155"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 23:02:47.817632"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-06 23:03:38.286250"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.1",
+        "session_identifier": "fc29dc09-a7f1-45a9-8021-ee05dfad1bbd",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 09:54:17.624965"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.72.1",
+        "session_identifier": "2a7d51d0-0de0-457d-acae-bd9f8b2b7b9e",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 09:54:17.644341"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win31",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "313e85b6-ead1-4ad9-b76a-6e19a275da72",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 09:54:17.662923"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.5",
+        "session_identifier": "c6f3bf0b-d206-418a-babd-7377593fe8a3",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 09:54:17.678511"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "9a87c264-f45e-4129-8260-8e5aa57c3ee9",
+        "action": "User Login",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-07 09:54:17.701200"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "9a87c264-f45e-4129-8260-8e5aa57c3ee9",
+        "action": "Trusted Device Added",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-07 09:54:17.721903"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:54:17.747386"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:54:58.672823"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:55:14.231718"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:56:10.748356"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "e1448b7b-9d5a-4f77-8ee4-ebf52573af55",
+        "action": "User Login",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-07 09:56:28.024543"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "e1448b7b-9d5a-4f77-8ee4-ebf52573af55",
+        "action": "Trusted Device Added",
+        "performed_by": "Venkat",
+        "timestamp": "2026-07-07 09:56:28.063048"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Login",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-07 09:56:28.104413"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "action": "User Logout",
+        "related_employee": "Venkat",
+        "timestamp": "2026-07-07 09:56:55.350060"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:57:16.316132"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "9a87c264-f45e-4129-8260-8e5aa57c3ee9",
+        "action": "Session Revoked",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-07 09:57:52.982897"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "9a87c264-f45e-4129-8260-8e5aa57c3ee9",
+        "action": "Force Logout Initiated",
+        "performed_by": "Admin",
+        "timestamp": "2026-07-07 09:57:53.022966"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Logout",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:58:02.412886"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "72699914-3c23-4970-98d3-88bc56610c35",
+        "action": "User Login",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-07 09:58:17.171333"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "72699914-3c23-4970-98d3-88bc56610c35",
+        "action": "Trusted Device Added",
+        "performed_by": "Admin A",
+        "timestamp": "2026-07-07 09:58:17.190488"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "action": "User Login",
+        "related_employee": "Admin A",
+        "timestamp": "2026-07-07 09:58:17.214336"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Venkat",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "e1448b7b-9d5a-4f77-8ee4-ebf52573af55",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 10:30:45.414442"
+    },
+    {
+        "company_id": 1,
+        "user_name": "Admin A",
+        "device_name": "Win32",
+        "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+        "ip_address": "160.238.73.4",
+        "session_identifier": "72699914-3c23-4970-98d3-88bc56610c35",
+        "action": "Session Expired",
+        "performed_by": "System",
+        "timestamp": "2026-07-07 11:32:12.162456"
     }
 ]

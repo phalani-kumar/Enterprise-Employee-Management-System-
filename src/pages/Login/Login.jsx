@@ -33,6 +33,8 @@ import { useAuth } from "../../context/AuthContext";
 
 import { loginUser } from "../../services/authService";
 
+import { createSession } from "../../services/loginDeviceService";
+
 import {
   trackLogin
 }
@@ -64,30 +66,73 @@ function Login() {
     setShowPassword] =
     useState(false);
 
-  const handleLogin =
-    async (e) => {
+  const handleLogin = async (e) => {
 
-      e.preventDefault();
+  e.preventDefault();
 
-      try {
+  try {
 
-        const user =
-  await loginUser(
-    email,
-    password
-  );
+    const browser = navigator.userAgent;
 
-  console.log(user);
+    const deviceName = navigator.platform;
 
-setUser(user);
+    const ipResponse = await fetch(
+      "https://api.ipify.org?format=json"
+    );
 
-const currentUser = user;
+    const ipData = await ipResponse.json();
 
-const ipResponse = await fetch(
-  "https://api.ipify.org?format=json"
-);
+    const ipAddress = ipData.ip;
 
-const ipData = await ipResponse.json();
+    // Login with device information
+
+    const user = await loginUser({
+
+      email,
+
+      password,
+
+      browser,
+
+      ip_address: ipAddress,
+
+      device_name: deviceName
+
+    });
+
+    const session = await createSession({
+
+        user_id: user.id,
+    
+        company_id: user.company_id,
+    
+        user_name: user.name,
+    
+        email: user.email,
+    
+        browser: browser,
+    
+        ip_address: ipAddress,
+    
+        device_name: deviceName,
+    
+        trusted: true
+    
+    });
+    
+    localStorage.setItem(
+    
+        "session_id",
+    
+        session.session_id
+    
+    );
+
+    console.log(user);
+
+    setUser(user);
+
+    const currentUser = user;
 
 const currentIp = ipData.ip;
 

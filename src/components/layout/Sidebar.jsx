@@ -58,13 +58,14 @@ import {
   FaUsers,
   FaBuilding,
   FaCalendarCheck,
+  FaLaptop,
   FaIndustry,
   FaUserPlus,
   FaClipboardList,
   FaExchangeAlt,
   FaHistory,
   FaFileExport,
-   FaCalendarAlt,
+  FaCalendarAlt,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -159,6 +160,24 @@ function Sidebar() {
 
             <NavLink
 
+    to="/device-monitoring"
+
+    className="sidebar-link"
+
+>
+
+    <FaLaptop />
+
+    <span>
+
+        Device Monitoring
+
+    </span>
+
+</NavLink>
+
+            <NavLink
+
   to="/companies"
   className="sidebar-link"
 >
@@ -246,6 +265,26 @@ function Sidebar() {
          </>
 
         )}
+
+        {
+        user?.role === "User" &&
+        
+        <NavLink
+            to="/login-devices"
+            className="sidebar-link"
+        >
+        
+            <FaLaptop />
+        
+            <span>
+        
+                Login Devices
+        
+            </span>
+        
+        </NavLink>
+        
+        }
 
         {
       user?.role==="User" &&

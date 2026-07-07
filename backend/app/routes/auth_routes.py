@@ -184,6 +184,14 @@ from app.database.notifications_db import (
     save_notifications
 )
 
+from datetime import datetime
+import uuid
+
+from app.database.login_devices_db import (
+    login_devices,
+    save_login_devices
+)
+
 # from app.database.reinstatement_requests_db import (
 #     reinstatement_requests,
 #     save_reinstatement_requests
@@ -329,6 +337,39 @@ def login(data: LoginSchema):
             "Suspended"
         }
 
+    #   session = {  
+    #       "session_id": str(uuid.uuid4()),
+
+    #       "user_id": matched_user["id"],
+
+    #       "company_id": matched_user["company_id"],
+
+    #       "user_name": matched_user["name"],
+
+    #       "email": matched_user["email"],
+
+    #       "browser": data.browser,
+
+    #       "ip_address": data.ip_address,
+
+    #       "device_name": data.device_name,
+
+    #       "login_time": str(datetime.now()),
+
+    #       "last_activity": str(datetime.now()),
+
+    #       "status": "Active",
+
+    #       "trusted": False,
+
+    #       "termination_reason": "" 
+
+    #   }  
+
+    #   login_devices.append(session)
+        
+    #   save_login_devices(login_devices)
+
       return {
 
         "success": True,
@@ -343,7 +384,9 @@ def login(data: LoginSchema):
         matched_user,
 
         "status":
-        matched_user["status"]
+        matched_user["status"],
+
+        # "session_id": session["session_id"]
     }
 
     return {

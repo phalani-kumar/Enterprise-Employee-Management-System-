@@ -19,17 +19,14 @@ const ADMIN_PASSWORD =
 /* LOGIN */
 
 export const loginUser =
-  async (
-    email,
-    password
-  ) => {
+  async (loginData) => {
 
     /* ADMIN LOGIN */
 
     if (
-      email === ADMIN_EMAIL &&
-      password === ADMIN_PASSWORD
-    ) {
+      loginData.email === ADMIN_EMAIL &&
+      loginData.password === ADMIN_PASSWORD
+     ) {
 
       const adminUser = {
 
@@ -58,10 +55,7 @@ export const loginUser =
       const response =
         await axios.post(
           "http://127.0.0.1:8000/login",
-          {
-            email,
-            password
-          }
+          loginData
         );
       
        console.log(
@@ -77,11 +71,14 @@ export const loginUser =
 
         localStorage.setItem(
           "authUser",
-          JSON.stringify(
-            response.data.user
-          )
+          JSON.stringify(response.data.user)
         );
-
+        
+        localStorage.setItem(
+          "session_id",
+          response.data.session_id
+        );
+        
         return response.data.user;
       }
 
@@ -107,6 +104,7 @@ export const logoutUser =
     localStorage.removeItem(
       "authUser"
     );
+    localStorage.removeItem("session_id");
   };
 
 /* CURRENT USER */

@@ -18,6 +18,10 @@ import Departments from "./pages/Departments/Departments";
 
 import Attendance from "./pages/Attendance/Attendance";
 
+import LoginDevices from "./pages/user/LoginDevices";
+
+import DeviceMonitoring from "./pages/admin/DeviceMonitoring";
+
 import Companies from
 "./pages/Companies/Companies";
 
@@ -146,6 +150,34 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+
+          path="/login-devices"
+
+          element={
+          <ProtectedRoute>
+              <LoginDevices />
+          </ProtectedRoute>  
+              }
+
+        />
+
+        <Route
+
+    path="/device-monitoring"
+
+    element={
+
+        <ProtectedRoute>
+
+            <DeviceMonitoring />
+
+        </ProtectedRoute>
+
+    }
+
+/>
 
         <Route
 
