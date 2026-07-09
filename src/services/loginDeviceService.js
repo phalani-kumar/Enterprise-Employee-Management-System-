@@ -228,3 +228,19 @@ export const filterDevices = async (
     );
 
 };
+
+export const revokeMultipleSessions = async (sessions) => {
+
+    return axios.put(
+
+        `${API_URL}/login-devices/revoke-multiple`,
+
+        {
+
+            sessions
+
+        }
+
+    );
+
+};

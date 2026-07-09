@@ -39,31 +39,77 @@
 
 // export default DashboardLayout;
 
+import { useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
+
 import Sidebar from "./Sidebar";
 
 import Navbar from "./Navbar";
 
-function DashboardLayout({
-  children,
-}) {
+import { getCurrentSession } from "../../services/loginDeviceService";
+
+function DashboardLayout({ children }) {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    const sessionId = localStorage.getItem("session_id");
+
+    if (!sessionId) return;
+
+    const timer = setInterval(async () => {
+
+      try {
+
+        const response = await getCurrentSession(sessionId);
+
+        const session = response.data;
+
+        if (
+
+          session.status === "Logged Out" ||
+
+          session.status === "Revoked" ||
+
+          session.status === "Expired"
+
+        ) {
+
+          localStorage.removeItem("authUser");
+
+          localStorage.removeItem("session_id");
+
+          alert("Your session has ended.");
+
+          navigate("/login");
+
+        }
+
+      }
+
+      catch (err) {
+
+        console.log(err);
+
+      }
+
+    }, 5000);
+
+    return () => clearInterval(timer);
+
+  }, [navigate]);
 
   return (
 
     <div className="layout">
 
-      {/* SIDEBAR */}
-
       <Sidebar />
-
-      {/* MAIN */}
 
       <div className="main-section">
 
-        {/* NAVBAR */}
-
         <Navbar />
-
-        {/* PAGE CONTENT */}
 
         <div className="main-content">
 
@@ -74,7 +120,9 @@ function DashboardLayout({
       </div>
 
     </div>
+
   );
+
 }
 
 export default DashboardLayout;

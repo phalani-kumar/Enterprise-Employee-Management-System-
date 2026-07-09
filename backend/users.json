@@ -412,7 +412,8 @@
         "company_name": "Company A",
         "status": "Active",
         "suspended_reason": "",
-        "suspended_by": ""
+        "suspended_by": "",
+        "attendance_access": true
     },
     {
         "id": 27,

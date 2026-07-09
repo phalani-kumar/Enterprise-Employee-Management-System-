@@ -758,3 +758,67 @@ def filter_devices(
         ]
 
     return result
+
+@router.get("/login-devices/history/{company_id}")
+def session_history(company_id:int):
+
+    return [
+
+        session
+
+        for session in login_devices
+
+        if session["company_id"]==company_id
+
+    ]
+
+@router.put("/login-devices/revoke-multiple")
+def revoke_multiple(data: dict):
+
+    expire_sessions()
+
+    session_ids = data["sessions"]
+
+    updated = False
+
+    for device in login_devices:
+
+        if (
+            device["session_id"] in session_ids
+            and device["status"] == "Active"
+        ):
+
+            device["status"] = "Revoked"
+            device["termination_reason"] = "Force Logout"
+
+            add_audit_log(
+
+                device["company_id"],
+
+                device["user_name"],
+
+                "Session Revoked",
+
+                device["device_name"],
+
+                device["browser"],
+
+                device["ip_address"],
+
+                device["session_id"],
+
+                "Admin"
+
+            )
+
+            updated = True
+
+    if updated:
+
+        save_login_devices(login_devices)
+
+    return {
+
+        "message": "Selected Sessions Revoked"
+
+    }    

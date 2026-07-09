@@ -5,6 +5,7 @@ import DashboardLayout from "../../components/layout/DashboardLayout";
 import {
     getCompanyDevices,
     revokeSession,
+    revokeMultipleSessions,
     searchDevices,
     filterDevices
 } from "../../services/loginDeviceService";
@@ -16,6 +17,8 @@ function DeviceMonitoring() {
     );
 
     const [devices, setDevices] = useState([]);
+
+    const [history, setHistory] = useState([]);
 
     const [search, setSearch] = useState("");
 
@@ -29,13 +32,29 @@ function DeviceMonitoring() {
 
     const loadDevices = async () => {
 
-        const data = await getCompanyDevices(
-            currentUser.company_id
-        );
+    const data = await getCompanyDevices(
+        currentUser.company_id
+    );
 
-        setDevices(data);
+    const activeDevices = data.filter(
+        device => device.status === "Active"
+    );
 
-    };
+    setDevices(activeDevices);
+
+};
+
+    const loadHistory = async () => {
+
+    const response = await fetch(
+        `http://127.0.0.1:8000/login-devices/history/${currentUser.company_id}`
+    );
+
+    const data = await response.json();
+
+    setHistory(data);
+
+};
 
     const handleSearch = async () => {
 
@@ -91,6 +110,8 @@ function DeviceMonitoring() {
 
         loadDevices();
 
+        loadHistory();
+
     }, []);
 
     return (
@@ -101,22 +122,30 @@ function DeviceMonitoring() {
 
             <button
 
-                    onClick={async () => {
+                onClick={async () => {
             
-                        for (const id of selected) {
+                    if (selected.length === 0) {
             
-                            await revokeSession(id);
+                        alert("Please select sessions");
             
-                        }
+                        return;
             
-                        setSelected([]);
+                    }
             
-                        loadDevices();
+                    await revokeMultipleSessions(selected);
             
-                    }}
-            >
-                 Force Logout Selected
+                    setSelected([]);
+            
+                    loadDevices();
 
+                    loadHistory();
+            
+                }}
+            
+            >
+            
+            Force Logout Selected
+            
             </button>
        
             
@@ -396,6 +425,8 @@ function DeviceMonitoring() {
 
                                                 loadDevices();
 
+                                                loadHistory();
+
                                             }}
 
                                         >
@@ -418,8 +449,72 @@ function DeviceMonitoring() {
 
             </table>
 
-        </DashboardLayout>
+            <h2 style={{marginTop:"40px"}}>
+                Session History
+            </h2>
+            
+            <table className="employee-table">
+            
+                <thead>
+            
+                    <tr>
+            
+                        <th>User</th>
+            
+                        <th>Device</th>
+            
+                        <th>Browser</th>
+            
+                        <th>IP Address</th>
+            
+                        <th>Status</th>
+            
+                        <th>Login Time</th>
+            
+                        <th>Last Activity</th>
+            
+                        <th>Termination Reason</th>
+            
+                    </tr>
+            
+                </thead>
+            
+                <tbody>
+            
+                    {
+    history
+        .filter(session => session.status !== "Active")
+        .map(session => (
 
+            <tr key={session.session_id}>
+
+                <td>{session.user_name}</td>
+
+                <td>{session.device_name}</td>
+
+                <td>{session.browser}</td>
+
+                <td>{session.ip_address}</td>
+
+                <td>{session.status}</td>
+
+                <td>{session.login_time}</td>
+
+                <td>{session.last_activity}</td>
+
+                <td>{session.termination_reason || "-"}</td>
+
+            </tr>
+
+        ))
+}
+            
+                </tbody>
+            
+            </table>
+            
+            </DashboardLayout>
+            
     );
 
 }
