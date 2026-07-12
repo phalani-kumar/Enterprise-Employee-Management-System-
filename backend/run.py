@@ -110,6 +110,16 @@ from app.routes.holiday_routes import holiday_router
 
 from app.routes.login_devices_routes import router as login_device_router
 
+from app.routes.skills_routes import router as skills_router
+
+from app.routes.certifications_routes import router as certifications_router
+
+from app.routes.admin_competency_routes import router as admin_competency_router
+
+from app.routes.dashboard_competency_routes import router as dashboard_competency_router
+
+from app.routes.certification_notification_routes import router as notification_router
+
 
 app = FastAPI()
 
@@ -177,6 +187,16 @@ app.include_router(suspension_router)
 app.include_router(holiday_router)
 
 app.include_router(login_device_router)
+
+app.include_router(skills_router)
+
+app.include_router(certifications_router)
+
+app.include_router(admin_competency_router)
+
+app.include_router(dashboard_competency_router)
+
+app.include_router(notification_router)
 
 
 # HOME

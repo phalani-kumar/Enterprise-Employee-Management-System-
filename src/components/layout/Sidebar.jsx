@@ -66,6 +66,9 @@ import {
   FaHistory,
   FaFileExport,
   FaCalendarAlt,
+  FaTools,
+  FaCertificate,
+  FaUserGraduate,
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
@@ -130,12 +133,28 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-  to="/attendance"
-  className="sidebar-link"
->
-  <FaCalendarCheck />
-  <span>Attendance</span>
-</NavLink>
+            to="/attendance"
+            className="sidebar-link"
+          >
+            <FaCalendarCheck />
+            <span>Attendance</span>
+          </NavLink>
+
+          <NavLink
+            to="/skills"
+            className="sidebar-link"
+          >
+            <FaTools/>
+            <span>Skills</span>
+          </NavLink>
+
+          <NavLink
+            to="/certifications"
+            className="sidebar-link"
+          >
+            <FaCertificate/>
+            <span>Certifications</span>
+          </NavLink>
 
         {/* ADMIN ONLY PAGES */}
 
@@ -158,7 +177,7 @@ function Sidebar() {
 
             </NavLink>
 
-            <NavLink
+<NavLink
 
     to="/device-monitoring"
 
@@ -176,7 +195,25 @@ function Sidebar() {
 
 </NavLink>
 
-            <NavLink
+<NavLink
+
+    to="/employee-competency"
+
+    className="sidebar-link"
+
+>
+
+    <FaUserGraduate />
+
+    <span>
+
+        Employee Competency
+
+    </span>
+
+</NavLink>
+
+<NavLink
 
   to="/companies"
   className="sidebar-link"

@@ -419,6 +419,12 @@ import {
 
 } from "../../services/authService";
 
+import {
+    getEmployeeDashboardSummary,
+    getAdminDashboardSummary,
+    getTopSkills
+} from "../../services/dashboardCompetencyService";
+
 function Dashboard() {
 
   const [pendingRequests,
@@ -431,6 +437,12 @@ function Dashboard() {
 
   const [users, setUsers] =
   useState([]); 
+
+  const [employeeDashboard, setEmployeeDashboard] = useState(null);
+
+  const [adminDashboard, setAdminDashboard] = useState(null);
+
+  const [topSkills, setTopSkills] = useState([]);
   
   const [
 
@@ -457,6 +469,8 @@ useEffect(() => {
   fetchUsers();
 
   fetchCompletion();
+
+  loadDashboardData();
 
 }, []);
 
@@ -505,6 +519,41 @@ useEffect(() => {
     console.log(data);
 
     setCompletionUsers(data);
+
+};
+
+  const loadDashboardData = async () => {
+
+    try {
+
+        const authUser = JSON.parse(
+            localStorage.getItem("authUser")
+        );
+
+        if (authUser.role === "Admin") {
+
+            const admin = await getAdminDashboardSummary(
+                authUser.company_id
+            );
+        
+            setAdminDashboard(admin);
+        
+            // Load Top Skills
+            const skills = await getTopSkills(
+                authUser.company_id
+            );
+        
+            setTopSkills(skills);
+        
+        }
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
 
 };
 
@@ -757,7 +806,134 @@ const attendanceAnalytics =
             </div>
           
           </div>
+
+          {
+
+          JSON.parse(localStorage.getItem("authUser"))?.role !== "Admin"
+          
+          &&
+          
+          employeeDashboard && (
+          
+          <>
+          
+          <div className="stat-card">
+          
+              <div className="stat-icon blue">
+          
+                  🛠️
+          
+              </div>
+          
+              <div>
+          
+                  <h2>
+          
+                      {employeeDashboard.total_skills}
+          
+                  </h2>
+          
+                  <p>Total Skills</p>
+          
+              </div>
+          
+          </div>
+          
+          <div className="stat-card">
+          
+              <div className="stat-icon green">
+          
+                  ⭐
+          
+              </div>
+          
+              <div>
+          
+                  <h2>
+          
+                      {employeeDashboard.primary_skills}
+          
+                  </h2>
+          
+                  <p>Primary Skills</p>
+          
+              </div>
+          
+          </div>
+          
+          <div className="stat-card">
+          
+              <div className="stat-icon purple">
+          
+                  📜
+          
+              </div>
+          
+              <div>
+          
+                  <h2>
+          
+                      {employeeDashboard.active_certifications}
+          
+                  </h2>
+          
+                  <p>Active Certifications</p>
+          
+              </div>
+          
+          </div>
+          
+          <div className="stat-card">
+          
+              <div className="stat-icon orange">
+          
+                  ❌
+          
+              </div>
+          
+              <div>
+          
+                  <h2>
+          
+                      {employeeDashboard.expired_certifications}
+          
+                  </h2>
+          
+                  <p>Expired Certifications</p>
+          
+              </div>
+          
+          </div>
+          
+          <div className="stat-card">
+          
+              <div className="stat-icon blue">
+          
+                  📈
+          
+              </div>
+          
+              <div>
+          
+                  <h2>
+          
+                      {employeeDashboard.profile_completion}%
+          
+                  </h2>
+          
+                  <p>Profile Completion</p>
+          
+              </div>
+          
+          </div>
+          
+          </>
+          
+          )
+          
+          }
         </div>
+
 
         {/* GRAPH + RECENT */}
 
@@ -1096,6 +1272,92 @@ const attendanceAnalytics =
   </ResponsiveContainer>
 
 </div>
+
+{
+
+JSON.parse(localStorage.getItem("authUser"))?.role === "Admin"
+
+&&
+
+adminDashboard && (
+
+<>
+
+<div className="analytics-card">
+
+<h2>Certification Summary</h2>
+
+<p>
+
+Valid Certifications :
+
+<b>
+
+{adminDashboard.valid_certifications}
+
+</b>
+
+</p>
+
+<p>
+
+Expired Certifications :
+
+<b>
+
+{adminDashboard.expired_certifications}
+
+</b>
+
+</p>
+
+<p>
+
+Expiring Soon :
+
+<b>
+
+{adminDashboard.expiring_soon}
+
+</b>
+
+</p>
+
+</div>
+
+<div className="analytics-card">
+
+<h2>Top Skills</h2>
+
+<ResponsiveContainer width="100%" height={300}>
+
+<BarChart data={topSkills}>
+
+<CartesianGrid strokeDasharray="3 3" />
+
+<XAxis dataKey="skill" />
+
+<YAxis />
+
+<Tooltip />
+
+<Bar
+dataKey="count"
+fill="#2563eb"
+/>
+
+</BarChart>
+
+</ResponsiveContainer>
+
+</div>
+
+
+</>
+
+)
+
+}
 
 {
 JSON.parse(localStorage.getItem("authUser"))?.role === "Admin" && (

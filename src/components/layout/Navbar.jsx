@@ -100,6 +100,11 @@ rejectAttendanceAccess
 
 from "../../services/attendanceService";
 
+import {
+    getEmployeeNotifications,
+    getCompanyNotifications
+} from "../../services/notificationService";
+
 import { Link }
 
 from "react-router-dom";
@@ -141,6 +146,11 @@ function Navbar() {
 
   const [notifications, setNotifications] =
   useState([]);
+
+  const [
+    certificationNotifications,
+    setCertificationNotifications
+  ] = useState([]);
 
   const [
 
@@ -236,6 +246,45 @@ const [showNotifications,
 
 };
 
+const loadCertificationNotifications = async () => {
+
+    try {
+
+        let response;
+
+        if (user?.role === "Admin") {
+
+            response = await getCompanyNotifications(companyId);
+
+        } else {
+
+            response = await getEmployeeNotifications(user.id);
+
+        }
+
+        const list = [
+            ...(response.expiring_soon || []),
+            ...(response.expired || [])
+        ];
+
+        setCertificationNotifications({
+        
+            expiring_soon: response.expiring_soon,
+        
+            expired: response.expired
+        
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+};
+
 const markAllRead = async () => {
 
     try {
@@ -274,11 +323,15 @@ useEffect(() => {
 
     loadAttendanceRequests();
 
+    loadCertificationNotifications();
+
     const interval = setInterval(() => {
 
         loadNotifications();
 
         loadAttendanceRequests();
+
+        loadCertificationNotifications();
 
     },3000);
 
@@ -540,33 +593,44 @@ notifications.filter(
 notification => !notification.read
 ).length
 +
-attendanceRequests.length
+(user?.role === "Admin"
+    ? attendanceRequests.length
+    : 0)
++
+certificationNotifications.length
 ) > 0 &&
 !showNotifications && (
 
 (
-  notifications.filter(
-    notification => !notification.read
-  ).length +
-  (user?.role === "Admin"
+notifications.filter(
+notification => !notification.read
+).length
++
+(user?.role === "Admin"
     ? attendanceRequests.length
     : 0)
++
+certificationNotifications.length
 ) > 0 && (
 
-  <span className="notification-count">
+<span className="notification-count">
 
-    {
-      notifications.filter(
-        notification => !notification.read
-      ).length +
-      (user?.role === "Admin"
-        ? attendanceRequests.length
-        : 0)
-    }
+{
+notifications.filter(
+notification => !notification.read
+).length
++
+(user?.role === "Admin"
+    ? attendanceRequests.length
+    : 0)
++
+certificationNotifications.length
+}
 
-  </span>
+</span>
 
 )
+
 )
 }
 
@@ -798,11 +862,67 @@ leaveRequests.map(
       )
     }
 
+    {/* Certification Notifications */}
+
+{
+  certificationNotifications.length > 0 && (
+    <>
+      <h4>Certification Alerts</h4>
+
+      {
+        certificationNotifications.map((item, index) => (
+
+          <div
+            key={index}
+            className="notification-item"
+          >
+
+            <p>
+
+            <strong>
+            
+            {item.employee_name ? item.employee_name + " - " : ""}
+            
+            {item.certification_name}
+            
+            </strong>
+            
+            </p>
+            
+            <p>
+            
+            {item.days_remaining < 0
+            
+            ? `Expired ${Math.abs(item.days_remaining)} days ago`
+            
+            : `Expires in ${item.days_remaining} days`}
+            
+            </p>
+            
+            <small>
+            
+            Expiry Date :
+            
+            {item.expiry_date}
+            
+            </small>
+
+          </div>
+
+        ))
+      }
+
+    </>
+  )
+}
+
+
    {
   (
     (user?.role !== "Admin" ||
       attendanceRequests.length === 0) &&
-    notifications.length === 0
+    notifications.length === 0 &&
+    certificationNotifications.length === 0
   ) && (
     <p>No Notifications</p>
   )
@@ -811,6 +931,8 @@ leaveRequests.map(
 )}
 
 </div>
+
+
 
         {/* PROFILE */}
 

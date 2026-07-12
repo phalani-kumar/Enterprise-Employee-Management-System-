@@ -63,6 +63,12 @@ import HolidayView from "./pages/holiday/HolidayView";
 
 import Profile from "./pages/Profile";
 
+import Skills from "./pages/skills/Skills";
+
+import Certifications from "./pages/certifications/Certifications";
+
+import EmployeeCompetency from "./pages/admin/EmployeeCompetency";
+
 function App() {
 
   return (
@@ -320,6 +326,42 @@ path="/profile"
 element={
   <ProtectedRoute>
   <Profile/>
+  </ProtectedRoute>
+}
+
+/>
+
+<Route
+
+path="/skills"
+
+element={
+  <ProtectedRoute>
+  <Skills/>
+  </ProtectedRoute>
+}
+
+/>
+
+<Route
+
+path="/certifications"
+
+element={
+  <ProtectedRoute>
+  <Certifications/>
+  </ProtectedRoute>
+}
+
+/>
+
+<Route
+
+path="/employee-competency"
+
+element={
+  <ProtectedRoute>
+  <EmployeeCompetency/>
   </ProtectedRoute>
 }
 

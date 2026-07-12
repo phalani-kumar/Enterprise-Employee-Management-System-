@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "employee_id": 7,
+        "company_id": 1,
+        "certification_name": "CCNA",
+        "issuing_organization": "NXT Wave",
+        "issue_date": "2025-06-06",
+        "expiry_date": "2026-07-06",
+        "document_name": null,
+        "created_at": "2026-07-12 15:33:22.079944"
+    },
+    {
+        "id": 2,
+        "employee_id": 1,
+        "company_id": 1,
+        "certification_name": "aws",
+        "issuing_organization": "NXT Wave",
+        "issue_date": "2026-07-11",
+        "expiry_date": "2027-07-12",
+        "document_name": null,
+        "created_at": "2026-07-12 16:03:12.960050"
+    },
+    {
+        "id": 3,
+        "employee_id": 1,
+        "company_id": 1,
+        "certification_name": "azure",
+        "issuing_organization": "NXT Wave",
+        "issue_date": "2026-07-12",
+        "expiry_date": "2026-08-11",
+        "document_name": null,
+        "created_at": "2026-07-12 16:06:11.088548"
+    },
+    {
+        "id": 4,
+        "employee_id": 1,
+        "company_id": 1,
+        "certification_name": "CCNA",
+        "issuing_organization": "NXT Wave",
+        "issue_date": "2026-01-12",
+        "expiry_date": "2026-07-31",
+        "document_name": null,
+        "created_at": "2026-07-12 16:13:17.226832"
+    }
+]
